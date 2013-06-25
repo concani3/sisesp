@@ -1,0 +1,235 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {"RA":"Águas Claras","indice":56.5,"unidade":"% com conta-corrente bancária","nivel":3},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5344347,-1787634
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA": "Varjão", "indice":25.1,"unidade":"% com conta-corrente bancária","nivel":1},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5330802,-1769734
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA": "Paranoá", "indice":29.2,"unidade":"% com conta-corrente bancária","nivel":1},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5286018,-1795417
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA": "Brasília", "indice":66.6,"unidade":"% com conta-corrente bancária","nivel":3},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5331115,-1778754
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA": "Recanto das Emas", "indice":25.1,"unidade":"% com conta-corrente bancária","nivel":1},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5356416,-1797328
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Vicente Pires", "indice":47.6,"unidade":"% com conta-corrente bancária","nivel":2},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5347702,-1783569
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Taguatinga", "indice":48.2,"unidade":"% com conta-corrente bancária","nivel":2},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5351295,-1780512
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Estrutural", "indice":19.5,"unidade":"% com conta-corrente bancária","nivel":0},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5341274,-1779594
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Santa Maria", "indice":34.9,"unidade":"% com conta-corrente bancária","nivel":1},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5329357,-1806118
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Samambaia", "indice":30.6,"unidade":"% com conta-corrente bancária","nivel":1},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5360620,-1791366
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Riacho Fundo II", "indice":34.3,"unidade":"% com conta-corrente bancária","nivel":1},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5343269,-1795111
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Riacho Fundo", "indice":41,"unidade":"% com conta-corrente bancária","nivel":2},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5347855,-1791671
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Núcleo Bandeirante", "indice":50.4,"unidade":"% com conta-corrente bancária","nivel":3},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5341740,-1790623
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Itapoã", "indice":21.8,"unidade":"% com conta-corrente bancária","nivel":1},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5312151,-1775314
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Gama", "indice":41,"unidade":"% com conta-corrente bancária","nivel":2},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5364442,-1806500
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Ceilândia", "indice":31.0,"unidade":"% com conta-corrente bancária","nivel":1},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5367117,-1782652
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Brazlândia", "indice":33.9,"unidade":"% com conta-corrente bancária","nivel":1},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5362065,-1756434
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Candangolândia", "indice":43.7,"unidade":"% com conta-corrente bancária","nivel":2},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5335625,-1787162
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Lago Norte", "indice":56.5,"unidade":"% com conta-corrente bancária","nivel":3},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5323999,-1778219
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Sobradinho", "indice":50.3,"unidade":"% com conta-corrente bancária","nivel":3},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5321553,-1760867
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Planaltina", "indice":34.5,"unidade":"% com conta-corrente bancária","nivel":1},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5287852,-1758345
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Lago Sul", "indice":66,"unidade":"% com conta-corrente bancária","nivel":3},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5327332, -1791618
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"São Sebastião", "indice":28.5,"unidade":"% com conta-corrente bancária","nivel":1},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5309484,-1802143
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,235 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {"RA":"Águas Claras","indice":13.4,"unidade":"Sal. Mínimos","nivel":2},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5345772,-1786802
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA": "Varjão", "indice":2.9,"unidade":"Sal. Mínimos","nivel":0},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5330252,-1770804
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA": "Paranoá", "indice":3.6,"unidade":"Sal. Mínimos","nivel":1},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5285001,-1798169
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA": "Brasília", "indice":17.6,"unidade":"Sal. Mínimos","nivel":3},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5330286,-1780783
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA": "Recanto das Emas", "indice":3.6,"unidade":"Sal. Mínimos","nivel":1},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5359107,-1796258
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Vicente Pires", "indice":11.8,"unidade":"Sal. Mínimos","nivel":2},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5346395,-1781429
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Taguatinga", "indice":8.5,"unidade":"Sal. Mínimos","nivel":2},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5352663,-1781964
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Estrutural", "indice":2.3,"unidade":"Sal. Mínimos","nivel":0},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5343567,-1777683
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Santa Maria", "indice":4.5,"unidade":"Sal. Mínimos","nivel":1},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5329961,-1808182
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Samambaia", "indice":2.4,"unidade":"Sal. Mínimos","nivel":0},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5361836,-1791136
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Riacho Fundo II", "indice":4.3,"unidade":"Sal. Mínimos","nivel":1},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5345249,-1797634
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Riacho Fundo", "indice":6.2,"unidade":"Sal. Mínimos","nivel":1},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5346625,-1793506
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Núcleo Bandeirante", "indice":8.3,"unidade":"Sal. Mínimos","nivel":2},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5340510,-1790984
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Itapoã", "indice":2.5,"unidade":"Sal. Mínimos","nivel":0},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5313527,-1775237
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Gama", "indice":6.5,"unidade":"Sal. Mínimos","nivel":1},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5360918,-1807341
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Ceilândia", "indice":4.7,"unidade":"Sal. Mínimos","nivel":1},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5369173,-1784181
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Brazlândia", "indice":4.6,"unidade":"Sal. Mínimos","nivel":1},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5359718,-1754599
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Candangolândia", "indice":7.4,"unidade":"Sal. Mínimos","nivel":1},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5337781,-1787697
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Lago Norte", "indice":23.4,"unidade":"Sal. Mínimos","nivel":3},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5325360,-1774626
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Sobradinho", "indice":9.0,"unidade":"Sal. Mínimos","nivel":2},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5317257,-1762549
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Planaltina", "indice":4.3,"unidade":"Sal. Mínimos","nivel":1},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5290428,-1761097
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"São Sebastião", "indice":3.4,"unidade":"Sal. Mínimos","nivel":1},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5309996,-1803825
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Lago Sul", "indice":31.6,"unidade":"Sal. Mínimos","nivel":3},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5326827,-1794446
+                ]
+            }
+        }
+    ]
+}

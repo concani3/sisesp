@@ -1,0 +1,237 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {"RA":"Águas Claras","indice":54.1,"unidade":"% da população de cor branca","nivel":2},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5345650,-1787757
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Varjão", "indice":26.7,"unidade":"% da população de cor branca","nivel":0},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5328738,-1771110
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Paranoá", "indice":27.2,"unidade":"% da população de cor branca","nivel":0},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5286912,-1796334
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Brasília", "indice":70,"unidade":"% da população de cor branca","nivel":3},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5331643,-1782805
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Recanto das Emas", "indice":31.5,"unidade":"% da população de cor branca","nivel":1},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5357349,-1795646
+                ]
+            }
+        },
+       {
+            "type": "Feature",
+            "properties": {"RA":"Vicente Pires", "indice":54.7,"unidade":"% da população de cor branca","nivel":2},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5346223,-1782521
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Taguatinga", "indice":51.4,"unidade":"% da população de cor branca","nivel":2},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5352759,-1783209
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Estrutural", "indice":23.8,"unidade":"% da população de cor branca","nivel":0},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5342497,-1779136
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Santa Maria", "indice":33.9,"unidade":"% da população de cor branca","nivel":1},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5331643,-1807723
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Samambaia", "indice":38.8,"unidade":"% da população de cor branca","nivel":1},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5361300,-1792436
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Riacho Fundo II", "indice":38.2,"unidade":"% da população de cor branca","nivel":1},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5343624,-1796356
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Riacho Fundo", "indice":40.8,"unidade":"% da população de cor branca","nivel":1},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5346032,-1792993
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Núcleo Bandeirante", "indice":50.8,"unidade":"% da população de cor branca","nivel":2},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5340299,-1790279
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Itapoã", "indice":28.1,"unidade":"% da população de cor branca","nivel":0},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5315362,-1774702
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Gama", "indice":44.6,"unidade":"% da população de cor branca","nivel":1},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5360918,-1805201
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Ceilândia", "indice":39.2,"unidade":"% da população de cor branca","nivel":1},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5368027,-1785021
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Brazlândia", "indice":38.4,"unidade":"% da população de cor branca","nivel":1},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5360364,-1757831
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Candangolândia", "indice":43.9,"unidade":"% da população de cor branca","nivel":1},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5336554,-1787718
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Lago Norte", "indice":82.1,"unidade":"% da população de cor branca","nivel":3},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5325054,-1776384
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Sobradinho", "indice":54.6,"unidade":"% da população de cor branca","nivel":2},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5319856,-1762702
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Planaltina", "indice":37.5,"unidade":"% da população de cor branca","nivel":1},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5289129,-1759186
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {"RA":"Lago Sul", "indice":83.9,"unidade":"% da população de cor branca","nivel":3},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5329732,-1796510
+                ]
+            }
+        },
+
+
+        {
+            "type": "Feature",
+            "properties": {"RA":"São Sebastião", "indice":29.8,"unidade":"% da população de cor branca","nivel":0},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5312824,-1803213
+                ]
+            }
+        }
+    ]
+}
