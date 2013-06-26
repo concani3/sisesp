@@ -293,31 +293,41 @@ mgov_wms_layer_jardimbotanico = new OpenLayers.Layer.WMS(
 HOSTNAME,
 {layers: 'pdadgeo:jardimbotanico',transparent:true},{attribution:'RA-Limites',visibility: false, isBaseLayer:false,opacity:1,displayInLayerSwitcher:true}
 );
+*/
 //WMS LAYER-7: SETOR
 mgov_wms_layer_setor = new OpenLayers.Layer.WMS(
-'DF:SETOR',
+'DF:Setor',
 HOSTNAME,
-{layers: 'pdadgeo:setor',transparent:true},{attribution:'RA-Limites',visibility: false, isBaseLayer:false,opacity:.6,displayInLayerSwitcher:true}
+{layers: 'cdes:df_setor',transparent:true},{minScale:220000,attribution:'RA-Limites',visibility: false, isBaseLayer:false,opacity:.6,displayInLayerSwitcher:true}
 );
+
 //WMS LAYER-8: QUADRAS
 mgov_wms_layer_quadras = new OpenLayers.Layer.WMS(
-'DF:QUADRA',
+'DF:Quadra',
 HOSTNAME,
-{layers: 'pdadgeo:quadras',transparent:true},{attribution:'RA-Limites',visibility: false, isBaseLayer:false,opacity:1,displayInLayerSwitcher:true}
+{layers: 'cdes:df_quadra',transparent:true},{minScale:55000,attribution:'RA-Limites',visibility: false, isBaseLayer:false,opacity:1,displayInLayerSwitcher:true}
 );
-//WMS LAYER-9: LOTE
+//WMS LAYER-9: CONJUNTO
+mgov_wms_layer_conjunto = new OpenLayers.Layer.WMS(
+'DF:Conjunto',
+HOSTNAME,
+{layers: 'cdes:df_conjunto',transparent:true},{minScale:15000,attribution:'RA-Limites',visibility: false, isBaseLayer:false,opacity:1,displayInLayerSwitcher:true}
+);
+//WMS LAYER-10: LOTE
 mgov_wms_layer_lote = new OpenLayers.Layer.WMS(
-'DF:LOTE',
+'DF:Lote',
 HOSTNAME,
-{layers: 'pdadgeo:lote',transparent:true},{attribution:'RA-Limites',visibility: false, isBaseLayer:false,opacity:1,displayInLayerSwitcher:true}
+{layers: 'cdes:df_lote',transparent:true},{minScale:10000,attribution:'RA-Limites',visibility: false, isBaseLayer:false,opacity:1,displayInLayerSwitcher:true}
 );
-//WMS LAYER-10: VIA
+
+/*
+//WMS LAYER-11: VIA
 mgov_wms_layer_via = new OpenLayers.Layer.WMS(
 'DF:VIA',
 HOSTNAME,
 {layers: 'pdadgeo:via',transparent:true},{attribution:'RA-Limites',visibility: false, isBaseLayer:false,opacity:1,displayInLayerSwitcher:true}
 );
-//WMS LAYER-11: EIXO
+//WMS LAYER-12: EIXO
 mgov_wms_layer_eixo = new OpenLayers.Layer.WMS(
 'DF:EIXO',
 HOSTNAME,
@@ -341,7 +351,7 @@ map.addLayers([mgov_map_osm, mgov_google_streets, mgov_google_satellite, mgov_wm
 map.addLayers([mgov_map_osm, mgov_wms_layer_ride_df, mgov_wms_layer_censitaria, mgov_wms_layer_pdad_pol,
    mgov_wms_layer_setor,mgov_wms_layer_quadras,mgov_wms_layer_lote,mgov_wms_layer_via,mgov_wms_layer_eixo,mgov_wms_layer_jardimbotanico]);
 */
-map.addLayers([mgov_map_osm, mgov_wms_layer_ride_df, mgov_wms_layer_pdad_pol]);
+map.addLayers([mgov_map_osm, mgov_wms_layer_ride_df, mgov_wms_layer_pdad_pol,mgov_wms_layer_setor,mgov_wms_layer_quadras,mgov_wms_layer_conjunto,mgov_wms_layer_lote]);
 
 // Deixar o centro do mapa no Distrito Federal
 map.setCenter(new OpenLayers.LonLat(-5330000,-1780000),10);
