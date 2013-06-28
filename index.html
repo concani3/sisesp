@@ -274,15 +274,28 @@ HOSTNAME,
 {layers: 'pdadgeo:pdadgeo', transparent:true},{attribution:'PDAD-GDF',visibility: false, isBaseLayer:false,opacity:.3,displayInLayerSwitcher:true}
 );
 */
+/*
 //WMS Layer-4: RIDE-DF
 var mgov_wms_layer_ride_df = new OpenLayers.Layer.WMS(
 'DF:Ride',
 HOSTNAME,
 {layers: 'cdes:ride_df', transparent:true},{attribution:'RIDE-DF',visibility: false, isBaseLayer:false,opacity:.5,displayInLayerSwitcher:true}
 );
+
+var mgov_wms_layer_municipios_ride = new OpenLayers.Layer.WMS(
+'DF:Mun_Ride',
+HOSTNAME,
+{layers: 'cdes:municipios_ride', transparent:true},{attribution:'MUN_RIDE-DF',visibility: false, isBaseLayer:false,opacity:1,displayInLayerSwitcher:true}
+);*/
+var mgov_wms_layer_ride_group = new OpenLayers.Layer.WMS(
+'Ride-DF',
+HOSTNAME,
+{layers: 'cdes:ride_group', transparent:true},{attribution:'RIDE-DF',visibility: false, isBaseLayer:false,opacity:.5,displayInLayerSwitcher:true}
+);
+
 //WMS LAYER-5: Poligono do GDF
 mgov_wms_layer_pdad_pol = new OpenLayers.Layer.WMS(
-'DF:Regioes Adm.',
+'DF:RAs',
 HOSTNAME,
 {layers: 'cdes:31RA_df',transparent:true},{attribution:'RA-Limites',visibility: false, isBaseLayer:false,opacity:1,displayInLayerSwitcher:true}
 );
@@ -351,8 +364,10 @@ map.addLayers([mgov_map_osm, mgov_google_streets, mgov_google_satellite, mgov_wm
 map.addLayers([mgov_map_osm, mgov_wms_layer_ride_df, mgov_wms_layer_censitaria, mgov_wms_layer_pdad_pol,
    mgov_wms_layer_setor,mgov_wms_layer_quadras,mgov_wms_layer_lote,mgov_wms_layer_via,mgov_wms_layer_eixo,mgov_wms_layer_jardimbotanico]);
 */
-map.addLayers([mgov_map_osm, mgov_wms_layer_ride_df, mgov_wms_layer_pdad_pol,mgov_wms_layer_setor,mgov_wms_layer_quadras,mgov_wms_layer_conjunto,mgov_wms_layer_lote]);
-
+/*
+map.addLayers([mgov_map_osm, mgov_wms_layer_ride_df, mgov_wms_layer_municipios_ride,mgov_wms_layer_pdad_pol,mgov_wms_layer_setor,mgov_wms_layer_quadras,mgov_wms_layer_conjunto,mgov_wms_layer_lote]);
+*/
+map.addLayers([mgov_map_osm, mgov_wms_layer_ride_group, mgov_wms_layer_pdad_pol,mgov_wms_layer_setor,mgov_wms_layer_quadras,mgov_wms_layer_conjunto,mgov_wms_layer_lote]);
 // Deixar o centro do mapa no Distrito Federal
 map.setCenter(new OpenLayers.LonLat(-5330000,-1780000),10);
 if(!map.getCenter()){

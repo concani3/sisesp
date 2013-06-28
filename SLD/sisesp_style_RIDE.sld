@@ -9,25 +9,35 @@
   <NamedLayer>
     <Name>ride_df</Name>
     <UserStyle>
-    <!-- Styles can have names, titles and abstracts -->
       <Title>RIDE-DF</Title>
-      <Abstract>A sample style that draws a polygon</Abstract>
+      <Abstract>Desenhar os poligonos da RIDE</Abstract>
       <!-- FeatureTypeStyles describe how to render different features -->
       <!-- A FeatureTypeStyle for rendering polygons -->
       <FeatureTypeStyle>
         <Rule>
           <Name>rule1</Name>
-          <Title>Gray Polygon with Black Outline</Title>
-          <Abstract>A polygon with a gray fill and a 1 pixel black outline</Abstract>
+          <Title>Polygon with a dots fill and 2 pixel black outline</Title>
+          <Abstract>A polygon with a dots fill and a 2 pixel black outline</Abstract>
           <PolygonSymbolizer>
             <Fill>
-              <CssParameter name="fill"></CssParameter>
+              <GraphicFill>
+                <Graphic>
+                  <Mark>
+                    <WellKnownName>shape://dot</WellKnownName>
+                    <Stroke>
+                      <CssParameter name="stroke">#29A6A6</CssParameter>
+                      <CssParameter name="stroke-width">3</CssParameter>
+                    </Stroke>
+                  </Mark>
+                  <Size>16</Size>
+                </Graphic>
+              </GraphicFill>
             </Fill>
             <Stroke>
               <CssParameter name="stroke">#000000</CssParameter>
               <CssParameter name="stroke-width">2</CssParameter>
             </Stroke>
-          </PolygonSymbolizer>
+          </PolygonSymbolizer>                   
         </Rule>
       </FeatureTypeStyle>
     </UserStyle>
