@@ -34,7 +34,7 @@
           </PolygonSymbolizer>
           <TextSymbolizer>
            <Label>
-             <ogc:PropertyName>ra_30_nome</ogc:PropertyName>
+             <ogc:PropertyName>nome</ogc:PropertyName>
            </Label>
           </TextSymbolizer>
         </Rule>
@@ -139,7 +139,7 @@
           </PolygonSymbolizer>
           <TextSymbolizer>
            <Label>
-             <ogc:PropertyName>ra_30_nome</ogc:PropertyName>
+             <ogc:PropertyName>nome</ogc:PropertyName>
            </Label>
           </TextSymbolizer>
         </Rule>
