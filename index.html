@@ -157,7 +157,7 @@ map.addControls([history,panel]);
 //
 /*
 * --------------------------------------------------------------------------
-* CONTROLE TRANSPARÊNCIA LAYER PDAD
+* CONTROLE TRANSPARÊNCIA LAYER RAs-DF
 * --------------------------------------------------------------------------
 */
 var transp = new OpenLayers.Control.Button({
@@ -335,22 +335,7 @@ mgov_wms_layer_lote = new OpenLayers.Layer.WMS(
 HOSTNAME,
 {layers: 'cdes:df_lote',transparent:true},{minScale:10000,attribution:'RA-Limites',visibility: false, isBaseLayer:false,opacity:.7,displayInLayerSwitcher:true}
 );
-
-/*
-//WMS LAYER-11: VIA
-mgov_wms_layer_via = new OpenLayers.Layer.WMS(
-'DF:VIA',
-HOSTNAME,
-{layers: 'pdadgeo:via',transparent:true},{attribution:'RA-Limites',visibility: false, isBaseLayer:false,opacity:1,displayInLayerSwitcher:true}
-);
-//WMS LAYER-12: EIXO
-mgov_wms_layer_eixo = new OpenLayers.Layer.WMS(
-'DF:EIXO',
-HOSTNAME,
-{layers: 'pdadgeo:eixo',transparent:true},{attribution:'RA-Limites',visibility: false, isBaseLayer:false,opacity:1,displayInLayerSwitcher:true}
-);
-*/
-
+//
 //
 /*
 * --------------------------------------------------------------------------
@@ -363,18 +348,10 @@ map.addLayer(mgov_vector_layer);
 /*
 map.addLayers([mgov_map_osm, mgov_google_streets, mgov_google_satellite, mgov_wms_layer_ride_df, mgov_wms_layer_pdad_pol, mgov_wms_layer_censitaria]);
 */
-/*
-map.addLayers([mgov_map_osm, mgov_wms_layer_ride_df, mgov_wms_layer_censitaria, mgov_wms_layer_pdad_pol,
-   mgov_wms_layer_setor,mgov_wms_layer_quadras,mgov_wms_layer_lote,mgov_wms_layer_via,mgov_wms_layer_eixo,mgov_wms_layer_jardimbotanico]);
-*/
-/*
-map.addLayers([mgov_map_osm, mgov_wms_layer_ride_df, mgov_wms_layer_municipios_ride,mgov_wms_layer_pdad_pol,mgov_wms_layer_setor,mgov_wms_layer_quadras,mgov_wms_layer_conjunto,mgov_wms_layer_lote]);
-*/
 map.addLayers([mgov_map_osm, mgov_wms_layer_ride_group, mgov_wms_layer_pdad_pol,mgov_wms_layer_setor,mgov_wms_layer_quadras,mgov_wms_layer_conjunto,mgov_wms_layer_lote]);
 // Deixar o centro do mapa no Distrito Federal
 map.setCenter(new OpenLayers.LonLat(-5330000,-1780000),10);
-if(!map.getCenter()){
-map.zoomToMaxExtent()};
+if(!map.getCenter()){map.zoomToMaxExtent()};
 //
 /*
 * --------------------------------------------------------------------------
