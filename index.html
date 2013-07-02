@@ -178,7 +178,7 @@ map.addControl(mgov_panel);
 var infos = new OpenLayers.Control.Button({
     displayClass:'olControlButtonInfo',
     type:2,
-    title:'Atributos - GetFeature',
+    title:'Atributos Literais',
     eventListeners:{
         'activate':ativar_funcao_info,
         'deactivate':desativar_funcao_info
@@ -211,7 +211,7 @@ var_featureInfo = new OpenLayers.Control.WMSGetFeatureInfo({
                 closeButtonX=true
             );
             popup.autoSize = true;
-            popup.maxSize = new OpenLayers.Size(300,300);
+            popup.maxSize = new OpenLayers.Size(500,300);
             map.addPopup(popup);
         }
     }

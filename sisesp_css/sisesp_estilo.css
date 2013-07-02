@@ -191,3 +191,10 @@ color:#271717;
 .chart4 {
     background-color: #271717;
 }
+
+.popup {
+    text-align:center;
+    font-size:1.3em;
+    font-weight:bold;
+    letter-spacing:.2em;
+}
