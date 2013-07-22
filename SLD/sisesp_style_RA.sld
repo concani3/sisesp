@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <StyledLayerDescriptor version="1.0.0"
  xsi:schemaLocation="http://www.opengis.net/sld StyledLayerDescriptor.xsd"
- xmlns="http://www.opengis.net/sld"
- xmlns:ogc="http://www.opengis.net/ogc"
+ xmlns="http://www.opengis.net/sld" xmlns:ogc="http://www.opengis.net/ogc"
  xmlns:xlink="http://www.w3.org/1999/xlink"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <!-- a Named Layer is the basic building block of an SLD document -->
@@ -25,11 +24,11 @@
           </ogc:Filter>
           <PolygonSymbolizer>
             <Fill>
-              <CssParameter name="fill">#00C611</CssParameter>
+              <CssParameter name="fill">#CB8223</CssParameter>
             </Fill>
             <Stroke>
               <CssParameter name="stroke">#000000</CssParameter>
-              <CssParameter name="stroke-width">2</CssParameter>
+              <CssParameter name="stroke-width">3</CssParameter>
             </Stroke>
           </PolygonSymbolizer>
           <TextSymbolizer>
@@ -50,13 +49,18 @@
           </ogc:Filter>
           <PolygonSymbolizer>
             <Fill>
-              <CssParameter name="fill">#70AD19</CssParameter>
+              <CssParameter name="fill">#CDD420</CssParameter>
             </Fill>
             <Stroke>
               <CssParameter name="stroke">#000000</CssParameter>
-              <CssParameter name="stroke-width">2</CssParameter>
+              <CssParameter name="stroke-width">3</CssParameter>
             </Stroke>
           </PolygonSymbolizer>
+          <TextSymbolizer>
+           <Label>
+             <ogc:PropertyName>nome</ogc:PropertyName>
+           </Label>
+          </TextSymbolizer>
         </Rule>
       </FeatureTypeStyle>
       <FeatureTypeStyle>
@@ -70,13 +74,18 @@
           </ogc:Filter>
           <PolygonSymbolizer>
             <Fill>
-              <CssParameter name="fill">#7E9E52</CssParameter>
+              <CssParameter name="fill">#CFB713</CssParameter>
             </Fill>
             <Stroke>
               <CssParameter name="stroke">#000000</CssParameter>
-              <CssParameter name="stroke-width">2</CssParameter>
+              <CssParameter name="stroke-width">3</CssParameter>
             </Stroke>
           </PolygonSymbolizer>
+          <TextSymbolizer>
+           <Label>
+             <ogc:PropertyName>nome</ogc:PropertyName>
+           </Label>
+          </TextSymbolizer>
         </Rule>
       </FeatureTypeStyle>
       <FeatureTypeStyle>
@@ -90,13 +99,18 @@
           </ogc:Filter>
           <PolygonSymbolizer>
             <Fill>
-              <CssParameter name="fill">#B6E476</CssParameter>
+              <CssParameter name="fill">#D9AA6D</CssParameter>
             </Fill>
             <Stroke>
               <CssParameter name="stroke">#000000</CssParameter>
-              <CssParameter name="stroke-width">2</CssParameter>
+              <CssParameter name="stroke-width">3</CssParameter>
             </Stroke>
           </PolygonSymbolizer>
+          <TextSymbolizer>
+           <Label>
+             <ogc:PropertyName>nome</ogc:PropertyName>
+           </Label>
+          </TextSymbolizer>
         </Rule>
       </FeatureTypeStyle>
       <FeatureTypeStyle>
@@ -110,13 +124,18 @@
           </ogc:Filter>
           <PolygonSymbolizer>
             <Fill>
-              <CssParameter name="fill">#717C63</CssParameter>
+              <CssParameter name="fill">#CB8223</CssParameter>
             </Fill>
             <Stroke>
               <CssParameter name="stroke">#000000</CssParameter>
-              <CssParameter name="stroke-width">2</CssParameter>
+              <CssParameter name="stroke-width">3</CssParameter>
             </Stroke>
           </PolygonSymbolizer>
+          <TextSymbolizer>
+           <Label>
+             <ogc:PropertyName>nome</ogc:PropertyName>
+           </Label>
+          </TextSymbolizer>
         </Rule>
       </FeatureTypeStyle>
       <FeatureTypeStyle>
@@ -130,11 +149,11 @@
           </ogc:Filter>
           <PolygonSymbolizer>
             <Fill>
-              <CssParameter name="fill">#A5BE54</CssParameter>
+              <CssParameter name="fill">#E8D037</CssParameter>
             </Fill>
             <Stroke>
               <CssParameter name="stroke">#000000</CssParameter>
-              <CssParameter name="stroke-width">2</CssParameter>
+              <CssParameter name="stroke-width">3</CssParameter>
             </Stroke>
           </PolygonSymbolizer>
           <TextSymbolizer>
@@ -155,13 +174,18 @@
           </ogc:Filter>
           <PolygonSymbolizer>
             <Fill>
-              <CssParameter name="fill">#779416</CssParameter>
+              <CssParameter name="fill">#CDD420</CssParameter>
             </Fill>
             <Stroke>
               <CssParameter name="stroke">#000000</CssParameter>
-              <CssParameter name="stroke-width">2</CssParameter>
+              <CssParameter name="stroke-width">3</CssParameter>
             </Stroke>
           </PolygonSymbolizer>
+          <TextSymbolizer>
+           <Label>
+             <ogc:PropertyName>nome</ogc:PropertyName>
+           </Label>
+          </TextSymbolizer>
         </Rule>
       </FeatureTypeStyle>
       <FeatureTypeStyle>
@@ -179,9 +203,14 @@
             </Fill>
             <Stroke>
               <CssParameter name="stroke">#000000</CssParameter>
-              <CssParameter name="stroke-width">2</CssParameter>
+              <CssParameter name="stroke-width">3</CssParameter>
             </Stroke>
           </PolygonSymbolizer>
+          <TextSymbolizer>
+           <Label>
+             <ogc:PropertyName>nome</ogc:PropertyName>
+           </Label>
+          </TextSymbolizer>
         </Rule>
       </FeatureTypeStyle>
       <FeatureTypeStyle>
@@ -195,13 +224,18 @@
           </ogc:Filter>
           <PolygonSymbolizer>
             <Fill>
-              <CssParameter name="fill">#009999</CssParameter>
+              <CssParameter name="fill">#E8D037</CssParameter>
             </Fill>
             <Stroke>
               <CssParameter name="stroke">#000000</CssParameter>
-              <CssParameter name="stroke-width">2</CssParameter>
+              <CssParameter name="stroke-width">3</CssParameter>
             </Stroke>
           </PolygonSymbolizer>
+          <TextSymbolizer>
+           <Label>
+             <ogc:PropertyName>nome</ogc:PropertyName>
+           </Label>
+          </TextSymbolizer>
         </Rule>
       </FeatureTypeStyle>
       <FeatureTypeStyle>
@@ -215,13 +249,18 @@
           </ogc:Filter>
           <PolygonSymbolizer>
             <Fill>
-              <CssParameter name="fill">#CDD420</CssParameter>
+              <CssParameter name="fill">#CFB713</CssParameter>
             </Fill>
             <Stroke>
               <CssParameter name="stroke">#000000</CssParameter>
-              <CssParameter name="stroke-width">2</CssParameter>
+              <CssParameter name="stroke-width">3</CssParameter>
             </Stroke>
           </PolygonSymbolizer>
+          <TextSymbolizer>
+           <Label>
+             <ogc:PropertyName>nome</ogc:PropertyName>
+           </Label>
+          </TextSymbolizer>
         </Rule>
       </FeatureTypeStyle>
       <FeatureTypeStyle>
@@ -235,13 +274,18 @@
           </ogc:Filter>
           <PolygonSymbolizer>
             <Fill>
-              <CssParameter name="fill">#E5EA77</CssParameter>
+              <CssParameter name="fill">#E8D037</CssParameter>
             </Fill>
             <Stroke>
               <CssParameter name="stroke">#000000</CssParameter>
-              <CssParameter name="stroke-width">2</CssParameter>
+              <CssParameter name="stroke-width">3</CssParameter>
             </Stroke>
           </PolygonSymbolizer>
+          <TextSymbolizer>
+           <Label>
+             <ogc:PropertyName>nome</ogc:PropertyName>
+           </Label>
+          </TextSymbolizer>
         </Rule>
       </FeatureTypeStyle>
       <FeatureTypeStyle>
@@ -255,13 +299,18 @@
           </ogc:Filter>
           <PolygonSymbolizer>
             <Fill>
-              <CssParameter name="fill">#E8D037</CssParameter>
+              <CssParameter name="fill">#CDD420</CssParameter>
             </Fill>
             <Stroke>
               <CssParameter name="stroke">#000000</CssParameter>
-              <CssParameter name="stroke-width">2</CssParameter>
+              <CssParameter name="stroke-width">3</CssParameter>
             </Stroke>
           </PolygonSymbolizer>
+          <TextSymbolizer>
+           <Label>
+             <ogc:PropertyName>nome</ogc:PropertyName>
+           </Label>
+          </TextSymbolizer>
         </Rule>
       </FeatureTypeStyle>
       <FeatureTypeStyle>
@@ -275,13 +324,18 @@
           </ogc:Filter>
           <PolygonSymbolizer>
             <Fill>
-              <CssParameter name="fill">#C6BB70</CssParameter>
+              <CssParameter name="fill">#CFB713</CssParameter>
             </Fill>
             <Stroke>
               <CssParameter name="stroke">#000000</CssParameter>
-              <CssParameter name="stroke-width">2</CssParameter>
+              <CssParameter name="stroke-width">3</CssParameter>
             </Stroke>
           </PolygonSymbolizer>
+          <TextSymbolizer>
+           <Label>
+             <ogc:PropertyName>nome</ogc:PropertyName>
+           </Label>
+          </TextSymbolizer>
         </Rule>
       </FeatureTypeStyle>
       <FeatureTypeStyle>
@@ -295,13 +349,18 @@
           </ogc:Filter>
           <PolygonSymbolizer>
             <Fill>
-              <CssParameter name="fill">#CFB713</CssParameter>
+              <CssParameter name="fill">#D9AA6D</CssParameter>
             </Fill>
             <Stroke>
               <CssParameter name="stroke">#000000</CssParameter>
-              <CssParameter name="stroke-width">2</CssParameter>
+              <CssParameter name="stroke-width">3</CssParameter>
             </Stroke>
           </PolygonSymbolizer>
+          <TextSymbolizer>
+           <Label>
+             <ogc:PropertyName>nome</ogc:PropertyName>
+           </Label>
+          </TextSymbolizer>
         </Rule>
       </FeatureTypeStyle>
       <FeatureTypeStyle>
@@ -315,13 +374,18 @@
           </ogc:Filter>
           <PolygonSymbolizer>
             <Fill>
-              <CssParameter name="fill">#E6DFB0</CssParameter>
+              <CssParameter name="fill">#CB8223</CssParameter>
             </Fill>
             <Stroke>
               <CssParameter name="stroke">#000000</CssParameter>
-              <CssParameter name="stroke-width">2</CssParameter>
+              <CssParameter name="stroke-width">3</CssParameter>
             </Stroke>
           </PolygonSymbolizer>
+          <TextSymbolizer>
+           <Label>
+             <ogc:PropertyName>nome</ogc:PropertyName>
+           </Label>
+          </TextSymbolizer>
         </Rule>
       </FeatureTypeStyle>
       <FeatureTypeStyle>
@@ -335,13 +399,18 @@
           </ogc:Filter>
           <PolygonSymbolizer>
             <Fill>
-              <CssParameter name="fill">#CB8223</CssParameter>
+              <CssParameter name="fill">#E8D037</CssParameter>
             </Fill>
             <Stroke>
               <CssParameter name="stroke">#000000</CssParameter>
-              <CssParameter name="stroke-width">2</CssParameter>
+              <CssParameter name="stroke-width">3</CssParameter>
             </Stroke>
           </PolygonSymbolizer>
+          <TextSymbolizer>
+           <Label>
+             <ogc:PropertyName>nome</ogc:PropertyName>
+           </Label>
+          </TextSymbolizer>
         </Rule>
       </FeatureTypeStyle>
       <FeatureTypeStyle>
@@ -355,13 +424,18 @@
           </ogc:Filter>
           <PolygonSymbolizer>
             <Fill>
-              <CssParameter name="fill">#D9AA6D</CssParameter>
+              <CssParameter name="fill">#CFB713</CssParameter>
             </Fill>
             <Stroke>
               <CssParameter name="stroke">#000000</CssParameter>
-              <CssParameter name="stroke-width">2</CssParameter>
+              <CssParameter name="stroke-width">3</CssParameter>
             </Stroke>
           </PolygonSymbolizer>
+          <TextSymbolizer>
+           <Label>
+             <ogc:PropertyName>nome</ogc:PropertyName>
+           </Label>
+          </TextSymbolizer>
         </Rule>
       </FeatureTypeStyle>
       <FeatureTypeStyle>
@@ -375,13 +449,18 @@
           </ogc:Filter>
           <PolygonSymbolizer>
             <Fill>
-              <CssParameter name="fill">#A26619</CssParameter>
+              <CssParameter name="fill">#CFB713</CssParameter>
             </Fill>
             <Stroke>
               <CssParameter name="stroke">#000000</CssParameter>
-              <CssParameter name="stroke-width">2</CssParameter>
+              <CssParameter name="stroke-width">3</CssParameter>
             </Stroke>
           </PolygonSymbolizer>
+          <TextSymbolizer>
+           <Label>
+             <ogc:PropertyName>nome</ogc:PropertyName>
+           </Label>
+          </TextSymbolizer>
         </Rule>
       </FeatureTypeStyle>
       <FeatureTypeStyle>
@@ -395,13 +474,18 @@
           </ogc:Filter>
           <PolygonSymbolizer>
             <Fill>
-              <CssParameter name="fill">#90A219</CssParameter>
+              <CssParameter name="fill">#D9AA6D</CssParameter>
             </Fill>
             <Stroke>
               <CssParameter name="stroke">#000000</CssParameter>
-              <CssParameter name="stroke-width">2</CssParameter>
+              <CssParameter name="stroke-width">3</CssParameter>
             </Stroke>
           </PolygonSymbolizer>
+          <TextSymbolizer>
+           <Label>
+             <ogc:PropertyName>nome</ogc:PropertyName>
+           </Label>
+          </TextSymbolizer>
         </Rule>
       </FeatureTypeStyle>
       <FeatureTypeStyle>
@@ -415,13 +499,18 @@
           </ogc:Filter>
           <PolygonSymbolizer>
             <Fill>
-              <CssParameter name="fill">#3DC719</CssParameter>
+              <CssParameter name="fill">#D9AA6D</CssParameter>
             </Fill>
             <Stroke>
               <CssParameter name="stroke">#000000</CssParameter>
-              <CssParameter name="stroke-width">2</CssParameter>
+              <CssParameter name="stroke-width">3</CssParameter>
             </Stroke>
           </PolygonSymbolizer>
+          <TextSymbolizer>
+           <Label>
+             <ogc:PropertyName>nome</ogc:PropertyName>
+           </Label>
+          </TextSymbolizer>
         </Rule>
       </FeatureTypeStyle>
       <FeatureTypeStyle>
@@ -435,13 +524,18 @@
           </ogc:Filter>
           <PolygonSymbolizer>
             <Fill>
-              <CssParameter name="fill">#00C611</CssParameter>
+              <CssParameter name="fill">#E8D037</CssParameter>
             </Fill>
             <Stroke>
               <CssParameter name="stroke">#000000</CssParameter>
-              <CssParameter name="stroke-width">2</CssParameter>
+              <CssParameter name="stroke-width">3</CssParameter>
             </Stroke>
           </PolygonSymbolizer>
+          <TextSymbolizer>
+           <Label>
+             <ogc:PropertyName>nome</ogc:PropertyName>
+           </Label>
+          </TextSymbolizer>
         </Rule>
       </FeatureTypeStyle>
       <FeatureTypeStyle>
@@ -455,13 +549,18 @@
           </ogc:Filter>
           <PolygonSymbolizer>
             <Fill>
-              <CssParameter name="fill">#70AD19</CssParameter>
+              <CssParameter name="fill">#CDD420</CssParameter>
             </Fill>
             <Stroke>
               <CssParameter name="stroke">#000000</CssParameter>
-              <CssParameter name="stroke-width">2</CssParameter>
+              <CssParameter name="stroke-width">3</CssParameter>
             </Stroke>
           </PolygonSymbolizer>
+          <TextSymbolizer>
+           <Label>
+             <ogc:PropertyName>nome</ogc:PropertyName>
+           </Label>
+          </TextSymbolizer>
         </Rule>
       </FeatureTypeStyle>
       <FeatureTypeStyle>
@@ -475,13 +574,18 @@
           </ogc:Filter>
           <PolygonSymbolizer>
             <Fill>
-              <CssParameter name="fill">#7E9E52</CssParameter>
+              <CssParameter name="fill">#CB8223</CssParameter>
             </Fill>
             <Stroke>
               <CssParameter name="stroke">#000000</CssParameter>
-              <CssParameter name="stroke-width">2</CssParameter>
+              <CssParameter name="stroke-width">3</CssParameter>
             </Stroke>
           </PolygonSymbolizer>
+          <TextSymbolizer>
+           <Label>
+             <ogc:PropertyName>nome</ogc:PropertyName>
+           </Label>
+          </TextSymbolizer>
         </Rule>
       </FeatureTypeStyle>
       <FeatureTypeStyle>
@@ -495,13 +599,18 @@
           </ogc:Filter>
           <PolygonSymbolizer>
             <Fill>
-              <CssParameter name="fill">#B6E476</CssParameter>
+              <CssParameter name="fill">#CB8223</CssParameter>
             </Fill>
             <Stroke>
               <CssParameter name="stroke">#000000</CssParameter>
-              <CssParameter name="stroke-width">2</CssParameter>
+              <CssParameter name="stroke-width">3</CssParameter>
             </Stroke>
           </PolygonSymbolizer>
+          <TextSymbolizer>
+           <Label>
+             <ogc:PropertyName>nome</ogc:PropertyName>
+           </Label>
+          </TextSymbolizer>
         </Rule>
       </FeatureTypeStyle>
       <FeatureTypeStyle>
@@ -515,13 +624,18 @@
           </ogc:Filter>
           <PolygonSymbolizer>
             <Fill>
-              <CssParameter name="fill">#717C63</CssParameter>
+              <CssParameter name="fill">#CB8223</CssParameter>
             </Fill>
             <Stroke>
               <CssParameter name="stroke">#000000</CssParameter>
-              <CssParameter name="stroke-width">2</CssParameter>
+              <CssParameter name="stroke-width">3</CssParameter>
             </Stroke>
           </PolygonSymbolizer>
+          <TextSymbolizer>
+           <Label>
+             <ogc:PropertyName>nome</ogc:PropertyName>
+           </Label>
+          </TextSymbolizer>
         </Rule>
       </FeatureTypeStyle>
       <FeatureTypeStyle>
@@ -535,13 +649,18 @@
           </ogc:Filter>
           <PolygonSymbolizer>
             <Fill>
-              <CssParameter name="fill">#A5BE54</CssParameter>
+              <CssParameter name="fill">#E8D037</CssParameter>
             </Fill>
             <Stroke>
               <CssParameter name="stroke">#000000</CssParameter>
-              <CssParameter name="stroke-width">2</CssParameter>
+              <CssParameter name="stroke-width">3</CssParameter>
             </Stroke>
           </PolygonSymbolizer>
+          <TextSymbolizer>
+           <Label>
+             <ogc:PropertyName>nome</ogc:PropertyName>
+           </Label>
+          </TextSymbolizer>
         </Rule>
       </FeatureTypeStyle>
       <FeatureTypeStyle>
@@ -555,13 +674,18 @@
           </ogc:Filter>
           <PolygonSymbolizer>
             <Fill>
-              <CssParameter name="fill">#779416</CssParameter>
+              <CssParameter name="fill">#CFB713</CssParameter>
             </Fill>
             <Stroke>
               <CssParameter name="stroke">#000000</CssParameter>
-              <CssParameter name="stroke-width">2</CssParameter>
+              <CssParameter name="stroke-width">3</CssParameter>
             </Stroke>
           </PolygonSymbolizer>
+          <TextSymbolizer>
+           <Label>
+             <ogc:PropertyName>nome</ogc:PropertyName>
+           </Label>
+          </TextSymbolizer>
         </Rule>
       </FeatureTypeStyle>
       <FeatureTypeStyle>
@@ -575,13 +699,18 @@
           </ogc:Filter>
           <PolygonSymbolizer>
             <Fill>
-              <CssParameter name="fill">#779416</CssParameter>
+              <CssParameter name="fill">#CFB713</CssParameter>
             </Fill>
             <Stroke>
               <CssParameter name="stroke">#000000</CssParameter>
-              <CssParameter name="stroke-width">2</CssParameter>
+              <CssParameter name="stroke-width">3</CssParameter>
             </Stroke>
           </PolygonSymbolizer>
+          <TextSymbolizer>
+           <Label>
+             <ogc:PropertyName>nome</ogc:PropertyName>
+           </Label>
+          </TextSymbolizer>
         </Rule>
       </FeatureTypeStyle>
       <FeatureTypeStyle>
@@ -595,13 +724,18 @@
           </ogc:Filter>
           <PolygonSymbolizer>
             <Fill>
-              <CssParameter name="fill">#B6E476</CssParameter>
+              <CssParameter name="fill">#D9AA6D</CssParameter>
             </Fill>
             <Stroke>
               <CssParameter name="stroke">#000000</CssParameter>
-              <CssParameter name="stroke-width">2</CssParameter>
+              <CssParameter name="stroke-width">3</CssParameter>
             </Stroke>
           </PolygonSymbolizer>
+          <TextSymbolizer>
+           <Label>
+             <ogc:PropertyName>nome</ogc:PropertyName>
+           </Label>
+          </TextSymbolizer>
         </Rule>
       </FeatureTypeStyle>
       <FeatureTypeStyle>
@@ -615,13 +749,18 @@
           </ogc:Filter>
           <PolygonSymbolizer>
             <Fill>
-              <CssParameter name="fill">#00C611</CssParameter>
+              <CssParameter name="fill">#CB8223</CssParameter>
             </Fill>
             <Stroke>
               <CssParameter name="stroke">#000000</CssParameter>
-              <CssParameter name="stroke-width">2</CssParameter>
+              <CssParameter name="stroke-width">3</CssParameter>
             </Stroke>
           </PolygonSymbolizer>
+          <TextSymbolizer>
+           <Label>
+             <ogc:PropertyName>nome</ogc:PropertyName>
+           </Label>
+          </TextSymbolizer>
         </Rule>
       </FeatureTypeStyle>
       <FeatureTypeStyle>
@@ -635,13 +774,18 @@
           </ogc:Filter>
           <PolygonSymbolizer>
             <Fill>
-              <CssParameter name="fill">#E5EA77</CssParameter>
+              <CssParameter name="fill">#E8D037</CssParameter>
             </Fill>
             <Stroke>
               <CssParameter name="stroke">#000000</CssParameter>
-              <CssParameter name="stroke-width">2</CssParameter>
+              <CssParameter name="stroke-width">3</CssParameter>
             </Stroke>
           </PolygonSymbolizer>
+          <TextSymbolizer>
+           <Label>
+             <ogc:PropertyName>nome</ogc:PropertyName>
+           </Label>
+          </TextSymbolizer>
         </Rule>
       </FeatureTypeStyle>
     </UserStyle>

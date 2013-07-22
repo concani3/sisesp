@@ -1,25 +1,47 @@
 <!DOCTYPE html>
 <html lang='pt-br'>
 <!--
+  Este programa é distribuído na expectativa de ser útil aos seus
+  usuários, porém NÃO TEM NENHUMA GARANTIA, EXPLÍCITAS OU IMPLÍCITAS,
+  COMERCIAIS OU DE ATENDIMENTO A UMA DETERMINADA FINALIDADE.  Consulte
+  a Licença Pública Geral GNU para maiores detalhes.
+
+  Licenciado sobre os termos da CC-GNU GPL versão 2.0.
+
+  http://www.gnu.org/copyleft/gpl.html
+  http://creativecommons.org/licenses/GPL/2.0/deed.pt
+  http://creativecommons.org/licenses/GPL/2.0/legalcode.pt
+
+  Copyright (C) 2013 Antonio Albuquerque
+
+  Antonio Albuquerque
+  alb.antonio@gmail.com
+  concani3.wordpress.com
+
 * --------------------------------------------------------
 *
-* GDF - Geoinformação
+* GDF - Geoinformação: Indicadores Sociais Espacializados
 *
-* -------------------------------------------------------
+* --------------------------------------------------------
 -->
 <head>
 <title>Sisesp: Indicadores Sociais Espacializados</title>
 <meta charset='utf-8' />
 <meta name="keywords" content="HTML,CSS,XML,JavaScript">
 <meta name="Indicadores" content="Geoinformação, OpenLayers">
+<link rel='stylesheet' href='./js/OpenLayers-2.12/theme/default/style.css' type='text/css'>
+<link rel='stylesheet' href='./sisesp_css/sisesp_OpenLayers.css' type='text/css'>
+<link rel='stylesheet' href='./sisesp_css/sisesp_estilo.css'  type='text/css'>
 <!-- <script src="http://maps.google.com/maps/api/js?sensor=false&v=3.2"></script> -->
-<script type='text/javascript' src='sisesp_funcoes.js'></script>
-<script type='text/javascript' src='js/OpenLayers-2.12/OpenLayers.js'></script>
-<script type='text/javascript' src='js/d3js/d3.js'></script>
-<!-- <link rel="stylesheet" href='mgov_meuscss.css' type='text/css'> -->
-<link rel="stylesheet" href="js/OpenLayers-2.12/theme/default/style.css"  type="text/css">
-<link rel="stylesheet" href="js/OpenLayers-2.12/theme/mgov/mgov.css"  type="text/css">
-
+<script type='text/javascript' src='./js/sisesp_utils/sisesp_funcoes.js'></script>
+<!-- <script type='text/javascript' src='./js/OpenLayers-2.12/OpenLayers.js'></script>
+<script type='text/javascript' src='./js/d3js/d3.js'></script> -->
+<script type='text/javascript' src='http://localhost/js/OpenLayers-2.12/OpenLayers.js'></script>
+<script type='text/javascript' src='http://localhost/js/d3js/d3.js'></script> -->
+<!-- a ordem de declaração das proximas 2 instruções é importante: carregar primeiro jquery -->
+<!-- <script type='text/javascript' src='./js/jquery/jquery-1.10.1.min.js'></script> -->
+<script type='text/javascript' src='http://localhost/js/jquery/jquery-1.10.1.min.js'></script>
+<script type='text/javascript' src='./js/sisesp_utils/sisesp_menuindicadores.js'></script>
 <script type='text/javascript'>
 //
 //
@@ -31,24 +53,20 @@
 * --------------------------------------------------------------------------
 */
 OpenLayers.Lang.setCode("pt-BR");
-/* cores para os graficos de indicadores
-const CHART0 = "#1f77b4"; */
-const CHART0 = "#867D7D";
-const CHART1 = "#2CA02C";
+// cores para os graficos de indicadores
+const CHART0 = "#2DE22D";
+const CHART1 = "#237D23";
 const CHART2 = "#FF7F0E";
 const CHART3 = "#D62728";
 const HOSTNAME = "HTTP://50.116.27.239:8080/geoserver/wms/";
-const COR_TEXTO_FEATURE = "#000000";
-const TAMANHO_TEXTO_FEATURE = "1.2em";
-const QUANTIDADE_LAYERS_INDICADORES  = 5;
-const QUANTIDADE_REGRAS_INDICADORES = 4;
-var mgov_mercator = new OpenLayers.Projection("EPSG:900913");
-var mgov_geographic = new OpenLayers.Projection("EPSG:4326");
+var vsis_mercator = new OpenLayers.Projection("EPSG:900913");
+var vsis_geographic = new OpenLayers.Projection("EPSG:4326");
 var map;
 var mgov_vector_format_json = new OpenLayers.Format.GeoJSON({
-                'externalProjection': new OpenLayers.Projection("mgov_mercator")
+                'externalProjection': new OpenLayers.Projection("vsis_mercator")
 });
-var mgov_wms_layer_pdad_pol = new Object();
+var vector_indicador = null;
+//
 /*
 * --------------------------------------------------------------------------
 *
@@ -58,7 +76,6 @@ var mgov_wms_layer_pdad_pol = new Object();
 */
 function init() {
 construir_graficoinicial();
-
 /*
 * --------------------------------------------------------------------------
 * DEFINICAO DOS CONTROLES
@@ -71,16 +88,16 @@ construir_graficoinicial();
 */
 // SphericalMercator - name given to the projection used by the commercial API providers, such as Google and OpenStreetMap.
 // It has been given the code EPSG:3857, though OpenLayers still uses the older, unofficial EPSG:900913.
-var mgov_navigation_control = new OpenLayers.Control.Navigation({});
+var vsis_navigation_control = new OpenLayers.Control.Navigation({});
 
 var mgov_vector_layer = new OpenLayers.Layer.Vector('Vetores Editáveis');
 var mgov_controls_array = [
-	    mgov_navigation_control,
-	    new OpenLayers.Control.Attribution({div:document.getElementById('layers_info'),template:'Camadas Visíveis: ${layers}'}),
+	    vsis_navigation_control,
+	    new OpenLayers.Control.Attribution({div:document.getElementById('id_layers_info'),template:'Camadas Visíveis: ${layers}'}),
 	    new OpenLayers.Control.PanZoomBar({}),
-	    new OpenLayers.Control.LayerSwitcher({'div':document.getElementById('camadas'),'roundedCorner':false}),
+	    new OpenLayers.Control.LayerSwitcher({title: 'Menu de Layers','roundedCorner':true}),
 //	    new OpenLayers.Control.Permalink(),
-	    new OpenLayers.Control.MousePosition({prefix:'Mouse em..... lon: ',separator:',    lat: ',numDigits:4,div:document.getElementById('mouse_id')}),
+	    new OpenLayers.Control.MousePosition({prefix:'Mouse em..... lon: ',separator:',    lat: ',numDigits:4,div:document.getElementById('id_mouse')}),
 	    new OpenLayers.Control.EditingToolbar(mgov_vector_layer),
 	    new OpenLayers.Control.ScaleLine({}),
 	    new OpenLayers.Control.Scale(),
@@ -95,7 +112,7 @@ var mgov_controls_array = [
 *
 * --------------------------------------------------------------------------
 */
-OpenLayers.ProxyHost = "/var/lib/tomcat6/webapps/ROOT/openlayers-cookbook/utils/proxy.php?url=";
+// OpenLayers.ProxyHost = "/var/lib/tomcat6/webapps/ROOT/openlayers-cookbook/utils/proxy.php?url=";
 
 /*
 * --------------------------------------------------------------------------
@@ -122,7 +139,7 @@ OpenLayers.ProxyHost = "/var/lib/tomcat6/webapps/ROOT/openlayers-cookbook/utils/
 // displayProjection - there are 3 controls which use displayProjection: ArgParser, MousePosition, Permalink. So when, for example,
 // MousePosition needs to display coordinates, it checks whether displayProjection is set, and if so converts them from the map 
 // projection to the displayProjection  (displayProjection too is always a projection object).
-map = new OpenLayers.Map('map_element',{
+map = new OpenLayers.Map('id_map',{
     allOverlays:false,
     PanMethod: OpenLayers.Easing.Quad.easeInOut,
     panDuration:100,
@@ -134,9 +151,9 @@ map = new OpenLayers.Map('map_element',{
     -1634372.177),
     units: 'm',
     numZoomLevels: 26,
-    projection: mgov_mercator,
-//    displayProjection: mgov_mercator
-    displayProjection: mgov_geographic
+    projection: vsis_mercator,
+//    displayProjection: vsis_mercator
+    displayProjection: vsis_geographic
 });
 //
 /*
@@ -144,7 +161,7 @@ map = new OpenLayers.Map('map_element',{
 * HISTORY CONTROL
 * --------------------------------------------------------------------------
 */
-var panel = new OpenLayers.Control.Panel({div:document.getElementById('div_history')});
+var panel = new OpenLayers.Control.Panel({div:document.getElementById('id_history')});
 var history = new OpenLayers.Control.NavigationHistory({
     "previousOptions": {"title": "Anterior"},
     "nextOptions": {"title": "Próximo"} 
@@ -154,7 +171,7 @@ map.addControls([history,panel]);
 //
 /*
 * --------------------------------------------------------------------------
-* CONTROLE TRANSPARÊNCIA LAYER PDAD
+* CONTROLE TRANSPARÊNCIA LAYER RAs-DF
 * --------------------------------------------------------------------------
 */
 var transp = new OpenLayers.Control.Button({
@@ -175,7 +192,7 @@ map.addControl(mgov_panel);
 var infos = new OpenLayers.Control.Button({
     displayClass:'olControlButtonInfo',
     type:2,
-    title:'Atributos - GetFeature',
+    title:'Atributos Literais',
     eventListeners:{
         'activate':ativar_funcao_info,
         'deactivate':desativar_funcao_info
@@ -208,7 +225,7 @@ var_featureInfo = new OpenLayers.Control.WMSGetFeatureInfo({
                 closeButtonX=true
             );
             popup.autoSize = true;
-            popup.maxSize = new OpenLayers.Size(300,300);
+            popup.maxSize = new OpenLayers.Size(500,300);
             map.addPopup(popup);
         }
     }
@@ -217,8 +234,6 @@ map.addControl(var_featureInfo);
 var_featureInfo.activate();
 }
 
-
-
 /*
 * -------------------------------------------------------------------------
 * DEFINIR OS LAYERS DO MAPA
@@ -226,7 +241,7 @@ var_featureInfo.activate();
 */
 //===== BASE MAPS
 //OpenStreetMap
-var mgov_map_osm = new OpenLayers.Layer.OSM(
+var wms_map_osm = new OpenLayers.Layer.OSM(
 "OpenStreetMap Layer"
 );
 /*
@@ -253,257 +268,157 @@ var mgov_google_satellite = new OpenLayers.Layer.Google(
 *   displayInLayerSwitcher:  display the layer's name in the layer switcher.
 * --------------------------------------------------------------------------
 */
-//WMS Layer-1: Municipios Brasileiros
-//mgov_wms_layer_mun : new OpenLayers.Layer.WMS(
-// 'Brasil:Municipios',
-//'http://192.168.1.102:8085/geoserver/wms/',
-//{layers: 'MaisGoverno:municipios2005'},{attribution:'Municípios',visibility: false, isBaseLayer:false,opacity:.4}
-//),
 //
-//WMS Layer-2: Zonas Censitárias do DF (pelo IBGE)
-//var mgov_wms_layer_cen = new OpenLayers.Layer.WMS(
+//WMS Layer: Zonas Censitárias do DF (pelo IBGE)
+//var wms_layer_cen = new OpenLayers.Layer.WMS(
 // 'DF:Zonas Censitarias',
 // 'http://192.168.1.102:8085/geoserver/wms/',
-//{layers: 'MaisGoverno:53see250gc_sir'},{attribution:'Zonas Censitárias',visibility: false, isBaseLayer:false,opacity:.3,displayInLayerSwitcher:true}
+//{layers: 'cdes:53see250gc_sir'},{attribution:'Zonas Censitárias',visibility: false, isBaseLayer:false,opacity:.3,displayInLayerSwitcher:true}
 //);
-/*
-//WMS Layer-3: GDF-Zonas Censitarias
-var mgov_wms_layer_censitaria = new OpenLayers.Layer.WMS(
-'DF:Zonas Censitarias',
-HOSTNAME,
-{layers: 'pdadgeo:pdadgeo', transparent:true},{attribution:'PDAD-GDF',visibility: false, isBaseLayer:false,opacity:.3,displayInLayerSwitcher:true}
-);
-*/
-/*
-//WMS Layer-4: RIDE-DF
-var mgov_wms_layer_ride_df = new OpenLayers.Layer.WMS(
-'DF:Ride',
-HOSTNAME,
-{layers: 'cdes:ride_df', transparent:true},{attribution:'RIDE-DF',visibility: false, isBaseLayer:false,opacity:.5,displayInLayerSwitcher:true}
-);
+//
+//WMS Layer: RIDE-DF
+//var wms_layer_ride_df = new OpenLayers.Layer.WMS(
+//'DF:Ride',
+//HOSTNAME,
+//{layers: 'cdes:ride_df', transparent:true},{attribution:'RIDE-DF',visibility: false, isBaseLayer:false,opacity:.5,displayInLayerSwitcher:true}
+//);
+//
+//var wms_layer_municipios_ride = new OpenLayers.Layer.WMS(
+//'DF:Mun_Ride',
+//HOSTNAME,
+//{layers: 'cdes:municipios_ride', transparent:true},{attribution:'MUN_RIDE-DF',visibility: false, isBaseLayer:false,opacity:1,displayInLayerSwitcher:true}
+//);
 
-var mgov_wms_layer_municipios_ride = new OpenLayers.Layer.WMS(
-'DF:Mun_Ride',
-HOSTNAME,
-{layers: 'cdes:municipios_ride', transparent:true},{attribution:'MUN_RIDE-DF',visibility: false, isBaseLayer:false,opacity:1,displayInLayerSwitcher:true}
-);*/
-var mgov_wms_layer_ride_group = new OpenLayers.Layer.WMS(
+var wms_layer_ride_group = new OpenLayers.Layer.WMS(
 'Ride-DF',
 HOSTNAME,
 {layers: 'cdes:ride_group', transparent:true},{attribution:'RIDE-DF',visibility: false, isBaseLayer:false,opacity:.5,displayInLayerSwitcher:true}
 );
 
-//WMS LAYER-5: Poligono do GDF
-mgov_wms_layer_pdad_pol = new OpenLayers.Layer.WMS(
+//WMS LAYER: Poligono do GDF
+wms_layer_pdad_pol = new OpenLayers.Layer.WMS(
 'DF:RAs',
 HOSTNAME,
 {layers: 'cdes:31RA_df',transparent:true},{attribution:'RA-Limites',visibility: false, isBaseLayer:false,opacity:1,displayInLayerSwitcher:true}
 );
-/*
-//WMS LAYER-6: Jardim Botanico
-mgov_wms_layer_jardimbotanico = new OpenLayers.Layer.WMS(
-'DF:Jardim Botanico',
-HOSTNAME,
-{layers: 'pdadgeo:jardimbotanico',transparent:true},{attribution:'RA-Limites',visibility: false, isBaseLayer:false,opacity:1,displayInLayerSwitcher:true}
-);
-*/
-//WMS LAYER-7: SETOR
-mgov_wms_layer_setor = new OpenLayers.Layer.WMS(
+
+//WMS LAYER: SETOR
+wms_layer_setor = new OpenLayers.Layer.WMS(
 'DF:Setor',
 HOSTNAME,
 {layers: 'cdes:df_setor',transparent:true},{minScale:220000,attribution:'RA-Limites',visibility: false, isBaseLayer:false,opacity:1,displayInLayerSwitcher:true}
 );
 
-//WMS LAYER-8: QUADRAS
-mgov_wms_layer_quadras = new OpenLayers.Layer.WMS(
+//WMS LAYER: QUADRAS
+wms_layer_quadras = new OpenLayers.Layer.WMS(
 'DF:Quadra',
 HOSTNAME,
 {layers: 'cdes:df_quadra',transparent:true},{minScale:55000,attribution:'RA-Limites',visibility: false, isBaseLayer:false,opacity:.6,displayInLayerSwitcher:true}
 );
-//WMS LAYER-9: CONJUNTO
-mgov_wms_layer_conjunto = new OpenLayers.Layer.WMS(
+
+//WMS LAYER: CONJUNTO
+wms_layer_conjunto = new OpenLayers.Layer.WMS(
 'DF:Conjunto',
 HOSTNAME,
 {layers: 'cdes:df_conjunto',transparent:true},{minScale:15000,attribution:'RA-Limites',visibility: false, isBaseLayer:false,opacity:.6,displayInLayerSwitcher:true}
 );
-//WMS LAYER-10: LOTE
-mgov_wms_layer_lote = new OpenLayers.Layer.WMS(
+
+//WMS LAYER: LOTE
+wms_layer_lote = new OpenLayers.Layer.WMS(
 'DF:Lote',
 HOSTNAME,
 {layers: 'cdes:df_lote',transparent:true},{minScale:10000,attribution:'RA-Limites',visibility: false, isBaseLayer:false,opacity:.7,displayInLayerSwitcher:true}
 );
-
-/*
-//WMS LAYER-11: VIA
-mgov_wms_layer_via = new OpenLayers.Layer.WMS(
-'DF:VIA',
-HOSTNAME,
-{layers: 'pdadgeo:via',transparent:true},{attribution:'RA-Limites',visibility: false, isBaseLayer:false,opacity:1,displayInLayerSwitcher:true}
-);
-//WMS LAYER-12: EIXO
-mgov_wms_layer_eixo = new OpenLayers.Layer.WMS(
-'DF:EIXO',
-HOSTNAME,
-{layers: 'pdadgeo:eixo',transparent:true},{attribution:'RA-Limites',visibility: false, isBaseLayer:false,opacity:1,displayInLayerSwitcher:true}
-);
-*/
-
+//
 //
 /*
 * --------------------------------------------------------------------------
 *
 * ADICIONAR OS BASE MAPS, OVERLAYS MAPS E LAYER DE EDICAO VETORIAL AO MAPA
-*
+*	
 * --------------------------------------------------------------------------
 */
 map.addLayer(mgov_vector_layer);
-/*
-map.addLayers([mgov_map_osm, mgov_google_streets, mgov_google_satellite, mgov_wms_layer_ride_df, mgov_wms_layer_pdad_pol, mgov_wms_layer_censitaria]);
-*/
-/*
-map.addLayers([mgov_map_osm, mgov_wms_layer_ride_df, mgov_wms_layer_censitaria, mgov_wms_layer_pdad_pol,
-   mgov_wms_layer_setor,mgov_wms_layer_quadras,mgov_wms_layer_lote,mgov_wms_layer_via,mgov_wms_layer_eixo,mgov_wms_layer_jardimbotanico]);
-*/
-/*
-map.addLayers([mgov_map_osm, mgov_wms_layer_ride_df, mgov_wms_layer_municipios_ride,mgov_wms_layer_pdad_pol,mgov_wms_layer_setor,mgov_wms_layer_quadras,mgov_wms_layer_conjunto,mgov_wms_layer_lote]);
-*/
-map.addLayers([mgov_map_osm, mgov_wms_layer_ride_group, mgov_wms_layer_pdad_pol,mgov_wms_layer_setor,mgov_wms_layer_quadras,mgov_wms_layer_conjunto,mgov_wms_layer_lote]);
+map.addLayers([wms_map_osm, wms_layer_ride_group, wms_layer_pdad_pol, wms_layer_setor, wms_layer_quadras, wms_layer_conjunto, wms_layer_lote]);
 // Deixar o centro do mapa no Distrito Federal
 map.setCenter(new OpenLayers.LonLat(-5330000,-1780000),10);
-if(!map.getCenter()){
-map.zoomToMaxExtent()};
-//
-/*
-* --------------------------------------------------------------------------
-*
-*             CRIAR OS LAYERS VETORIAIS DE PONTOS RELEVANTES
-*
-* --------------------------------------------------------------------------
-*/
-//Criar layer vetorial de pontos contendo as classes Format, Protocol, e Strategy
-var layers_pontos = new Object();
-layers_pontos = definir_layers_pontos();
-//
-// Criar os objetos para definicao dos estilos (STYLE) dos layes de PONTOS, situacao "default"
-var estilo_pontos_default = new Object();
-estilo_pontos_default = definir_style_layer_pontos();
-//
-// construir o "styleMap', aplica-lo ao Layer e adicionar os layers de pontos ao mapa
-for (var key in layers_pontos) {
-    layers_pontos[key].styleMap = new OpenLayers.StyleMap({ 'default': estilo_pontos_default[key]});
-    map.addLayer(layers_pontos[key]);
-};
-/*
-* --------------------------------------------------------------------------
-*
-* CAPTURAR A GEOMETRIA DAS FEATURES DO LAYER "mgov_vector_layer
-* Classe: OpenLayers.Control.SelectFeature
-*         The SelectFeature control selects vector features from a given layer on click or hover.
-* Métodos:
-* onFeatureInsert:  method called after a feature is inserted. 
-* --------------------------------------------------------------------------
-*/
-var mgov_controle_features = new OpenLayers.Control.SelectFeature(
-  mgov_vector_layer,
-  {
-// propriedades da classe "OpenLayers.Control.SelectFeature"
-  multiple: false,
-  multipleKey: '',
-  clickout: true,
-  toggle: true,
-  hover: false,
-  geometryTypes: ['OpenLayers.Geometry.Point', 'OpenLayers.Geometry.LineString']
-  }
-);
-// adicionar a instância ao mapa
-map.addControl(mgov_controle_features);
-mgov_vector_layer.onFeatureInsert = function (feature) { alert ('Captura da Geometria da feature: ' +  feature.geometry)};
-//
-/*
-* --------------------------------------------------------------------------
-*
-*      CRIAR OS LAYERS DE "INDICADORES" E ADICIONA-LOS AO MAPA
-*
-* --------------------------------------------------------------------------
-*/
-//
-var identificacao_layers_ind = new Object();
-identificacao_layers_ind = definir_identificacao_layers_ind ();
-// Definir as cores das features de cada camada de indicadores: criar Objeto cores_camadas contendo as
-// propriedades/valores corresponde as cores das features para cada uma das camadas de indicadores
-var cores_camadas_ind = new Object(QUANTIDADE_LAYERS_INDICADORES);
-cores_camadas_ind = definir_cores_camadas ();
-//
-// Criar as regras e os filtros
-var regras_ind = new Object(QUANTIDADE_REGRAS_INDICADORES);
-regras_ind = definir_regras_indicadores ();
-//
-// Criar um array de objetos de layers vetoriais, contendo as classes de
-//Format, Protocol, e Strategy.  Cada entrada correspondente a um layer de indicadores.
-var layers_ind = new Array(QUANTIDADE_LAYERS_INDICADORES);
-layers_ind = definir_layers_indicadores (identificacao_layers_ind);
-//
-//Criar o objeto para definicao do estilo (STYLE) dos layers dos indicadores, situação "default".
-// Para a situacao "selecionado", esta estara definida adiante.
-// Cada entrada  no Array corresponde a cada um dos layers de indicadores.
-var estilo_ind_default = new Array(QUANTIDADE_LAYERS_INDICADORES);
-estilo_ind_default = definir_estilo_default_layers_ind(cores_camadas_ind);
-//
-//Criar o objeto para definicao do estilo (STYLE) dos layers dos indicadores, situacao "selecionado".
-var estilo_ind_selected = new Object();
-estilo_ind_selected = definir_estilo_layers_ind ();
-//
-// Aplicar as REGRAS a cada uma das camadas de indicadores.
-// Ou seja, a cada objeto de STYLE.
-// Criar os controles JavaScript sobre as features
-//
-var array_regras=[];
-for (var key in regras_ind) {
-    array_regras.push(regras_ind[key])
-};
-for (var key in estilo_ind_default) {
-estilo_ind_default[key].addRules(array_regras);
-};
-// Executar:
-//     1) Criar o objeto STYLEMAP contendo os estilos definidos
-//     2) Associar os ESTILOS a cada LAYER de indicadores
-var stylemap_ind = new Array(QUANTIDADE_LAYERS_INDICADORES);
-for (var key in layers_ind) {
-       stylemap_ind[key] = new OpenLayers.StyleMap({'default': estilo_ind_default[key],'select':estilo_ind_selected});
-       layers_ind[key].styleMap = stylemap_ind[key];
-};
-// Adicionar cada layer ao MAPA
-for (var key in layers_ind) {
-       map.addLayer(layers_ind[key]);
-};
-// Criar os controles JavaScript sobre as features
-var array_camadas = new Array(QUANTIDADE_LAYERS_INDICADORES);
-for (var key in layers_ind) {
-    array_camadas[key] = layers_ind[key]
-};
-var controle_features_indicadores = new OpenLayers.Control.SelectFeature(
-    array_camadas,
-    {
-    autoActivate:true,
-    multiple:false,
-    toggle:true,
-    box:false,
-    hover:true
-    }
-);
-// Adicionar os controles ao MAPA
-map.addControl(controle_features_indicadores);
-//
-// Tratamento dos eventos das features
-for (var key in layers_ind) {
-       layers_ind[key].events.register('featureselected', this, selected_feature);
-       layers_ind[key].events.register('featureunselected', this, unselected_feature);
+if(!map.getCenter()){map.zoomToMaxExtent()};
 }
-function selected_feature(event){
+//
+/*
+* --------------------------------------------------------------------------
+*
+*      FUNCAO DE CONTROLE DA TRANSPARENCIA PARA O LAYER DAS RA's
+*
+* --------------------------------------------------------------------------
+*/
+function transparencia(){
+            if(wms_layer_pdad_pol.opacity === 0){
+                wms_layer_pdad_pol.setOpacity(.3);
+            }
+            else if (wms_layer_pdad_pol.opacity === .3){
+                wms_layer_pdad_pol.setOpacity(.5);
+            }
+            else if (wms_layer_pdad_pol.opacity === .5){
+                wms_layer_pdad_pol.setOpacity(.7);
+            }
+            else if (wms_layer_pdad_pol.opacity === .7){
+                wms_layer_pdad_pol.setOpacity(1);
+            }
+            else {
+                wms_layer_pdad_pol.setOpacity(0);
+            }
+}
+
+function fsis_indicadores(identf){
+var vsis_arrayindicadores = {"escolaridade":0,"bandalarga":1,"cor":2,"bancaria":3,"renda":4};
+var vsis_arrayindicadores2 = [
+                          ["ESCOLARIDADE","data_indicador_escolaridade.json"],
+                          ["BANDA LARGA","data_indicador_bandalarga.json"],
+                          ["TEZ DA PELE","data_indicador_cor.json"],
+                          ["EXCLUSÃO BANCÁRIA","data_indicador_bancaria.json"],
+                          ["RENDA","data_indicador_renda.json"]
+];
+var vsis_arraysymbolizers = {
+   '0':{'fillColor':CHART0,'fillOpacity':1,'strokeColor':'#000000','strokeWidth':2,'pointRadius':10,'label':'${indice}','cursor':'pointer','graphicName':'square'},
+   '1':{'fillColor':CHART1,'fillOpacity':1,'strokeColor':'#000000','strokeWidth':2,'pointRadius':15,'label':'${indice}','cursor':'pointer','graphicName':'triangle','labelYOffset':-8},
+   '2':{'fillColor':CHART2,'fillOpacity':1,'strokeColor':'#000000','strokeWidth':3,'pointRadius':20,'label':'${indice}','cursor':'pointer','graphicName':'circle'},
+   '3':{'fillColor':CHART3,'fillOpacity':1,'strokeColor':'#000000','strokeWidth':3,'pointRadius':28,'label':'${indice}','cursor':'pointer','graphicName':'star','labelYOffset':-4,'graphicTitle':'oi','fontOpacity':0}
+};
+// ---------------------------------------------------------------------------------------------------------------------------------------------------
+if (vector_indicador != null) {
+  vector_indicador.destroyFeatures();
+  map.removeLayer(vector_indicador);
+  protocol1.destroy();
+}
+else {
+  vector_style_map = new OpenLayers.StyleMap({});
+  vector_style_map.addUniqueValueRules('default','nivel',vsis_arraysymbolizers);
+}
+protocol1 = new OpenLayers.Protocol.HTTP({
+                    url:'data_json/'+vsis_arrayindicadores2[vsis_arrayindicadores[identf]][1],
+                    format: mgov_vector_format_json
+});
+vector_indicador = new OpenLayers.Layer.Vector('Indicadores',{
+                     protocol: protocol1,
+                     strategies:[new OpenLayers.Strategy.Fixed()],
+                     visibility: true,isBaseLayer:false,displayInLayerSwitcher:true
+});
+vector_indicador.styleMap = vector_style_map;
+map.addLayer(vector_indicador);
+// esperar o carregamento do arquivo
+vector_indicador.events.on({
+      "loadend": function(e){
+             console.log(e.object.features.length);
+      fsis_visualizar_indicadores(vsis_arrayindicadores2[vsis_arrayindicadores[identf]][0]);
+}});}
+function fsis_visualizar_indicadores(nome_indicador){
+// ----------------------------------------------------------------------------------------------------
     var i=0, infos_RA=[], quartil=[[0,"Índice Baixo"],[0,"Índice Médio-Baixo"],[0,"Índice Médio-Alto"],[0,"Índice Alto"]];
-    for (var i = 0,len = (event.feature.layer.features).length; i < len; i++){
-        infos_RA.push([event.feature.layer.features[i].attributes.indice,event.feature.layer.features[i].attributes.RA,
-    	    event.feature.layer.features[i].attributes.nivel]);
+    console.log('-----  ' + vector_indicador.features[0].attributes.unidade);
+    for (var i = 0,len = (vector_indicador.features).length; i < len; i++){
+        infos_RA.push([vector_indicador.features[i].attributes.indice,vector_indicador.features[i].attributes.RA,
+    	    vector_indicador.features[i].attributes.nivel]);
     	    // calculo dos quartis do indicador
     	    switch (infos_RA[i][2]){
     	            case 0:
@@ -538,76 +453,53 @@ function selected_feature(event){
     total += desvio * desvio;
     }
     var desvio_pa = Math.sqrt(total/(infos_RA.length));
-    document.getElementById('indicadores-titulo').innerHTML = '';
-    var display_text = '<texto style="font-size:1.7em;"><strong><center>' + event.feature.layer.attribution + '</center></strong></style><hr />';
-    document.getElementById('indicadores-titulo').innerHTML = display_text;
-    document.getElementById('indicadores-1').innerHTML = '';
+    document.getElementById('id_indicadores-titulo').innerHTML = '';
+    var display_text = '<texto style="font-size:1.7em;"><strong><center>' + nome_indicador + '</center></strong></style><hr />';
+    document.getElementById('id_indicadores-titulo').innerHTML = display_text;
+    document.getElementById('id_indicadores-1').innerHTML = '';
     
     var display_text = '<texto style="font-size:1.2em;"><strong>Índices desagregados por RA</strong></style><br /><texto style="font-size:0.8em;"> * Medida: ' + 
-    event.feature.attributes.unidade +'<br /> * Média do indicador: ' + media.toFixed(2) + '<br /> * Desvio padrão do indicador: ' + desvio_pa.toFixed(2) + '<br /><a target="_blank" href="http://www.codeplan.df.gov.br/">Fonte: PDAD-Codeplan </a><br /></style><hr />';
-    document.getElementById('indicadores-1').innerHTML = display_text;
+    vector_indicador.features[0].attributes.unidade +'<br /> * Média do indicador: ' + media.toFixed(2) + '<br /> * Desvio padrão do indicador: ' + desvio_pa.toFixed(2) + '<br /><a target="_blank" href="http://www.codeplan.df.gov.br/">Fonte: PDAD-Codeplan </a><br /></style><hr />';
+    document.getElementById('id_indicadores-1').innerHTML = display_text;
+
     // classificar o array em ordem numérica
     infos_RA.sort(function(a,b){
 	return a[0]-b[0];});
     var estilo_chart;
-    switch (event.feature.layer.attribution) {
-    case identificacao_layers_ind.IND_RENDA : {estilo_chart = "chart0";break};
-    case identificacao_layers_ind.IND_BANDALARGA  : {estilo_chart = "chart1";break};
-    case identificacao_layers_ind.IND_COR  : {estilo_chart = "chart2";break};
-    case identificacao_layers_ind.IND_ESCOLARIDADE  : {estilo_chart = "chart3";break};
-    case identificacao_layers_ind.IND_BANCARIA  : {estilo_chart = "chart4";break};
-    default : {estilo_chart = "chart4";break}; // saída de erro!!
-    };
+    estilo_chart = "chart0";
     console.log(infos_RA);
     console.log(quartil);
     construir_grafico1 (infos_RA);
     construir_grafico2 (quartil);
-}
-function unselected_feature(event){
-    limpar_grafico ();
-}
-}
-/*
-* --------------------------------------------------------------------------
-*
-*      FUNCAO DE CONTROLE DA TRANSPARENCIA PARA O LAYER DAS RA's
-*
-* --------------------------------------------------------------------------
-*/
-function transparencia(){
-            if(mgov_wms_layer_pdad_pol.opacity === 0){
-                mgov_wms_layer_pdad_pol.setOpacity(.3);
-            }
-            else if (mgov_wms_layer_pdad_pol.opacity === .3){
-                mgov_wms_layer_pdad_pol.setOpacity(.5);
-            }
-            else if (mgov_wms_layer_pdad_pol.opacity === .5){
-                mgov_wms_layer_pdad_pol.setOpacity(.7);
-            }
-            else if (mgov_wms_layer_pdad_pol.opacity === .7){
-                mgov_wms_layer_pdad_pol.setOpacity(1);
-            }
-            else {
-                mgov_wms_layer_pdad_pol.setOpacity(0);
-            }
-}
+// ----------------------------------------------------------------------------------------------------
 
+}
+</script>
+<script type='text/javascript'>
+ddsmoothmenu.init({
+mainmenuid: "smoothmenu-ajax",
+//customtheme: ["#1c5a80", "#18374a"], //override default menu CSS background values? Uncomment: ["normal_background", "hover_background"]
+contentsource: ["id_container", "sisesp_menu.html"] //"markup" or ["id_container", "path_to_menu_file"]
+});
 </script>
 </head>
 <body  onload='init();'>
-<div id="principal">
-<div id="div_history" class="historyClass"></div>
-<div id="titulo"><img src="icon/GDF.png" alt="Brasão GDF">Portal da Geoinformação</div>
-<div id="informacoes">
-<div id="camadas"><h2>Layers</h2><hr /></div>
-<div id="indicadores" class="indicadores">
-<div id="indicadores-titulo"><h2>Indicadores Sociais</h2><hr /></div>
-<div id="indicadores-1"></div>
-<div id="indicadores-2"></div>
-</div></div>
-<div id="map_element"></div>
-<div id="mouse_id"></div>
-<div id="layers_info"></div>
+<div id="id_principal">
+<div id="id_history" class="historyClass"></div>
+<div id="id_titulo"><img src="icon/GDF.png" alt="Brasão GDF">Portal da Geoinformação</div>
+<div id="id_indicadores" class="indicadores">
+<div id="id_container">
+<noscript>
+<a href="#"><h2>!!! OooopS !!!<br /></h2><center><h3>JavaScript desabilitado: para executar esta aplicação é necessário ter o JS habilitado.<br /> Interrompido!</h3></center></a>
+</noscript>
+</div>
+<div id="id_indicadores-titulo"><h2>Indicadores Sociais</h2><hr /></div>
+<div id="id_indicadores-1"></div>
+<div id="id_indicadores-2"></div>
+</div>
+<div id="id_map"></div>
+<div id="id_mouse"></div>
+<div id="id_layers_info"></div>
 </div>
 </body>
 </html>
