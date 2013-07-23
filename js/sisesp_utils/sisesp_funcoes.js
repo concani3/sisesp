@@ -323,7 +323,7 @@ function construir_grafico1 (infos_RA){
         
     d3.selectAll("div.line")
         .append("div")
-        .attr("class", function(d){return d[3];})
+        .attr("class", function(d){return d[4];})
         .style("width", function(d){return escala(d[0]);})
         .text(function(d){return d[0];});
 }	

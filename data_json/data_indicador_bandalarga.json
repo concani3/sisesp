@@ -3,7 +3,7 @@
     "features": [
         {
             "type": "Feature",
-            "properties": { "RA":"Águas Claras","indice":67.2,"unidade":"%","nivel":3},
+            "properties": { "RA":"Águas Claras","indice":67.2,"unidade":"%","nivel":3,"romano":"XX"},
             "geometry": {
                 "type": "Point",
                 "coordinates": [
@@ -13,7 +13,7 @@
         },
         {
             "type": "Feature",
-            "properties": { "RA":"Varjão", "indice":19.3,"unidade":"%","nivel":0},
+            "properties": { "RA":"Varjão", "indice":19.3,"unidade":"%","nivel":0,"romano":"XXIII"},
             "geometry": {
                 "type": "Point",
                 "coordinates": [
@@ -23,7 +23,7 @@
         },
         {
             "type": "Feature",
-            "properties": { "RA":"Paranoá", "indice":27.7,"unidade":"%","nivel":1},
+            "properties": { "RA":"Paranoá", "indice":27.7,"unidade":"%","nivel":1,"romano":"VII"},
             "geometry": {
                 "type": "Point",
                 "coordinates": [
@@ -33,7 +33,7 @@
         },
         {
             "type": "Feature",
-            "properties": { "RA":"Brasília", "indice":86.9,"unidade":"%","nivel":3},
+            "properties": { "RA":"Brasília", "indice":86.9,"unidade":"%","nivel":3,"romano":"I"},
             "geometry": {
                 "type": "Point",
                 "coordinates": [
@@ -43,7 +43,7 @@
         },
         {
             "type": "Feature",
-            "properties": { "RA":"Recanto das Emas", "indice":29.3,"unidade":"%","nivel":1},
+            "properties": { "RA":"Recanto das Emas", "indice":29.3,"unidade":"%","nivel":1,"romano":"XV"},
             "geometry": {
                 "type": "Point",
                 "coordinates": [
@@ -53,7 +53,7 @@
         },
         {
             "type": "Feature",
-            "properties": { "RA":"Vicente Pires", "indice":59.5,"unidade":"%","nivel":2},
+            "properties": { "RA":"Vicente Pires", "indice":59.5,"unidade":"%","nivel":2,"romano":"XXX"},
             "geometry": {
                 "type": "Point",
                 "coordinates": [
@@ -63,7 +63,7 @@
         },
         {
             "type": "Feature",
-            "properties": { "RA":"Taguatinga", "indice":59.7,"unidade":"%","nivel":2},
+            "properties": { "RA":"Taguatinga", "indice":59.7,"unidade":"%","nivel":2,"romano":"III"},
             "geometry": {
                 "type": "Point",
                 "coordinates": [
@@ -73,7 +73,7 @@
         },
         {
             "type": "Feature",
-            "properties": { "RA":"Estrutural", "indice":15.5,"unidade":"%","nivel":0},
+            "properties": { "RA":"Estrutural", "indice":15.5,"unidade":"%","nivel":0,"romano":"XXV"},
             "geometry": {
                 "type": "Point",
                 "coordinates": [
@@ -83,7 +83,7 @@
         },
         {
             "type": "Feature",
-            "properties": { "RA":"Santa Maria", "indice":42.4,"unidade":"%","nivel":2},
+            "properties": { "RA":"Santa Maria", "indice":42.4,"unidade":"%","nivel":2,"romano":"XIII"},
             "geometry": {
                 "type": "Point",
                 "coordinates": [
@@ -93,7 +93,7 @@
         },
         {
             "type": "Feature",
-            "properties": { "RA":"Samambaia", "indice":35.1,"unidade":"%","nivel":1},
+            "properties": { "RA":"Samambaia", "indice":35.1,"unidade":"%","nivel":1,"romano":"XII"},
             "geometry": {
                 "type": "Point",
                 "coordinates": [
@@ -103,7 +103,7 @@
         },
         {
             "type": "Feature",
-            "properties": { "RA":"Riacho Fundo II", "indice":34.8,"unidade":"%","nivel":1},
+            "properties": { "RA":"Riacho Fundo II", "indice":34.8,"unidade":"%","nivel":1,"romano":"XXI"},
             "geometry": {
                 "type": "Point",
                 "coordinates": [
@@ -113,7 +113,7 @@
         },
         {
             "type": "Feature",
-            "properties": { "RA":"Riacho Fundo", "indice":50.0,"unidade":"%","nivel":2},
+            "properties": { "RA":"Riacho Fundo", "indice":50.0,"unidade":"%","nivel":2,"romano":"XVII"},
             "geometry": {
                 "type": "Point",
                 "coordinates": [
@@ -123,7 +123,7 @@
         },
         {
             "type": "Feature",
-            "properties": { "RA":"Núcleo Bandeirante", "indice":61.2,"unidade":"%","nivel":2},
+            "properties": { "RA":"Núcleo Bandeirante", "indice":61.2,"unidade":"%","nivel":2,"romano":"VIII"},
             "geometry": {
                 "type": "Point",
                 "coordinates": [
@@ -133,7 +133,7 @@
         },
         {
             "type": "Feature",
-            "properties": { "RA":"Itapoã", "indice":11.1,"unidade":"%","nivel":0},
+            "properties": { "RA":"Itapoã", "indice":11.1,"unidade":"%","nivel":0,"romano":"XXVIII"},
             "geometry": {
                 "type": "Point",
                 "coordinates": [
@@ -143,7 +143,7 @@
         },
         {
             "type": "Feature",
-            "properties": { "RA":"Gama", "indice":52.8,"unidade":"%","nivel":2},
+            "properties": { "RA":"Gama", "indice":52.8,"unidade":"%","nivel":2,"romano":"II"},
             "geometry": {
                 "type": "Point",
                 "coordinates": [
@@ -153,7 +153,7 @@
         },
         {
             "type": "Feature",
-            "properties": { "RA":"Ceilândia", "indice":30.9,"unidade":"%","nivel":1},
+            "properties": { "RA":"Ceilândia", "indice":30.9,"unidade":"%","nivel":1,"romano":"IX"},
             "geometry": {
                 "type": "Point",
                 "coordinates": [
@@ -163,7 +163,7 @@
         },
         {
             "type": "Feature",
-            "properties": { "RA":"Brazlândia", "indice":27.1,"unidade":"%","nivel":1},
+            "properties": { "RA":"Brazlândia", "indice":27.1,"unidade":"%","nivel":1,"romano":"IV"},
             "geometry": {
                 "type": "Point",
                 "coordinates": [
@@ -173,7 +173,7 @@
         },
         {
             "type": "Feature",
-            "properties": { "RA":"Candangolândia", "indice":51.3,"unidade":"%","nivel":2},
+            "properties": { "RA":"Candangolândia", "indice":51.3,"unidade":"%","nivel":2,"romano":"XIX"},
             "geometry": {
                 "type": "Point",
                 "coordinates": [
@@ -183,7 +183,7 @@
         },
         {
             "type": "Feature",
-            "properties": { "RA":"Lago Norte", "indice":87.8,"unidade":"%","nivel":3},
+            "properties": { "RA":"Lago Norte", "indice":87.8,"unidade":"%","nivel":3,"romano":"XVIII"},
             "geometry": {
                 "type": "Point",
                 "coordinates": [
@@ -193,7 +193,7 @@
         },
         {
             "type": "Feature",
-            "properties": { "RA":"Sobradinho", "indice":62.6,"unidade":"%","nivel":2},
+            "properties": { "RA":"Sobradinho", "indice":62.6,"unidade":"%","nivel":2,"romano":"V"},
             "geometry": {
                 "type": "Point",
                 "coordinates": [
@@ -203,7 +203,7 @@
         },
         {
             "type": "Feature",
-            "properties": { "RA":"Planaltina", "indice":33.3,"unidade":"%","nivel":1},
+            "properties": { "RA":"Planaltina", "indice":33.3,"unidade":"%","nivel":1,"romano":"VI"},
             "geometry": {
                 "type": "Point",
                 "coordinates": [
@@ -213,7 +213,7 @@
         },
         {
             "type": "Feature",
-            "properties": { "RA":"Lago Sul", "indice":91.4,"unidade":"%","nivel":3},
+            "properties": { "RA":"Lago Sul", "indice":91.4,"unidade":"%","nivel":3,"romano":"XVI"},
             "geometry": {
                 "type": "Point",
                 "coordinates": [
@@ -223,7 +223,7 @@
         },
         {
             "type": "Feature",
-            "properties": { "RA":"São Sebastião", "indice":28.4,"unidade":"%","nivel":1},
+            "properties": { "RA":"São Sebastião", "indice":28.4,"unidade":"%","nivel":1,"romano":"XIV"},
             "geometry": {
                 "type": "Point",
                 "coordinates": [
