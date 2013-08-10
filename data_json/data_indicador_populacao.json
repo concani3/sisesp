@@ -1,0 +1,48 @@
+{
+    "indicador":{
+        "titulo":"População do Distrito Federal",
+        "fonte":"Dados primários oriundos pesquisa Codeplan-2011",
+        "ano":2011,
+        "unidade":"habitantes",
+        "descricao":"6.11 - População total Distrito Federal= 2.556.149",
+        "num_quartis":      4,
+        "quartis":  [
+                {"qi":0,"qs":50000},
+                {"qi":50000,"qs":150000},
+                {"qi":150000,"qs":250000},
+                {"qi":250000,"qs":500000}
+        ]
+    },
+    "indices":  [
+                {"RA":"Águas Claras"      ,"romano":"XX"    ,"indice":109935},
+                {"RA":"Brasília"          ,"romano":"I"     ,"indice":209926},
+                {"RA":"Brazlândia"        ,"romano":"IV"    ,"indice":49418},
+                {"RA":"Candangolândia"    ,"romano":"XIX"   ,"indice":15953},
+                {"RA":"Ceilândia"         ,"romano":"IX"    ,"indice":404287},
+                {"RA":"Cruzeiro"          ,"romano":"XI"    ,"indice":31230},
+                {"RA":"Estrutural"        ,"romano":"XXV"   ,"indice":32148},
+                {"RA":"Gama"              ,"romano":"II"    ,"indice":127475},
+                {"RA":"Guará"             ,"romano":"X"     ,"indice":107817},
+                {"RA":"Itapoã"            ,"romano":"XXVIII","indice":56360},
+                {"RA":"Jd Botânico"       ,"romano":"XXVII" ,"indice":23856},
+                {"RA":"Lago Norte"        ,"romano":"XVIII" ,"indice":33526},
+                {"RA":"Lago Sul"          ,"romano":"XVI"   ,"indice":29677},
+                {"RA":"Núcleo Bandeirante","romano":"VIII"  ,"indice":22569},
+                {"RA":"ParkWay"           ,"romano":"XXIV"  ,"indice":19648},
+                {"RA":"Paranoá"           ,"romano":"VII"   ,"indice":42427},
+                {"RA":"Planaltina"        ,"romano":"VI"    ,"indice":161812},
+                {"RA":"Recanto das Emas"  ,"romano":"XV"    ,"indice":124755},
+                {"RA":"Riacho Fundo"      ,"romano":"XVII"  ,"indice":35268},
+                {"RA":"Riacho Fundo II"   ,"romano":"XXI"   ,"indice":37051},
+                {"RA":"Samambaia"         ,"romano":"XII"   ,"indice":201871},
+                {"RA":"Santa Maria"       ,"romano":"XIII"  ,"indice":119444},
+                {"RA":"São Sebastião"     ,"romano":"XIV"   ,"indice":77793},
+                {"RA":"SIA"               ,"romano":"XXIX"  ,"indice":2448},
+                {"RA":"Sobradinho"        ,"romano":"V"     ,"indice":59024},
+                {"RA":"Sobradinho-II"     ,"romano":"XXVI"  ,"indice":94279},
+                {"RA":"Sudoeste/Octogonal","romano":"XXII"  ,"indice":51565},
+                {"RA":"Taguatinga"        ,"romano":"III"   ,"indice":197783},
+                {"RA":"Varjão"            ,"romano":"XXIII" ,"indice":9021},
+                {"RA":"Vicente Pires"     ,"romano":"XXX"   ,"indice":67783}
+            ]
+}

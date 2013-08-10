@@ -1,0 +1,48 @@
+{
+    "indicador":{
+        "titulo":"População com Ensino Fundamental Completo",
+        "fonte":"Dados primários oriundos pesquisa Codeplan-2011",
+        "ano":2011,
+        "unidade":"% da população que tem nível fundamental completo",
+        "descricao":"5.2 - População por nível de escolaridade",
+        "num_quartis":      4,
+        "quartis":  [
+                {"qi":0,"qs":2},
+                {"qi":2,"qs":5},
+                {"qi":5,"qs":7},
+                {"qi":7,"qs":100}
+        ]
+    },
+    "indices":  [
+                {"RA":"Águas Claras"      ,"romano":"XX"    ,"indice":3.77},
+                {"RA":"Brasília"          ,"romano":"I"     ,"indice":2.40},
+                {"RA":"Brazlândia"        ,"romano":"IV"    ,"indice":6.02},
+                {"RA":"Candangolândia"    ,"romano":"XIX"   ,"indice":5.90},
+                {"RA":"Ceilândia"         ,"romano":"IX"    ,"indice":7.26},
+                {"RA":"Cruzeiro"          ,"romano":"XI"    ,"indice":4.35},
+                {"RA":"Estrutural"        ,"romano":"XXV"   ,"indice":5.17},
+                {"RA":"Gama"              ,"romano":"II"    ,"indice":6.71},
+                {"RA":"Guará"             ,"romano":"X"     ,"indice":4.35},
+                {"RA":"Itapoã"            ,"romano":"XXVIII","indice":6.03},
+                {"RA":"Jd Botânico"       ,"romano":"XXVII" ,"indice":2.36},
+                {"RA":"Lago Norte"        ,"romano":"XVIII" ,"indice":1.63},
+                {"RA":"Lago Sul"          ,"romano":"XVI"   ,"indice":2.49},
+                {"RA":"Núcleo Bandeirante","romano":"VIII"  ,"indice":5.95},
+                {"RA":"ParkWay"           ,"romano":"XXIV"  ,"indice":2.69},
+                {"RA":"Paranoá"           ,"romano":"VII"   ,"indice":6.26},
+                {"RA":"Planaltina"        ,"romano":"VI"    ,"indice":6.03},
+                {"RA":"Recanto das Emas"  ,"romano":"XV"    ,"indice":7.16},
+                {"RA":"Riacho Fundo"      ,"romano":"XVII"  ,"indice":6.68},
+                {"RA":"Riacho Fundo II"   ,"romano":"XXI"   ,"indice":7.18},
+                {"RA":"Samambaia"         ,"romano":"XII"   ,"indice":5.95},
+                {"RA":"Santa Maria"       ,"romano":"XIII"  ,"indice":6.27},
+                {"RA":"São Sebastião"     ,"romano":"XIV"   ,"indice":6.19},
+                {"RA":"SIA"               ,"romano":"XXIX"  ,"indice":8.91},
+                {"RA":"Sobradinho"        ,"romano":"V"     ,"indice":5.09},
+                {"RA":"Sobradinho-II"     ,"romano":"XXVI"  ,"indice":5.03},
+                {"RA":"Sudoeste/Octogonal","romano":"XXII"  ,"indice":1.16},
+                {"RA":"Taguatinga"        ,"romano":"III"   ,"indice":6.44},
+                {"RA":"Varjão"            ,"romano":"XXIII" ,"indice":5.57},
+                {"RA":"Vicente Pires"     ,"romano":"XXX"   ,"indice":5.60}
+    ]
+}

@@ -1,12 +1,10 @@
 function construir_graficoinicial(){
 
 	    d3.csv("TABELA_2.1.csv",function(data){
-/*		console.log(data); */
 		var dd = [];
 		for (var i in data) {
 		    dd.push([data[i].romano_C_254,Number(data[i].v_2_1_1_N_16_6)]);
 		}
-		console.log(dd);
 	    })
 /* ******************************************* */
 	    //Width and height
@@ -213,23 +211,104 @@ function construir_graficoinicial(){
 	        });
 
 }
+function construir_grafico4 (infos_RA){
+    var width = 250;
+    var height = 180;
+    console.log(infos_RA);
+    var color = d3.scale.ordinal()
+        .domain(["chart0","chart1","chart2","chart3","chart4","chart5"])
+        .range([QUARTIL0,QUARTIL1,QUARTIL2,QUARTIL3,QUARTIL4,QUARTIL5]);
+
+    var escalax=  d3.scale.linear()
+    .domain([0, d3.max(infos_RA,function(d){return d[0];})])
+        .range(["1em","20em"]);
+    var  escalay=  d3.scale.linear()
+    .domain([0, d3.max(infos_RA,function(d){return d[5];})])
+        .range(["8em","1em"]);
+    d3.select("#id_indicadores-2")
+            .append("meutexto")
+            .text("Renda Per Capita x Indicador");
+
+    var svg = d3.select("#id_indicadores-2")
+        .append("svg")
+        .attr("width",width)
+        .attr("height",height)
+        .attr("id","scatterplot");
+    svg.selectAll("circle")
+        .data(infos_RA)
+        .enter()
+        .append("circle")
+        .attr("cx",function(d){return escalax(d[0]);})
+        .attr("cy",function(d){return escalay(d[5]);})
+        .attr("r",4)
+        .attr("fill",function(d){return color(d[4]);});
+
+}
+
+function construir_grafico3 (quartil){
+    var width  = 100;
+    var height = 100;
+    var dataset = [];
+    var vsis_populacaototal = 0;
+    //
+    d3.select("#id_indicadores-2")
+            .append("meutexto")
+            .text("% População do DF por Quartil")
+
+    for (var i in quartil)vsis_populacaototal += quartil[i][2];
+    for (var i in quartil)dataset.push((quartil[i][2]*100/vsis_populacaototal).toFixed(1));
+    var outerRadius = width / 2;
+    var innerRadius = 0;
+    var arc = d3.svg.arc()
+        .innerRadius(innerRadius)
+        .outerRadius(outerRadius);
+    var pie = d3.layout.pie()
+        .sort(null);
+    var color = d3.scale.ordinal()
+        .domain(["chart0","chart1","chart2","chart3","chart4","chart5"])
+        .range([QUARTIL0,QUARTIL1,QUARTIL2,QUARTIL3,QUARTIL4,QUARTIL5]);
+    //Create SVG element
+    //d3.select("#id_indicadores-2 div").remove();
+    d3.select("#id_indicadores-2")
+            .append("grafico3")
+            .attr("class", "chartsvg");
+
+    var svg = d3.select("#id_indicadores-2 grafico3")
+        .append("svg")
+        .attr("width", width)
+        .attr("height", height);
+
+
+    //Set up groups
+    var arcs = svg.selectAll("g.arc")
+        .data(pie(dataset))
+        .enter()
+        .append("g")
+        .attr("class", "arc")
+        .attr("transform", "translate(" + outerRadius + "," + outerRadius + ")");
+
+    //Draw arc paths
+    arcs.append("path")
+        .attr("fill", function(d, i) {return color(i);})
+        .attr("d", arc);
+
+    //Labels
+    arcs.append("text")
+        .attr("transform", function(d) {
+            return "translate(" + arc.centroid(d) + ")";
+        })
+        .attr("text-anchor", "middle")
+        .text(function(d) {return d.value;});
+}
+
+
 
 function construir_grafico2 (quartil){
-    var width = 150;
-    var height = 150;
+    var width  = 100;
+    var height = 100;
     var dataset = [];
 
-    for (i in quartil){
-	dataset.push(quartil[i][0]);
-    }
-    document.getElementById('id_indicadores-2').innerHTML = '';
-    var display_text = '<strong><center>Índices agregados RAs</center></strong><br />' +
-	'<ul class="a"><li>Baixo</li></ul>' +
-	'<ul class="b"><li>Médio-Baixo</li></ul>' +
-	'<ul class="c"><li>Médio-Alto</li></ul>' +
-	'<ul class="d"><li>Alto</li></ul>';
-    document.getElementById('id_indicadores-2').innerHTML = display_text;
-
+    for (var i in quartil)dataset.push(quartil[i][0]);
     var outerRadius = width / 2;
     var innerRadius = 0;
     var arc = d3.svg.arc()
@@ -239,19 +318,24 @@ function construir_grafico2 (quartil){
 	.sort(null);
 
     var color = d3.scale.ordinal()
-	.domain(["chart0","chart1","chart2","chart3"])
-	.range([CHART0,CHART1,CHART2,CHART3]);
+	.domain(["chart0","chart1","chart2","chart3","chart4","chart5"])
+	.range([QUARTIL0,QUARTIL1,QUARTIL2,QUARTIL3,QUARTIL4,QUARTIL5]);
     
     //Create SVG element
     d3.select("#id_indicadores-2 div").remove();
     d3.select("#id_indicadores-2")
-            .append("div")
+            .append("meutexto")
+    	    .text("Quantidade RAs por Quartil")
+
+    d3.select("#id_indicadores-2")
+            .append("grafico2")
     	    .attr("class", "chartsvg");
 
-    var svg = d3.select("#id_indicadores-2 div")
-	.append("svg")
-	.attr("width", width)
-	.attr("height", height);
+    var svg = d3.select("#id_indicadores-2 grafico2")
+        .append("svg")
+        .attr("width", width)
+        .attr("height", height)
+
 
 
     //Set up groups
@@ -276,35 +360,11 @@ function construir_grafico2 (quartil){
 	.text(function(d) {return d.value;});
 }
 
-/*
 
-    d3.select("#indicadores-2 div").remove();
-    d3.select("#indicadores-2")
-        .append("div")
-    	    .attr("class", "chart")
-        .selectAll("div.linequartil")
-	.data(quartil)
-        .enter()
-        .append("div")
-        .attr("class","linequartil")
-    
-    d3.selectAll("div.linequartil")
-        .append("div")
-        .attr("class","label")
-        .text(function(d){return d[1];})
-
-    d3.selectAll("div.linequartil")
-        .append("div")
-        .attr("class", estilo_chart)
-        .style("width", function(d){return escala(d[0]);})
-        .text(function(d){return d[0];});
-}
-
-*/
 function construir_grafico1 (infos_RA){
     var escala=  d3.scale.linear()
     .domain([0, d3.max(infos_RA,function(d){return d[0];})])
-        .range(["1.5em","21em"]);
+        .range(["1.5em","22em"]);
 
     d3.select("#id_indicadores-1 div").remove();
     d3.select("#id_indicadores-1")
@@ -315,7 +375,7 @@ function construir_grafico1 (infos_RA){
         .enter()
         .append("div")
         .attr("class","line")
-    
+
     d3.selectAll("div.line")
         .append("div")
         .attr("class","label")

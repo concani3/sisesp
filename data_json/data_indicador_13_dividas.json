@@ -1,0 +1,48 @@
+{
+    "indicador":{
+        "titulo":"Utilização do 13º Salário pagar dívidas",
+        "fonte":"Dados primários oriundos pesquisa Codeplan-2011",
+        "ano":2011,
+        "unidade":"% da população que utiliza 13º salário para pagar dívidas",
+        "descricao":"6.8 - População que utiliza seu 13º salário para pagamento de dívidas",
+        "num_quartis":      4,
+        "quartis":  [
+                {"qi":0,"qs":60},
+                {"qi":60,"qs":70},
+                {"qi":70,"qs":80},
+                {"qi":80,"qs":100}
+        ]
+    },
+    "indices":  [
+                {"RA":"Águas Claras"      ,"romano":"XX"    ,"indice":67.19},
+                {"RA":"Brasília"          ,"romano":"I"     ,"indice":62.99},
+                {"RA":"Brazlândia"        ,"romano":"IV"    ,"indice":85.73},
+                {"RA":"Candangolândia"    ,"romano":"XIX"   ,"indice":82.87},
+                {"RA":"Ceilândia"         ,"romano":"IX"    ,"indice":74.84},
+                {"RA":"Cruzeiro"          ,"romano":"XI"    ,"indice":76.16},
+                {"RA":"Estrutural"        ,"romano":"XXV"   ,"indice":91.25},
+                {"RA":"Gama"              ,"romano":"II"    ,"indice":86.65},
+                {"RA":"Guará"             ,"romano":"X"     ,"indice":66.98},
+                {"RA":"Itapoã"            ,"romano":"XXVIII","indice":91.91},
+                {"RA":"Jd Botânico"       ,"romano":"XXVII" ,"indice":69.65},
+                {"RA":"Lago Norte"        ,"romano":"XVIII" ,"indice":77.02},
+                {"RA":"Lago Sul"          ,"romano":"XVI"   ,"indice":51.47},
+                {"RA":"Núcleo Bandeirante","romano":"VIII"  ,"indice":78.70},
+                {"RA":"ParkWay"           ,"romano":"XXIV"  ,"indice":54.45},
+                {"RA":"Paranoá"           ,"romano":"VII"   ,"indice":92.95},
+                {"RA":"Planaltina"        ,"romano":"VI"    ,"indice":96.18},
+                {"RA":"Recanto das Emas"  ,"romano":"XV"    ,"indice":82.41},
+                {"RA":"Riacho Fundo"      ,"romano":"XVII"  ,"indice":77.36},
+                {"RA":"Riacho Fundo II"   ,"romano":"XXI"   ,"indice":84.16},
+                {"RA":"Samambaia"         ,"romano":"XII"   ,"indice":83.40},
+                {"RA":"Santa Maria"       ,"romano":"XIII"  ,"indice":85.18},
+                {"RA":"São Sebastião"     ,"romano":"XIV"   ,"indice":89.55},
+                {"RA":"SIA"               ,"romano":"XXIX"  ,"indice":84.12},
+                {"RA":"Sobradinho"        ,"romano":"V"     ,"indice":81.50},
+                {"RA":"Sobradinho-II"     ,"romano":"XXVI"  ,"indice":86.76},
+                {"RA":"Sudoeste/Octogonal","romano":"XXII"  ,"indice":52.46},
+                {"RA":"Taguatinga"        ,"romano":"III"   ,"indice":79.60},
+                {"RA":"Varjão"            ,"romano":"XXIII" ,"indice":92.45},
+                {"RA":"Vicente Pires"     ,"romano":"XXX"   ,"indice":70.10}
+    ]
+}
