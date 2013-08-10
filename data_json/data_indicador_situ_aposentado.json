@@ -1,0 +1,48 @@
+{
+    "indicador":{
+        "titulo":"Indicador de Trabalhadores Aposentados",
+        "fonte":"Dados primários oriundos pesquisa Codeplan-2011",
+        "ano":2011,
+        "unidade":"% da população aposentado",
+        "descricao":"6.1 - População aposentada por RA",
+        "num_quartis":      4,
+        "quartis":  [
+                {"qi":0,"qs":5},
+                {"qi":5,"qs":10},
+                {"qi":10,"qs":15},
+                {"qi":15,"qs":100}
+        ]
+    },
+    "indices":  [
+                {"RA":"Águas Claras"      ,"romano":"XX"    ,"indice":9.51},
+                {"RA":"Brasília"          ,"romano":"I"     ,"indice":18.22},
+                {"RA":"Brazlândia"        ,"romano":"IV"    ,"indice":7.13},
+                {"RA":"Candangolândia"    ,"romano":"XIX"   ,"indice":10.06},
+                {"RA":"Ceilândia"         ,"romano":"IX"    ,"indice":7.44},
+                {"RA":"Cruzeiro"          ,"romano":"XI"    ,"indice":14.47},
+                {"RA":"Estrutural"        ,"romano":"XXV"   ,"indice":2.63},
+                {"RA":"Gama"              ,"romano":"II"    ,"indice":13.43},
+                {"RA":"Guará"             ,"romano":"X"     ,"indice":14.02},
+                {"RA":"Itapoã"            ,"romano":"XXVIII","indice":3.08},
+                {"RA":"Jd Botânico"       ,"romano":"XXVII" ,"indice":11.15},
+                {"RA":"Lago Norte"        ,"romano":"XVIII" ,"indice":17.57},
+                {"RA":"Lago Sul"          ,"romano":"XVI"   ,"indice":21.55},
+                {"RA":"Núcleo Bandeirante","romano":"VIII"  ,"indice":11.80},
+                {"RA":"ParkWay"           ,"romano":"XXIV"  ,"indice":15.45},
+                {"RA":"Paranoá"           ,"romano":"VII"   ,"indice":6.01},
+                {"RA":"Planaltina"        ,"romano":"VI"    ,"indice":7.86},
+                {"RA":"Recanto das Emas"  ,"romano":"XV"    ,"indice":4.51},
+                {"RA":"Riacho Fundo"      ,"romano":"XVII"  ,"indice":7.53},
+                {"RA":"Riacho Fundo II"   ,"romano":"XXI"   ,"indice":4.89},
+                {"RA":"Samambaia"         ,"romano":"XII"   ,"indice":6.49},
+                {"RA":"Santa Maria"       ,"romano":"XIII"  ,"indice":6.48},
+                {"RA":"São Sebastião"     ,"romano":"XIV"   ,"indice":3.34},
+                {"RA":"SIA"               ,"romano":"XXIX"  ,"indice":3.43},
+                {"RA":"Sobradinho"        ,"romano":"V"     ,"indice":12.91},
+                {"RA":"Sobradinho-II"     ,"romano":"XXVI"  ,"indice":8.61},
+                {"RA":"Sudoeste/Octogonal","romano":"XXII"  ,"indice":11.66},
+                {"RA":"Taguatinga"        ,"romano":"III"   ,"indice":14.09},
+                {"RA":"Varjão"            ,"romano":"XXIII" ,"indice":3.78},
+                {"RA":"Vicente Pires"     ,"romano":"XXX"   ,"indice":9.47}
+    ]
+}

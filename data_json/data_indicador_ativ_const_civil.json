@@ -1,0 +1,48 @@
+{
+    "indicador":{
+        "titulo":"Indicador de Trabalhadores no Ramo Construção Civil",
+        "fonte":"Dados primários oriundos pesquisa Codeplan-2011",
+        "ano":2011,
+        "unidade":"% dos trabalhadores ativos neste ramo",
+        "descricao":"6.2 - População desenvolvolvendo atividades profissionais no ramo da construção civil por RA",
+        "num_quartis":      4,
+        "quartis":  [
+                {"qi":0,"qs":3},
+                {"qi":3,"qs":6},
+                {"qi":6,"qs":13},
+                {"qi":13,"qs":100}
+        ]
+    },
+    "indices":  [
+                {"RA":"Águas Claras"      ,"romano":"XX"    ,"indice":3.20},
+                {"RA":"Brasília"          ,"romano":"I"     ,"indice":0.96},
+                {"RA":"Brazlândia"        ,"romano":"IV"    ,"indice":6.57},
+                {"RA":"Candangolândia"    ,"romano":"XIX"   ,"indice":2.79},
+                {"RA":"Ceilândia"         ,"romano":"IX"    ,"indice":6.04},
+                {"RA":"Cruzeiro"          ,"romano":"XI"    ,"indice":1.06},
+                {"RA":"Estrutural"        ,"romano":"XXV"   ,"indice":13.99},
+                {"RA":"Gama"              ,"romano":"II"    ,"indice":4.20},
+                {"RA":"Guará"             ,"romano":"X"     ,"indice":2.44},
+                {"RA":"Itapoã"            ,"romano":"XXVIII","indice":19.50},
+                {"RA":"Jd Botânico"       ,"romano":"XXVII" ,"indice":2.45},
+                {"RA":"Lago Norte"        ,"romano":"XVIII" ,"indice":2.38},
+                {"RA":"Lago Sul"          ,"romano":"XVI"   ,"indice":2.77},
+                {"RA":"Núcleo Bandeirante","romano":"VIII"  ,"indice":1.83},
+                {"RA":"ParkWay"           ,"romano":"XXIV"  ,"indice":2.37},
+                {"RA":"Paranoá"           ,"romano":"VII"   ,"indice":11.05},
+                {"RA":"Planaltina"        ,"romano":"VI"    ,"indice":10.45},
+                {"RA":"Recanto das Emas"  ,"romano":"XV"    ,"indice":6.98},
+                {"RA":"Riacho Fundo"      ,"romano":"XVII"  ,"indice":5.36},
+                {"RA":"Riacho Fundo II"   ,"romano":"XXI"   ,"indice":7.29},
+                {"RA":"Samambaia"         ,"romano":"XII"   ,"indice":5.86},
+                {"RA":"Santa Maria"       ,"romano":"XIII"  ,"indice":5.95},
+                {"RA":"São Sebastião"     ,"romano":"XIV"   ,"indice":11.82},
+                {"RA":"SIA"               ,"romano":"XXIX"  ,"indice":0.00},
+                {"RA":"Sobradinho"        ,"romano":"V"     ,"indice":2.47},
+                {"RA":"Sobradinho-II"     ,"romano":"XXVI"  ,"indice":7.11},
+                {"RA":"Sudoeste/Octogonal","romano":"XXII"  ,"indice":1.60},
+                {"RA":"Taguatinga"        ,"romano":"III"   ,"indice":2.15},
+                {"RA":"Varjão"            ,"romano":"XXIII" ,"indice":9.57},
+                {"RA":"Vicente Pires"     ,"romano":"XXX"   ,"indice":4.47}
+    ]
+}

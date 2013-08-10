@@ -1,5 +1,4 @@
 //
-//
 /*
 * --------------------------------------------------------------------------
 *
@@ -8,19 +7,25 @@
 * --------------------------------------------------------------------------
 */
 OpenLayers.Lang.setCode("pt-BR");
-// cores para os graficos de indicadores
-const CHART0 = "#2DE22D";
-const CHART1 = "#237D23";
-const CHART2 = "#FF7F0E";
-const CHART3 = "#D62728";
-const HOSTNAME = "HTTP://50.116.27.239:8080/geoserver/wms/";
+const HOSTNAME = "http://50.116.27.239";
+const HOSTNAME_WMS = HOSTNAME + ":8080/geoserver/wms/";
+const HOSTNAME_WFS = HOSTNAME + ":8080/geoserver/wfs/";
+
+var vsis_map, vsis_populacaoDF, vsis_percapitaDF;
 var vsis_mercator = new OpenLayers.Projection("EPSG:900913");
 var vsis_geographic = new OpenLayers.Projection("EPSG:4326");
-var map;
-var mgov_vector_format_json = new OpenLayers.Format.GeoJSON({
-                'externalProjection': new OpenLayers.Projection("vsis_mercator")
-});
-var vector_indicador = null;
+var vsis_layerindicadores = null, vsis_layerregioes = null;
+var vsis_featuresregioes;
+// cores para os graficos de indicadores
+const QUARTIL0 = "#FFF68F";
+const QUARTIL1 = "#EABE53";
+const QUARTIL2 = "#B1D4AF";
+const QUARTIL3 = "#7E9B26";
+const QUARTIL4 = "#E48164";
+const QUARTIL5 = "#E92922";
+
+var vsis_paletaregioes = [[0,"chart0"],[1,"chart1"],[2,"chart2"],[3,"chart3"],[4,"chart4"],[5,"chart5"]];
+var vsis_paletaregioes2 = [[0,QUARTIL0],[1,QUARTIL1],[2,QUARTIL2],[3,QUARTIL3],[4,QUARTIL4],[5,QUARTIL5]];
 //
 /*
 * --------------------------------------------------------------------------
@@ -30,7 +35,7 @@ var vector_indicador = null;
 * --------------------------------------------------------------------------
 */
 function init() {
-construir_graficoinicial();
+//construir_graficoinicial();
 /*
 * --------------------------------------------------------------------------
 * DEFINICAO DOS CONTROLES
@@ -44,61 +49,33 @@ construir_graficoinicial();
 // SphericalMercator - name given to the projection used by the commercial API providers, such as Google and OpenStreetMap.
 // It has been given the code EPSG:3857, though OpenLayers still uses the older, unofficial EPSG:900913.
 var vsis_navigation_control = new OpenLayers.Control.Navigation({});
-
-var mgov_vector_layer = new OpenLayers.Layer.Vector('Vetores Editáveis');
-var mgov_controls_array = [
+var vsis_layeredicao = new OpenLayers.Layer.Vector('Vetores Editáveis');
+var vsis_controlsarray = [
 	    vsis_navigation_control,
-	    new OpenLayers.Control.Attribution({div:document.getElementById('id_layers_info'),template:'Camadas Visíveis: ${layers}'}),
+	    new OpenLayers.Control.Attribution({div:document.getElementById('id_layers_info'),template:'Camadas Selecionadas: ${layers}'}),
 	    new OpenLayers.Control.PanZoomBar({}),
 	    new OpenLayers.Control.LayerSwitcher({title: 'Menu de Layers','roundedCorner':true}),
-//	    new OpenLayers.Control.Permalink(),
-	    new OpenLayers.Control.MousePosition({prefix:'Mouse em..... lon: ',separator:',    lat: ',numDigits:4,div:document.getElementById('id_mouse')}),
-	    new OpenLayers.Control.EditingToolbar(mgov_vector_layer),
+	    new OpenLayers.Control.Permalink(),
+	    new OpenLayers.Control.MousePosition({prefix:'Mouse=   lon: ',separator:',    lat: ',numDigits:4,div:document.getElementById('id_mouse')}),
+	    new OpenLayers.Control.EditingToolbar(vsis_layeredicao),
 	    new OpenLayers.Control.ScaleLine({}),
 	    new OpenLayers.Control.Scale(),
 	    new OpenLayers.Control.OverviewMap({maxRatio: 20,minRatio:6}),
 	    new OpenLayers.Control.KeyboardDefaults({})
 ];
-//
-/*
-* --------------------------------------------------------------------------
-*
-* DEFINIR O PROXY
-*
-* --------------------------------------------------------------------------
-*/
-// OpenLayers.ProxyHost = "/var/lib/tomcat6/webapps/ROOT/openlayers-cookbook/utils/proxy.php?url=";
 
 /*
 * --------------------------------------------------------------------------
-* CRIAR O MAPA
-* 1- Propriedades utilizadas:
-*   allOverlays: allow or not the map to function without "base layers" 
-*   controls: List of controls associated with the map.
-*   maxExtent: {<OpenLayers.Bounds>|Array}
-*   units: the map units.
-*   numZoomLevels: number of zoom levels for the map.
-*   projection: specify the default projection for layers added to this map.
-*   displayProjection: {OpenLayers.Projection} - requires proj4js support for 
-*     projections other than EPSG:4326 or EPSG:900913/EPSG:3857.
 *
-* 2- Metodos (funcoes) utilizadas:
-*   addLayers: add the layers to the MAP.
-*   zoomToMaxExtent: zoom to the full extent and recenter.
-*   setCenter: set the map center (and optionally, the zoom level).
-*   getCenter: {OpenLayers.LonLat}
+*                            CRIAR O MAPA
+*
 * ---------------------------------------------------------------------------
 */
-//Criar o "objeto" mapa
-// This particular projection is embedded into OpenLayers, so no need for proj4js
-// displayProjection - there are 3 controls which use displayProjection: ArgParser, MousePosition, Permalink. So when, for example,
-// MousePosition needs to display coordinates, it checks whether displayProjection is set, and if so converts them from the map 
-// projection to the displayProjection  (displayProjection too is always a projection object).
-map = new OpenLayers.Map('id_map',{
+vsis_map = new OpenLayers.Map('id_map',{
     allOverlays:false,
     PanMethod: OpenLayers.Easing.Quad.easeInOut,
-    panDuration:100,
-    controls: mgov_controls_array,
+    panDuration:90,
+    controls: vsis_controlsarray,
     maxExtent: new OpenLayers.Bounds(
     -5501341.250,
     -1961522.658,
@@ -112,193 +89,215 @@ map = new OpenLayers.Map('id_map',{
 });
 //
 /*
-* --------------------------------------------------------------------------
-* HISTORY CONTROL
-* --------------------------------------------------------------------------
-*/
-var panel = new OpenLayers.Control.Panel({div:document.getElementById('id_history')});
-var history = new OpenLayers.Control.NavigationHistory({
-    "previousOptions": {"title": "Anterior"},
-    "nextOptions": {"title": "Próximo"} 
-});
-panel.addControls([history.next,history.previous]);
-map.addControls([history,panel]);
-//
-/*
-* --------------------------------------------------------------------------
-* CONTROLE TRANSPARÊNCIA LAYER RAs-DF
-* --------------------------------------------------------------------------
-*/
-var transp = new OpenLayers.Control.Button({
-    displayClass: 'olControlTransparencia',
-    trigger: transparencia,
-    type:1,
-    title:'Transparência RAs'
-});
-var mgov_panel = new OpenLayers.Control.Panel({displayClass:'olControlPanel'});
-mgov_panel.addControls([transp]);
-map.addControl(mgov_panel);
-//
-/*
-* --------------------------------------------------------------------------
-* CONTROLE INFORMACOES  LITERAIS WMSGetFeatureInfo com POPUP
-* --------------------------------------------------------------------------
-*/
-var infos = new OpenLayers.Control.Button({
-    displayClass:'olControlButtonInfo',
-    type:2,
-    title:'Atributos Literais',
-    eventListeners:{
-        'activate':ativar_funcao_info,
-        'deactivate':desativar_funcao_info
-    },
-    type: OpenLayers.Control.TYPE_TOGGLE
-});
-mgov_panel.addControls([infos]); 
-function desativar_funcao_info(){
-    if (typeof var_featureInfo != 'undefined'){
-         var_featureInfo.destroy();
-    }
-};
-function ativar_funcao_info(){
-if (typeof var_featureInfo != 'undefined'){
-var_featureInfo.destroy();
-};
-var_featureInfo = new OpenLayers.Control.WMSGetFeatureInfo({
-    url: HOSTNAME,
-    title: 'features by clicking',
-    queryVisible: true,
-    eventListeners: {
-        "getfeatureinfo": function(event) {
-            var htmlString = '<p class="popup">Informações Literais:</p>';
-            var popup = new OpenLayers.Popup.FramedCloud(
-                'geoinformacao',
-                map.getLonLatFromPixel(event.xy),
-                null,
-                htmlString+event.text,
-                anchor=null,
-                closeButtonX=true
-            );
-            popup.autoSize = true;
-            popup.maxSize = new OpenLayers.Size(500,300);
-            map.addPopup(popup);
-        }
-    }
-})
-map.addControl(var_featureInfo);
-var_featureInfo.activate();
-}
-
-/*
 * -------------------------------------------------------------------------
-* DEFINIR OS LAYERS DO MAPA
+*
+*                              LAYERS
+*
 * --------------------------------------------------------------------------
 */
-//===== BASE MAPS
 //OpenStreetMap
-var wms_map_osm = new OpenLayers.Layer.OSM(
+var vsis_layerosm = new OpenLayers.Layer.OSM(
 "OpenStreetMap Layer"
 );
-/*
-//Google streets is the normal map type, so we don't need to pass in a type
-var mgov_google_streets = new OpenLayers.Layer.Google(
+//
+//Google streets
+var vsis_layerstreets = new OpenLayers.Layer.Google(
 "Google Streets Layer",{attribution:"Google Streets"}
 );
-//Camada do "tipo" Google satellite
-var mgov_google_satellite = new OpenLayers.Layer.Google(
+//Google satellite
+var vsis_layersatellite = new OpenLayers.Layer.Google(
 "Google Satellite Layer",
 {type: google.maps.MapTypeId.SATELLITE,attribution:"Google Satellite"}
 );
-*/
-//
-/*
-* --------------------------------------------------------------------------
-* DEFINIR OS "OVERLAYS MAPS"
-* 1- Parâmetros (server side):
-*   layers: Layers names required from server
-* 2- Propriedades/Opções (client side):
-*   visibility: the layer should be displayed in the map.
-*   opacity: the layer's opacity.
-*   isBaseLayer: whether or not the layer is a base layer.
-*   displayInLayerSwitcher:  display the layer's name in the layer switcher.
-* --------------------------------------------------------------------------
-*/
-//
-//WMS Layer: Zonas Censitárias do DF (pelo IBGE)
-//var wms_layer_cen = new OpenLayers.Layer.WMS(
-// 'DF:Zonas Censitarias',
-// 'http://192.168.1.102:8085/geoserver/wms/',
-//{layers: 'cdes:53see250gc_sir'},{attribution:'Zonas Censitárias',visibility: false, isBaseLayer:false,opacity:.3,displayInLayerSwitcher:true}
-//);
-//
-//WMS Layer: RIDE-DF
-//var wms_layer_ride_df = new OpenLayers.Layer.WMS(
-//'DF:Ride',
-//HOSTNAME,
-//{layers: 'cdes:ride_df', transparent:true},{attribution:'RIDE-DF',visibility: false, isBaseLayer:false,opacity:.5,displayInLayerSwitcher:true}
-//);
-//
-//var wms_layer_municipios_ride = new OpenLayers.Layer.WMS(
-//'DF:Mun_Ride',
-//HOSTNAME,
-//{layers: 'cdes:municipios_ride', transparent:true},{attribution:'MUN_RIDE-DF',visibility: false, isBaseLayer:false,opacity:1,displayInLayerSwitcher:true}
-//);
-
-var wms_layer_ride_group = new OpenLayers.Layer.WMS(
+//RIDE
+var vsis_layerridegroup = new OpenLayers.Layer.WMS(
 'Ride-DF',
-HOSTNAME,
+HOSTNAME_WMS,
 {layers: 'cdes:ride_group', transparent:true},{attribution:'RIDE-DF',visibility: false, isBaseLayer:false,opacity:.5,displayInLayerSwitcher:true}
 );
-
-//WMS LAYER: Poligono do GDF
-wms_layer_pdad_pol = new OpenLayers.Layer.WMS(
+//Poligono das RAs
+var vsis_layerRA = new OpenLayers.Layer.WMS(
 'DF:RAs',
-HOSTNAME,
+HOSTNAME_WMS,
 {layers: 'cdes:ra31_df',transparent:true},{attribution:'RA-Limites',visibility: false, isBaseLayer:false,opacity:1,displayInLayerSwitcher:true}
 );
-
 //WMS LAYER: SETOR
-wms_layer_setor = new OpenLayers.Layer.WMS(
+var vsis_layersetor = new OpenLayers.Layer.WMS(
 'DF:Setor',
-HOSTNAME,
-{layers: 'cdes:df_setor',transparent:true},{minScale:220000,attribution:'RA-Limites',visibility: false, isBaseLayer:false,opacity:1,displayInLayerSwitcher:true}
+HOSTNAME_WMS,
+{layers: 'cdes:df_setor',transparent:true},{minScale:220000,attribution:'DF-Setores',visibility: false, isBaseLayer:false,opacity:1,displayInLayerSwitcher:true}
 );
-
 //WMS LAYER: QUADRAS
-wms_layer_quadras = new OpenLayers.Layer.WMS(
+var vsis_layerquadras = new OpenLayers.Layer.WMS(
 'DF:Quadra',
-HOSTNAME,
-{layers: 'cdes:df_quadra',transparent:true},{minScale:55000,attribution:'RA-Limites',visibility: false, isBaseLayer:false,opacity:.6,displayInLayerSwitcher:true}
+HOSTNAME_WMS,
+{layers: 'cdes:df_quadra',transparent:true},{minScale:55000,attribution:'DF-Quadras',visibility: false, isBaseLayer:false,opacity:.6,displayInLayerSwitcher:true}
 );
-
 //WMS LAYER: CONJUNTO
-wms_layer_conjunto = new OpenLayers.Layer.WMS(
+var vsis_layerconjunto = new OpenLayers.Layer.WMS(
 'DF:Conjunto',
-HOSTNAME,
-{layers: 'cdes:df_conjunto',transparent:true},{minScale:15000,attribution:'RA-Limites',visibility: false, isBaseLayer:false,opacity:.6,displayInLayerSwitcher:true}
+HOSTNAME_WMS,
+{layers: 'cdes:df_conjunto',transparent:true},{minScale:15000,attribution:'DF-Conjuntos',visibility: false, isBaseLayer:false,opacity:.6,displayInLayerSwitcher:true}
 );
-
 //WMS LAYER: LOTE
-wms_layer_lote = new OpenLayers.Layer.WMS(
+var vsis_layerlote = new OpenLayers.Layer.WMS(
 'DF:Lote',
-HOSTNAME,
-{layers: 'cdes:df_lote',transparent:true},{minScale:10000,attribution:'RA-Limites',visibility: false, isBaseLayer:false,opacity:.7,displayInLayerSwitcher:true}
+HOSTNAME_WMS,
+{layers: 'cdes:df_lote',transparent:true},{minScale:10000,attribution:'DF-Lotes',visibility: false, isBaseLayer:false,opacity:.7,displayInLayerSwitcher:true}
 );
-//
+vsis_map.addLayer(vsis_layeredicao);
+vsis_map.addLayers([vsis_layerosm, vsis_layerstreets,vsis_layersatellite,vsis_layerridegroup, vsis_layerRA, vsis_layersetor, vsis_layerquadras, vsis_layerconjunto, vsis_layerlote]);
+// Deixar o centro do mapa no Distrito Federal
+vsis_map.setCenter(new OpenLayers.LonLat(-5330000,-1780000),10);
+if(!vsis_map.getCenter()){vsis_map.zoomToMaxExtent()};
 //
 /*
 * --------------------------------------------------------------------------
 *
-* ADICIONAR OS BASE MAPS, OVERLAYS MAPS E LAYER DE EDICAO VETORIAL AO MAPA
-*	
+*                               HISTORY CONTROL
+*
 * --------------------------------------------------------------------------
 */
-map.addLayer(mgov_vector_layer);
-map.addLayers([wms_map_osm, wms_layer_ride_group, wms_layer_pdad_pol, wms_layer_setor, wms_layer_quadras, wms_layer_conjunto, wms_layer_lote]);
-// Deixar o centro do mapa no Distrito Federal
-map.setCenter(new OpenLayers.LonLat(-5330000,-1780000),10);
-if(!map.getCenter()){map.zoomToMaxExtent()};
+var vsis_panel = new OpenLayers.Control.Panel({div:document.getElementById('id_history')});
+var vsis_history = new OpenLayers.Control.NavigationHistory({
+    "previousOptions": {"title": "Anterior"},
+    "nextOptions":     {"title": "Próximo"} 
+});
+vsis_panel.addControls([vsis_history.next,vsis_history.previous]);
+vsis_map.addControls([vsis_history,vsis_panel]);
+//
+/*
+* --------------------------------------------------------------------------
+*
+*                     CONTROLE TRANSPARÊNCIA LAYER RAs-DF
+*
+* --------------------------------------------------------------------------
+*/
+var vsis_controltransparencia = new OpenLayers.Control.Button({
+    displayClass: 'olControlTransparencia',
+    trigger: fsis_transparencia,
+    type:1,
+    title:'Transparência RAs'
+});
+var vsis_paineltransparencia = new OpenLayers.Control.Panel({displayClass:'olControlPanel'});
+vsis_paineltransparencia.addControls([vsis_controltransparencia]);
+vsis_map.addControl(vsis_paineltransparencia);
+//
+/*
+* --------------------------------------------------------------------------
+*
+*                       INFORMACOES  LITERAIS (POPUP)
+*
+* --------------------------------------------------------------------------
+*/
+var vsis_controlpopup = new OpenLayers.Control.Button({
+    displayClass:'olControlButtonInfo',
+//    type:2,
+    title:'Atributos Literais',
+    eventListeners:{
+        'activate':fsis_ativarinfo,
+        'deactivate':fsis_desativarinfo
+    },
+    type: OpenLayers.Control.TYPE_TOGGLE
+});
+vsis_paineltransparencia.addControls([vsis_controlpopup]); 
+function fsis_desativarinfo(){
+    if (typeof var_featureInfo != 'undefined'){var_featureInfo.destroy();}
+};
+function fsis_ativarinfo(){
+    if (typeof var_featureInfo != 'undefined'){var_featureInfo.destroy();};
+    var_featureInfo = new OpenLayers.Control.WMSGetFeatureInfo({
+	url: HOSTNAME_WMS,
+	title: 'features by clicking',
+	queryVisible: true,
+	eventListeners: {
+    	    "getfeatureinfo": function(event) {
+        	var htmlString = '<p class="popup">Informações Literais:</p>';
+        	var popup = new OpenLayers.Popup.FramedCloud(
+            	    'geoinformacao',
+            	    vsis_map.getLonLatFromPixel(event.xy),
+            	    null,
+            	    htmlString+event.text,
+            	    anchor=null,
+            	    closeButtonX=true
+        	);
+        	popup.autoSize = true;
+        	popup.maxSize = new OpenLayers.Size(500,300);
+        	vsis_map.addPopup(popup);
+    	    }
+	}
+    });
+    vsis_map.addControl(var_featureInfo);
+    var_featureInfo.activate();
 }
+//
+/*
+* --------------------------------------------------------------------------
+*
+*           INFORMAÇÃO DA POPULAÇÃO DO DF POR REGIÃO ADMINISTRATIVA
+*
+* --------------------------------------------------------------------------
+*/
+    var vsis_protocol2 = new OpenLayers.Protocol.HTTP({
+                    url:'data_json/data_indicador_populacao.json',
+                    format: new OpenLayers.Format.JSON({})
+    });
+/*
+    vsis_layerindicadores = new OpenLayers.Layer.Vector('Indicadores',{
+                    protocol: vsis_protocol1,
+                    strategies:[new OpenLayers.Strategy.Fixed()],
+                    visibility:true,isBaseLayer:false,displayInLayerSwitcher:true
+    });
+*/
+    vsis_populacaoDF = vsis_protocol2.read({callback:_CallBack3});
+    function _CallBack3(){
+       vsis_protocol2 = new OpenLayers.Protocol.HTTP({
+                    url:'data_json/data_indicador_renda_percapita.json',
+                    format: new OpenLayers.Format.JSON({})
+        });
+        vsis_percapitaDF = vsis_protocol2.read({callback:_CallBack4});
+        function  _CallBack4(){
+            //console.log(vsis_percapitaDF);
+        }
+    }
+//
+/*
+* --------------------------------------------------------------------------
+*
+*     MAPA VETORIAL DAS RAs PARA ESTILIZAÇÃO DOS INDICADORES
+*
+* --------------------------------------------------------------------------
+*/
+var vsis_protocolo = new OpenLayers.Protocol.WFS({
+            version: "1.1.0",
+            url: HOSTNAME_WFS,
+            featureType: "ra31_df",
+            featureNS: HOSTNAME + "/catalogcdes",
+            srsName: "EPSG:900913",
+});
+vsis_featuresregioes = vsis_protocolo.read({
+   callback:_CallBack
+});
+function _CallBack (resp) {
+        try{
+        if (resp.features == null) throw "OooopS!\nErro no carregamento WFS";
+        if (resp.error != null) throw "OooopS!\nErro no carregamento WFS";}
+        catch(err){
+            window.alert("Erro: " + err + ".");
+            return false;
+        }
+    var vsis_styleregioes = new OpenLayers.Style({
+        'fillColor':'${ra_prefifo}',
+        'strokeColor':'#000000',
+        'fillOpacity':.85
+    });
+    vsis_layerregioes = new OpenLayers.Layer.Vector("layer Indicadores",{
+        styleMap: new OpenLayers.StyleMap(vsis_styleregioes)
+    });
+    vsis_map.addLayer(vsis_layerregioes);
+};
+
+
 //
 /*
 * --------------------------------------------------------------------------
@@ -307,127 +306,151 @@ if(!map.getCenter()){map.zoomToMaxExtent()};
 *
 * --------------------------------------------------------------------------
 */
-function transparencia(){
-            if(wms_layer_pdad_pol.opacity === 0){
-                wms_layer_pdad_pol.setOpacity(.3);
+function fsis_transparencia(){
+            if(vsis_layerRA.opacity === 0){
+                vsis_layerRA.setOpacity(.3);
             }
-            else if (wms_layer_pdad_pol.opacity === .3){
-                wms_layer_pdad_pol.setOpacity(.5);
+            else if (vsis_layerRA.opacity === .3){
+                vsis_layerRA.setOpacity(.5);
             }
-            else if (wms_layer_pdad_pol.opacity === .5){
-                wms_layer_pdad_pol.setOpacity(.7);
+            else if (vsis_layerRA.opacity === .5){
+                vsis_layerRA.setOpacity(.7);
             }
-            else if (wms_layer_pdad_pol.opacity === .7){
-                wms_layer_pdad_pol.setOpacity(1);
+            else if (vsis_layerRA.opacity === .7){
+                vsis_layerRA.setOpacity(1);
             }
             else {
-                wms_layer_pdad_pol.setOpacity(0);
+                vsis_layerRA.setOpacity(0);
             }
 }
-
+}  // Fim função init()
+//
+/*
+* --------------------------------------------------------------------------
+*
+* FUNCAO PARA PLOTAGEM DE GRÁFICOS DE INDICADORES DAS RAs E MAPA ESTILIZADO
+*
+* --------------------------------------------------------------------------
+*/
 function fsis_indicadores(identf){
-var vsis_arrayindicadores = {"escolaridade":0,"bandalarga":1,"cor":2,"bancaria":3,"renda":4};
-var vsis_arrayindicadores2 = [
-                          ["ESCOLARIDADE","data_indicador_escolaridade.json"],
-                          ["BANDA LARGA","data_indicador_bandalarga.json"],
-                          ["TEZ DA PELE","data_indicador_cor.json"],
-                          ["EXCLUSÃO BANCÁRIA","data_indicador_bancaria.json"],
-                          ["RENDA","data_indicador_renda.json"]
-];
-var vsis_arraysymbolizers = {
-   '0':{'fillColor':CHART0,'fillOpacity':1,'strokeColor':'#000000','strokeWidth':2,'pointRadius':10,'label':'${indice}','cursor':'pointer','graphicName':'square'},
-   '1':{'fillColor':CHART1,'fillOpacity':1,'strokeColor':'#000000','strokeWidth':2,'pointRadius':15,'label':'${indice}','cursor':'pointer','graphicName':'triangle','labelYOffset':-8},
-   '2':{'fillColor':CHART2,'fillOpacity':1,'strokeColor':'#000000','strokeWidth':3,'pointRadius':20,'label':'${indice}','cursor':'pointer','graphicName':'circle'},
-   '3':{'fillColor':CHART3,'fillOpacity':1,'strokeColor':'#000000','strokeWidth':3,'pointRadius':28,'label':'${indice}','cursor':'pointer','graphicName':'star','labelYOffset':-4,'graphicTitle':'oi','fontOpacity':0}
-};
-// ---------------------------------------------------------------------------------------------------------------------------------------------------
-if (vector_indicador != null) {
-  vector_indicador.destroyFeatures();
-  map.removeLayer(vector_indicador);
-  protocol1.destroy();
-}
-else {
-  vector_style_map = new OpenLayers.StyleMap({});
-  vector_style_map.addUniqueValueRules('default','nivel',vsis_arraysymbolizers);
-}
-protocol1 = new OpenLayers.Protocol.HTTP({
-                    url:'data_json/'+vsis_arrayindicadores2[vsis_arrayindicadores[identf]][1],
-                    format: mgov_vector_format_json
-});
-vector_indicador = new OpenLayers.Layer.Vector('Indicadores',{
-                     protocol: protocol1,
-                     strategies:[new OpenLayers.Strategy.Fixed()],
-                     visibility: true,isBaseLayer:false,displayInLayerSwitcher:true
-});
-vector_indicador.styleMap = vector_style_map;
-map.addLayer(vector_indicador);
-// esperar o carregamento do arquivo
-vector_indicador.events.on({
-      "loadend": function(e){
-             console.log(e.object.features.length);
-      fsis_visualizar_indicadores(vsis_arrayindicadores2[vsis_arrayindicadores[identf]][0]);
-}});}
-function fsis_visualizar_indicadores(nome_indicador){
-// ----------------------------------------------------------------------------------------------------
-    var i=0, infos_RA=[], quartil=[[0,"Índice Baixo"],[0,"Índice Médio-Baixo"],[0,"Índice Médio-Alto"],[0,"Índice Alto"]];
-    console.log('-----  ' + vector_indicador.features[0].attributes.unidade);
-    for (var i = 0,len = (vector_indicador.features).length; i < len; i++){
-        infos_RA.push([vector_indicador.features[i].attributes.indice,vector_indicador.features[i].attributes.RA,
-    	    vector_indicador.features[i].attributes.nivel]);
-    	    // calculo dos quartis do indicador
-    	    switch (infos_RA[i][2]){
-    	            case 0:
-    	            	quartil[0][0]++;
-    	            	infos_RA[i][3]="chart0";
-    		        break;
-    	            case 1:
-    	            	quartil[1][0]++;
-    	            	infos_RA[i][3]="chart1";
-    	    		break;
-    	            case 2:
-    	            	quartil[2][0]++;
-    	            	infos_RA[i][3]="chart2";
-    	            	break;
-    	            case 3:
-    	            	quartil[3][0]++;
-    	            	infos_RA[i][3]="chart3";
-    	            	break;
-    	            default:
-    	            	console.log("Erro na identificacao dos quartis");
-    	                break;
-    	        }
+    var vsis_protocol1, vsis_indices;
+    vsis_protocol1 = new OpenLayers.Protocol.HTTP({
+                    url:'data_json/'+identf,
+                    format: new OpenLayers.Format.JSON({})
+    });
+    vsis_layerindicadores = new OpenLayers.Layer.Vector('Indicadores',{
+                    protocol: vsis_protocol1,
+                    strategies:[new OpenLayers.Strategy.Fixed()],
+                    visibility:true,isBaseLayer:false,displayInLayerSwitcher:true
+    });
+    vsis_indices = vsis_protocol1.read({callback: _callBack2});
+    function _callBack2 (vsis_indices) {
+        try{
+        if (vsis_indices.features == null) throw "OooopS!\nArquivo " + identf + " não encontrado";
+        if (vsis_indices.error != null) throw "OooopS!\nErro no carregamento do arquivo " + identf;
+        if (vsis_featuresregioes.features == null) throw "OooopS!\nGeometria das regiões com problema";}
+        catch(err){
+            window.alert("Erro: " + err + ".");
+            return false;
+        }
+        // Variáveis locais:
+        var vsis_limiarquartis = [], vsis_infosRA=[], vsis_RAsquartil=[], vsis_media, vsis_total=0, vsis_desvio, vsis_indicepercapita;
+        var vsis_classespaleta = ["a","b","c","d","e","f"];  /* sistema para até 6 quartis */
+        // Quartis:
+        //     - classificacao das RAs dentro dos limiares dos quartis;
+        //     - vsis_infosRA será composto por: [[indice,nome da RA, romano, quartil,style],[...],....];
+        for (var i = 0, len = (vsis_indices.features.indicador.quartis).length; i < len; i++){
+            // iniciação das variáveis de quartis.
+            vsis_limiarquartis.push([vsis_indices.features.indicador.quartis[i].qi,vsis_indices.features.indicador.quartis[i].qs]);
+            vsis_RAsquartil.push([0,"",0]);
+        }
+        for (var i = 0, len = ( vsis_indices.features.indices).length; i < len; i++){
+            for (var m = 0; m < vsis_percapitaDF.features.indices.length; m++){
+                // associação da renda percapita com a RA atual
+                if ( vsis_indices.features.indices[i].romano == vsis_percapitaDF.features.indices[m].romano ){
+                    vsis_indicepercapita = vsis_percapitaDF.features.indices[m].indice;
+                    break;
+                }
+            }
+            for (var j = 0; j < vsis_indices.features.indicador.num_quartis; j++) {
+                // identificação de cada RA em relação aos quartis.
+                if ( vsis_indices.features.indices[i].indice <= vsis_limiarquartis[j][1] ) {
+                    vsis_infosRA.push([vsis_indices.features.indices[i].indice, vsis_indices.features.indices[i].RA, vsis_indices.features.indices[i].romano,j,vsis_paletaregioes[j][1],vsis_indicepercapita]);
+                    vsis_RAsquartil[j][0]++;
+                    break;
+                }
+            }
+            for (var k = 0; k < vsis_populacaoDF.features.indices.length; k++){
+                if ( vsis_indices.features.indices[i].romano == vsis_populacaoDF.features.indices[k].romano ){
+                    vsis_RAsquartil[j][2] += vsis_populacaoDF.features.indices[k].indice;
+                    // console.log(j,vsis_indices.features.indices[i].romano," ",vsis_populacaoDF.features.indices[k].romano,vsis_populacaoDF.features.indices[k].indice);
+                    break;
+                }
+            }
+        }
+        //console.log(vsis_RAsquartil);
+        // Estatisticas e preparação da visualização:
+        //      - desvio padrão dos índices;
+        //      - classificar as RAs de acordo com o índice.
+        for (var i= 0;i < vsis_infosRA.length;i++) vsis_total += vsis_infosRA[i][0];
+        vsis_media = vsis_total/vsis_infosRA.length;
+        vsis_total = 0;
+        for (i = 0; i < vsis_infosRA.length; i++){
+            vsis_desvio = vsis_infosRA[i][0] - vsis_media;
+            vsis_total += vsis_desvio * vsis_desvio;
+        }
+        vsis_desvio = Math.sqrt(vsis_total/(vsis_infosRA.length));
+        vsis_infosRA.sort(function(a,b){return a[0]-b[0];});
+        // Cabeçalho textual da área de indicadores
+        //      - para gráficos de índices desagregados e agregados
+        // width="20" height="20"
+        const MENS1 = '<p class="indi_titulo1">' + vsis_indices.features.indicador.titulo.substr(0,52) + '</p><hr />';
+        const MENS2 = '<explicacao2><span class="indi_titulo2">Índices Desagregados:</span><br />* Medida: ' + 
+                    vsis_indices.features.indicador.unidade.substr(0,77) +'<br /> * Média do indicador: ' + vsis_media.toFixed(2) + 
+                    '<br /> * Desvio padrão do indicador: ' + vsis_desvio.toFixed(2) +
+                    '<br /><a target="_blank" href="http://www.codeplan.df.gov.br/">Fonte: PDAD-Codeplan </a></explicacao2><br />';
+        const MENS3 = '<explicacao2><span class="indi_titulo2">Índices Agregados:</span><br />* Descrição: '+ vsis_indices.features.indicador.descricao.substr(0,64) +
+                    '</explicacao2>';
 
-    };
-    // calculo do desvio padrao
-    var total = 0;
-    for (var i= 0;i < infos_RA.length;i++) total += infos_RA[i][0];
-    var media = total/infos_RA.length;
-    total = 0;
-    for (i = 0; i < infos_RA.length; i++){
-    var desvio = infos_RA[i][0] - media;
-    total += desvio * desvio;
+        document.getElementById('id_indicadores-titulo').innerHTML = '';
+        document.getElementById('id_indicadores-titulo').innerHTML = MENS1;
+        document.getElementById('id_indicadores-1').innerHTML = '';
+        document.getElementById('id_indicadores-1').innerHTML = MENS2;
+        document.getElementById('id_indicadores-2').innerHTML = '';
+        document.getElementById('id_indicadores-2').innerHTML = MENS3;
+        // plotar os gráficos e mostrar o mapa estilizado de acordo com os índices
+        //      - duas áreas de indicadores (informações agregadas e desagregadas) e uma área do mapa
+        fsis_estilizarregioes(vsis_infosRA);
+        construir_grafico1 (vsis_infosRA);
+        construir_grafico2 (vsis_RAsquartil);
+        construir_grafico3 (vsis_RAsquartil);
+        construir_grafico4 (vsis_infosRA);
     }
-    var desvio_pa = Math.sqrt(total/(infos_RA.length));
-    document.getElementById('id_indicadores-titulo').innerHTML = '';
-    var display_text = '<texto style="font-size:1.7em;"><strong><center>' + nome_indicador + '</center></strong></style><hr />';
-    document.getElementById('id_indicadores-titulo').innerHTML = display_text;
-    document.getElementById('id_indicadores-1').innerHTML = '';
-    
-    var display_text = '<texto style="font-size:1.2em;"><strong>Índices desagregados por RA</strong></style><br /><texto style="font-size:0.8em;"> * Medida: ' + 
-    vector_indicador.features[0].attributes.unidade +'<br /> * Média do indicador: ' + media.toFixed(2) + '<br /> * Desvio padrão do indicador: ' + desvio_pa.toFixed(2) + '<br /><a target="_blank" href="http://www.codeplan.df.gov.br/">Fonte: PDAD-Codeplan </a><br /></style><hr />';
-    document.getElementById('id_indicadores-1').innerHTML = display_text;
+} /* Fim função fsis_indicadores() */
+//
+/*
+* --------------------------------------------------------------------------
+*
+*           FUNCAO DE CONTROLE DAS MARCAS DE INDICADORES
+*
+* --------------------------------------------------------------------------
+*/
 
-    // classificar o array em ordem numérica
-    infos_RA.sort(function(a,b){
-	return a[0]-b[0];});
-    var estilo_chart;
-    estilo_chart = "chart0";
-    console.log(infos_RA);
-    console.log(quartil);
-    construir_grafico1 (infos_RA);
-    construir_grafico2 (quartil);
-// ----------------------------------------------------------------------------------------------------
 
+function fsis_estilizarregioes(vsis_infosRA){
+ for (var i=0; i < vsis_featuresregioes.features.length; i++){
+    for (var j=0; j < vsis_infosRA.length; j++){
+        if (vsis_featuresregioes.features[i].attributes.romano == vsis_infosRA[j][2]){
+            vsis_featuresregioes.features[i].attributes.ra_prefifo = vsis_paletaregioes2[vsis_infosRA[j][3]][1];
+            break;
+        }
+    }
+    if (j == vsis_infosRA.length){
+         console.log("Erro: não encontrado especificação da situação da RA para o indicador escolhido. RA = ",vsis_featuresregioes.features[i].attributes.romano);
+         vsis_featuresregioes.features[i].attributes.ra_prefifo = "#000"; /* Preto: para estilizar região do mapa referente à RA que não fora encontrada suas informações */
+    }
+ }
+ vsis_layerregioes.addFeatures(vsis_featuresregioes.features);
 }
 
 ddsmoothmenu.init({

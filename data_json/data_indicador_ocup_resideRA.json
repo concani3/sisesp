@@ -1,0 +1,48 @@
+{
+    "indicador":{
+        "titulo":"População Ocupada Trabalha-Reside Mesma RA",
+        "fonte":"Dados primários oriundos pesquisa Codeplan-2011",
+        "ano":2011,
+        "unidade":"% da população ocupada que trabalha e reside na própria RA",
+        "descricao":"6.6 - População ocupada que trabalha e reside na própria RA",
+        "num_quartis":      4,
+        "quartis":  [
+                {"qi":0,"qs":20},
+                {"qi":20,"qs":30},
+                {"qi":30,"qs":40},
+                {"qi":40,"qs":100}
+        ]
+    },
+    "indices":  [
+                {"RA":"Águas Claras"      ,"romano":"XX"    ,"indice":18.28},
+                {"RA":"Brasília"          ,"romano":"I"     ,"indice":91.49},
+                {"RA":"Brazlândia"        ,"romano":"IV"    ,"indice":45.55},
+                {"RA":"Candangolândia"    ,"romano":"XIX"   ,"indice":23.33},
+                {"RA":"Ceilândia"         ,"romano":"IX"    ,"indice":33.23},
+                {"RA":"Cruzeiro"          ,"romano":"XI"    ,"indice":17.21},
+                {"RA":"Estrutural"        ,"romano":"XXV"   ,"indice":33.93},
+                {"RA":"Gama"              ,"romano":"II"    ,"indice":40.96},
+                {"RA":"Guará"             ,"romano":"X"     ,"indice":25.41},
+                {"RA":"Itapoã"            ,"romano":"XXVIII","indice":20.41},
+                {"RA":"Jd Botânico"       ,"romano":"XXVII" ,"indice":10.14},
+                {"RA":"Lago Norte"        ,"romano":"XVIII" ,"indice":7.24},
+                {"RA":"Lago Sul"          ,"romano":"XVI"   ,"indice":16.88},
+                {"RA":"Núcleo Bandeirante","romano":"VIII"  ,"indice":30.13},
+                {"RA":"ParkWay"           ,"romano":"XXIV"  ,"indice":14.22},
+                {"RA":"Paranoá"           ,"romano":"VII"   ,"indice":30.40},
+                {"RA":"Planaltina"        ,"romano":"VI"    ,"indice":45.38},
+                {"RA":"Recanto das Emas"  ,"romano":"XV"    ,"indice":23.84},
+                {"RA":"Riacho Fundo"      ,"romano":"XVII"  ,"indice":26.18},
+                {"RA":"Riacho Fundo II"   ,"romano":"XXI"   ,"indice":17.15},
+                {"RA":"Samambaia"         ,"romano":"XII"   ,"indice":28.42},
+                {"RA":"Santa Maria"       ,"romano":"XIII"  ,"indice":26.34},
+                {"RA":"São Sebastião"     ,"romano":"XIV"   ,"indice":33.91},
+                {"RA":"SIA"               ,"romano":"XXIX"  ,"indice":58.50},
+                {"RA":"Sobradinho"        ,"romano":"V"     ,"indice":44.72},
+                {"RA":"Sobradinho-II"     ,"romano":"XXVI"  ,"indice":21.02},
+                {"RA":"Sudoeste/Octogonal","romano":"XXII"  ,"indice":7.54},
+                {"RA":"Taguatinga"        ,"romano":"III"   ,"indice":41.80},
+                {"RA":"Varjão"            ,"romano":"XXIII" ,"indice":29.09},
+                {"RA":"Vicente Pires"     ,"romano":"XXX"   ,"indice":13.73}
+            ]
+}

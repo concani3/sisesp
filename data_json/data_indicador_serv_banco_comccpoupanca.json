@@ -1,0 +1,49 @@
+
+{
+    "indicador":{
+        "titulo":"População Com Conta-Corrente Bancária ou de Poupança",
+        "fonte":"Dados primários oriundos pesquisa Codeplan-2011",
+        "ano":2011,
+        "unidade":"% da população com conta corrente ou poupança",
+        "descricao":"6.7 - População maior de 10 anos com conta-corrente bancária ou de poupança",
+        "num_quartis":      4,
+        "quartis":  [
+                {"qi":0,"qs":35},
+                {"qi":35,"qs":45},
+                {"qi":45,"qs":60},
+                {"qi":60,"qs":100}
+        ]
+    },
+    "indices":  [
+                {"RA":"Águas Claras"      ,"romano":"XX"    ,"indice":66.73},
+                {"RA":"Brasília"          ,"romano":"I"     ,"indice":76.31},
+                {"RA":"Brazlândia"        ,"romano":"IV"    ,"indice":42.20},
+                {"RA":"Candangolândia"    ,"romano":"XIX"   ,"indice":53.01},
+                {"RA":"Ceilândia"         ,"romano":"IX"    ,"indice":42.43},
+                {"RA":"Cruzeiro"          ,"romano":"XI"    ,"indice":69.59},
+                {"RA":"Estrutural"        ,"romano":"XXV"   ,"indice":29.52},
+                {"RA":"Gama"              ,"romano":"II"    ,"indice":50.36},
+                {"RA":"Guará"             ,"romano":"X"     ,"indice":65.99},
+                {"RA":"Itapoã"            ,"romano":"XXVIII","indice":31.66},
+                {"RA":"Jd Botânico"       ,"romano":"XXVII" ,"indice":73.55},
+                {"RA":"Lago Norte"        ,"romano":"XVIII" ,"indice":79.83},
+                {"RA":"Lago Sul"          ,"romano":"XVI"   ,"indice":78.10},
+                {"RA":"Núcleo Bandeirante","romano":"VIII"  ,"indice":61.89},
+                {"RA":"ParkWay"           ,"romano":"XXIV"  ,"indice":70.47},
+                {"RA":"Paranoá"           ,"romano":"VII"   ,"indice":37.88},
+                {"RA":"Planaltina"        ,"romano":"VI"    ,"indice":41.35},
+                {"RA":"Recanto das Emas"  ,"romano":"XV"    ,"indice":36.62},
+                {"RA":"Riacho Fundo"      ,"romano":"XVII"  ,"indice":49.67},
+                {"RA":"Riacho Fundo II"   ,"romano":"XXI"   ,"indice":45.12},
+                {"RA":"Samambaia"         ,"romano":"XII"   ,"indice":39.80},
+                {"RA":"Santa Maria"       ,"romano":"XIII"  ,"indice":44.18},
+                {"RA":"São Sebastião"     ,"romano":"XIV"   ,"indice":38.49},
+                {"RA":"SIA"               ,"romano":"XXIX"  ,"indice":59.70},
+                {"RA":"Sobradinho"        ,"romano":"V"     ,"indice":60.53},
+                {"RA":"Sobradinho-II"     ,"romano":"XXVI"  ,"indice":53.20},
+                {"RA":"Sudoeste/Octogonal","romano":"XXII"  ,"indice":81.48},
+                {"RA":"Taguatinga"        ,"romano":"III"   ,"indice":57.10},
+                {"RA":"Varjão"            ,"romano":"XXIII" ,"indice":34.20},
+                {"RA":"Vicente Pires"     ,"romano":"XXX"   ,"indice":62.01}
+    ]
+}

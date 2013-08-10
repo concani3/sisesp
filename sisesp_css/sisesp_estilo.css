@@ -1,52 +1,148 @@
+/* */
+/* ######### ------------------------>>> CORES <<<-------------------------######### */
+/*
+  # Body background:            laranja                 #FF6600
+  # Div Principal background:   laranja Orange          #FFA500
+  # Border div principal:       laranja Orange          #FFA500
+  # Div Titulo background:      branco gelo             #F1EEE8
+  # Border div Indicadores      laranja Orange          #FFF029
+  # Menu background             azul                    #1F77B4
+  # Menu Top Level              preto                   #2D2B2B
+  # menu hover link             vermelho                #D62728
+  #
+  # Quartil-0:                                          #FFF68F
+  # Quartil-1:                                          #EABE53
+  # Quartil-2:                                          #B1D4AF
+  # Quartil-3:                                          #7E9B26
+  # Quartil-4:                                          #E48164
+  # Quartil-5:                                          #E92922
+  # Texto Quartil:                                      #4F4F4F
+*/
+/* ######### ------------>>> FOLHAS DE ESTILO COMPLEMENTARES <<<------------######### */
+/* a instrução "import" a seguir deve ser a primeira instrução deste arquivo de CSS */
+    @import url(sisesp_OpenLayers.css);
+
+/* ######### -------------------->>> Initial Settings <<<---------------------######### */
+/* Eliminar diferenças de comportamento entre navegadores devido aos estilos iniciais
+adotados por cada solução.
+*/
+/* Neutralizar styling: elementos para limpar inteiramente */
+html, body, form, fieldset {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif, Verdana, Arial, Helvetica ;
+}
+
+/* Neutralizar styling: elementos com margem vertical */
+h1,h2,h3, h4, h5, h6, p, pre,
+blockquote, ul, ol, dl, address {
+        margin: 0.4em 0;
+        padding: 0;
+}
+
+/* Aplicar margem esquerda: apenas para estes poucos elementos */
+dd, blockquote {
+        margin-left: 1em;
+}
+
+/* Miscelânea conveniente */
+form label {
+        cursor: pointer;
+}
+fieldset {
+        border: none;
+}
+input, select, textarea {
+        font-size: 100%;
+        font-family: inherit;
+}
+
+html { font-size:100.01%; }
+/* ######### ------------------------>>> GLOBAL <<<-------------------------######### */
 body {
     background-color:#ff6600;
-    font-size: 62.5%;
+/*    font-size: 62.5%; */
+    font-size: 10px;
 }
 
 #id_principal {
-    width:95%;
+    width:1400px;
     border-style:solid;
     border-width:0.2em;
     border-color:#ffa500;
     background-color:#ffa500;
     padding:0;
-    margin:2%;
+    margin:auto;
+    margin-top:20px;
 }
 
 #id_titulo {
     width:100%;
-    height:1.8em;
+    height:2.2em;
     padding-top:0.05em;
     border-style:solid;
     border-color:#ffa500;
     border-width:0.02em;
     background-color:#F1EEE8;
     margin:0 0 0 0;
-    font-size:4em;
+    font-size:3em;
     font-weight:bold;
     letter-spacing:.2em;
+    text-shadow:0 0 0.2em #8B8484, 0 0 0.2em #8B8484, 0 0 0.2em #8B8484;
 }
 
 #id_titulo img {
-    vertical-align:text-top;
+    vertical-align:middle;
 }
-
+#id_indicadores, #id_map {
+    height:580px;
+    border-style:solid;
+    border-color:#fff029;
+    border-width:thin;
+    padding:0;
+}
 #id_indicadores {
     background-color:#ffffff;
     background-image:url('img/gradient2.png');
     background-repeat:repeat-x;
     float:left;
-    width:34.6%;
-    height: 510px;
+    width:34.5%;
     margin:0 0 0 0.05em;
+}
+#id_map {
+    background-color:#000000;
+    float: right;
+    width:65%;
+    margin:0 0 0 0;
+}
+#id_mapinfo{
+    clear: both;
+    width:100%;
+    height:1.4em;
+    padding-top:0.3em;
+    background-color:#ffa500;
+    text-align:center;
+    font-size:1em;
+    margin:0 0 0 0;
     border-style:solid;
-    border-color:#fff029;
     border-width:thin;
+    border-color:#fff029;
+}
+#id_mouse, #id_layers_info {
+    margin:0;
+    width:49.6%;
+}
+#id_layers_info{
+    float:left;
+}
+#id_mouse{
+    float:right;
 }
 
+/* ######### ------------------------>>> INDICADORES <<<-------------------------######### */
 #id_indicadores-1, #id_indicadores-2{
     margin:0;
-    width:50%;
+    width:49.6%;
 }
 
 #id_indicadores-1{
@@ -55,47 +151,40 @@ body {
 
 #id_indicadores-2{
     float:right;
-    font-size:1.2em;
 }
-#id_map {
-    background-color:#000000; 
-    float: right;
-    height:510px;
-    width:65%;
-    margin:0 0 0 0;
-    border-style:solid;
-    border-color:#fff029;
-    border-width:thin;
-    padding:0px;
-}
-
-#id_mouse {
-    clear: both;
-    width:100%;
-    height:15px;
-    padding-top:5px;
-    background-color:#ffa500;
+#id_indicadores-titulo .indi_titulo1{
+    font-size:1.5em;
     text-align:center;
-    font-size:1em;
-    margin:0 0 0 0;
-    border-style:solid;
-    border-width:thin;
-    border-color:#fff029;
+    font-weight:bold;
+    color:black;
+}
+#id_indicadores .indi_titulo2{
+    font-size:1.3em;
+    text-align:left;
+    font:normal 1.2em;
+    color:black;
 }
 
-#id_layers_info {
-    width:100%;
-    height:15px;
-    padding-top:5px;
-    background-color:#ffa500;
-    text-align:center;
-    font-size:1em;
-    margin:0 0 0 0;
-    border-style:solid;
-    border-width:thin;
-    border-color:#fff029;
+#id_indicadores-2 explicacao2, #id_indicadores-1 explicacao2{
+    display: block;
+    position: relative;
+    top:0;
+    left: 0;
+    width: 96%;
+    height:8em;
+    padding: 0.2em;
+    margin-left:0;
+    font: normal 1.2em;
+    color:#000; /*  cor do texto */
+    background-image:url('img/gradient2.png');
+    text-align:left;
+    box-shadow: .6em .6em .6em #9f9696; /* box-shadow color generally should be a little darker than that for the NON CSS3 capable browsers background-color #aaa */
+    /* -moz-box-shadow: .6em .6em .6em #9f9696; */
+    -webkit-box-shadow: .6em .6em .6em #9f9696;
 }
 
+
+/* ######### ------------------------>>> GRÁFICOS <<<-------------------------######### */
 .line{
     margin-bottom:0.1em;
     margin-left: 0.5em;
@@ -107,175 +196,258 @@ body {
     height:1.2em;
     font-size: 1em;
 }
-
-.chart{
-    font-family:sans-serif;
-}
 .chartsvg{
-    font-family:sans-serif;
     margin-left: 6em;
+    margin-top:2em;
 }
+#id_indicadores-2 meutexto{
+    display: block;
+    position: relative;
+    top:1em;
+    left:0;
+    width: 80%;
+    height:1em;
+    padding: .5em;
+    border:1em;
+    margin:auto;
+    margin-bottom:2em;
+    color:black; /*  cor do texto */
+    background-color:#E0E7EF;
+    text-align:center;
+    box-shadow: .6em .6em .6em #9f9696; /* box-shadow color generally should be a little darker than that for the NON CSS3 capable browsers background-color #aaa */
+    /* -moz-box-shadow: .6em .6em .6em #9f9696; */
+    -webkit-box-shadow: .6em .6em .6em #9f9696;
 
+}
+#scatterplot{
+    display: block;
+    position: relative;
+    top:.7em;
+    left:0;
+    width: 90%;
+    height:9em;
+    padding:0;
+    border:0;
+    margin:auto;
+    background-color:#5E3A3A;
+
+}
 .label {
     float:right;
     text-align:left;
     margin-left: 6em;
     font-size: 0.8em;
 }
-
 .chart0, .chart1, .chart2, .chart3, .chart4  {
     text-align: left;
-    color: white;
+    color: #4F4F4F;
     font-size: 0.8em;
 }
 .chart0  {
-/*  cor CHART0  */
-    background-color: #2DE22D ;
+    /*  Cor Quartil-0  */
+    background-color: #FFF68F;
 }
 .chart1 {
-/*  cor CHART1  */
-    background-color: #237D23;
+    /*  Cor Quartil-1  */
+    background-color: #EABE53;
 }
 .chart2 {
-/*  cor CHART2  */
-    background-color: #ff7f0e;
+    /*  Cor Quartil-2  */
+    background-color: #B1D4AF;
 }
 .chart3 {
-/*  cor CHART3  */
-    background-color: #d62728;
+    /*  Cor Quartil-3  */
+    background-color: #7E9B26;
 }
 .chart4 {
-    background-color: #271717;
+    /*  Cor Quartil-4  */
+    background-color: #E48164;
+}
+.chart5 {
+    /*  Cor Quartil-5  */
+    background-color: #E92922;
+}
+ul.a,ul.b,ul.c,ul.d,ul.e,ul.f{
+    list-style-type:square;
+    padding:0 0 0 1em;
+    margin:0 0 0 2em;
+    text-indent: 0.5em;
 }
 
+ul.a li {
+    /*  Cor Quartil-0  */
+    color:#FFF68F;
+}
+ul.b li { 
+    /*  Cor Quartil-1  */
+    color:#EABE53;
+}
+ul.c li {
+    /*  Cor Quartil-2  */
+    color:#B1D4AF;
+}
+ul.d li {
+    /*  Cor Quartil-3  */
+    color:#7E9B26;
+}
+ul.e li {
+    /*  Cor Quartil-4  */
+    color:#E48164;
+}
+ul.f li {
+    /*  Cor Quartil-5  */
+    color:#E92922;
+}
+/* ######### ------------------------>>> POPUP <<<-------------------------######### */
 .popup {
     text-align:center;
     font-size:1.3em;
     font-weight:bold;
     letter-spacing:.2em;
 }
-/* ----- inicio menu indicadores */
+
+/* ######### ------------------------>>> MENU <<<-------------------------######### */
+
 .ddsmoothmenu{
-font: bold 0.8em Verdana;
-background: #1f77b4; /*background of menu bar (default state #414141)*/
-width: 100%;
+    font: normal 1em;
+    background: #3494D5; /* #1f77b4; background do menu bar */
+    width: 100%;
 }
 
 .ddsmoothmenu ul{
-z-index:100;
-margin: 0;
-padding: 0;
-list-style-type: none;
+    z-index:100;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
 }
 
 /*Top level list items*/
 .ddsmoothmenu ul li{
-position: relative;
-display: inline;
-float: left;
+    position: relative;
+    display: inline;
+    float: left;
 }
 
 /*Top level menu link items style*/
 .ddsmoothmenu ul li a{
-display: block;
-background: #1f77b4; /*background of menu items (default state #414141)*/
-color: white;
-padding: 8px 10px;
-border-right: 0.1em solid #778;
-color: #2d2b2b;  /* default: #2d2b2b */
-text-decoration: none;
+    display: block;
+    background: #3494D5;/* background of menu items */
+    color: white;
+    padding: 0.6em 0.8em;
+    border-right: 0.1em solid #778;
+    color: #2d2b2b; 
+    text-decoration: none;
 }
 
 * html .ddsmoothmenu ul li a{ /*IE6 hack to get sub menu links to behave correctly*/
-display: inline-block;
+    display: inline-block;
 }
 
 .ddsmoothmenu ul li a:link, .ddsmoothmenu ul li a:visited{
-color: white;
+    color: white;
 }
 
 .ddsmoothmenu ul li a.selected { /*CSS class that's dynamically added to the currently active menu items' LI A element*/
-background: black !important; 
-color: white;
+    background: black !important; 
+    color: white;
 }
 
 .ddsmoothmenu ul li a:hover{
-background: #d62728; /*background of menu items during onmouseover (hover state) default: black */
-color: white;
+    background: #d62728; /*background of menu items during onmouseover (hover state) default: black */
+    color: white;
 }
     
 /* sub menus */
 .ddsmoothmenu ul li ul{
-position: absolute;
-left: -3000px;
-display: none; /*collapse all sub menus to begin with*/
-visibility: hidden;
+    position: absolute;
+    left: -3000px;
+    display: none; /*collapse all sub menus to begin with*/
+    visibility: hidden;
 }
 
 /*Sub level menu list items (alters style from Top level List Items)*/
 .ddsmoothmenu ul li ul li{
-display: list-item;
-float: none;
+    display: list-item;
+    float: none;
 }
 
 /*All subsequent sub menu levels vertical offset after 1st level sub menu */
-.ddsmoothmenu ul li ul li ul{
-top: 0;
+    .ddsmoothmenu ul li ul li ul{
+    top: 0;
 }
 
 /* Sub level menu links style */
 .ddsmoothmenu ul li ul li a{
-font: normal 1em Verdana;
-width: 14em; /*width of sub menus*/
-padding: 0.5em;
-margin: 0;
-border-top-width: 0;
-border-bottom: 0.1em solid gray;
+    /* font: normal 1em Verdana; */
+    width: 12em; /*width of sub menus*/
+    padding: 0.4em;
+    margin: 0;
+    border-top-width: 0;
+    border-bottom: 0.1em solid gray;
+}
+/* -----------------------------  */
+.ddsmoothmenu li a explicar{
+    display: none;
+}
+.ddsmoothmenu li a:hover explicar{
+    display: block;
+    position: absolute;
+    top:0;
+    left: 13em;
+    width: 14em;
+    padding: 0.4em;
+    margin-left:0;
+    color: #fff;
+    background:#060;
+    text-align:left;
+    font-style:italic;
+    border:1px solid yellow;
+    box-shadow: .6em .6em .6em #9f9696; /* box-shadow color generally should be a little darker than that for the NON CSS3 capable browsers background-color #aaa */
+    /* -moz-box-shadow: .6em .6em .6em #9f9696; */
+    -webkit-box-shadow: .6em .6em .6em #9f9696;
 }
 
 /* Holly Hack for IE \*/
 * html .ddsmoothmenu{height: 1%;} /*Holly Hack for IE7 and below*/
 
 
-/* ######### CSS classes applied to down and right arrow images  ######### */
+/* CSS classes applied to down and right arrow images  */
 
 .downarrowclass{
-position: absolute;
-top: 1em;
-right: 0.5em;
+    position: absolute;
+    top: 1em;
+    right: 0.5em;
 }
 
 .rightarrowclass{
-position: absolute;
-top: 0.5em;
-right: 0.4em;
+    position: absolute;
+    top: 0.5em;
+    right: 0.4em;
 }
 
-/* ######### CSS for shadow added to sub menus  ######### */
-
-.ddshadow{ 
-position: absolute;
-left: 0;
-top: 0;
-width: 0;
-height: 0;
-background-color: #ccc; /* generally should be just a little lighter than the box-shadow color for CSS3 capable browsers */
+/* CSS for shadow added to sub menus */
+.ddshadow{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    background-color: #ccc; /* generally should be just a little lighter than the box-shadow color for CSS3 capable browsers */
 }
 
 .toplevelshadow{
-margin: 0.5em 0 0 0.5em; /* in NON CSS3 capable browsers gives the offset of the shadow */
-opacity: 0.8; /* shadow opacity mostly for NON CSS3 capable browsers. Doesn't work in IE */
+    margin: 0.5em 0 0 0.5em; /* in NON CSS3 capable browsers gives the offset of the shadow */
+    opacity: 1; /* shadow opacity mostly for NON CSS3 capable browsers. Doesn't work in IE */
 }
 
 .ddcss3support .ddshadow.toplevelshadow {
-margin: 0; /* in CSS3 capable browsers overrides offset from NON CSS3 capable browsers, allowing the box-shadow values in the next selector to govern that */
-/* opacity: 1; */ /* optionally uncomment this to remove partial opacity for browsers supporting a box-shadow property which has its own slight gradient opacity */
+    margin: 0; /* in CSS3 capable browsers overrides offset from NON CSS3 capable browsers, allowing the box-shadow values in the next selector to govern that */
+    /* opacity: 1; */ /* optionally uncomment this to remove partial opacity for browsers supporting a box-shadow property which has its own slight gradient opacity */
 }
 
 .ddcss3support .ddshadow {
-background-color: transparent;
-box-shadow: .6em .6em .6em #9f9696; /* box-shadow color generally should be a little darker than that for the NON CSS3 capable browsers background-color #aaa */
-/* -moz-box-shadow: .6em .6em .6em #9f9696; */
--webkit-box-shadow: .6em .6em .6em #9f9696;
+    background-color: transparent;
+    box-shadow: .6em .6em .6em #9f9696; /* box-shadow color generally should be a little darker than that for the NON CSS3 capable browsers background-color #aaa */
+    /* -moz-box-shadow: .6em .6em .6em #9f9696; */
+    -webkit-box-shadow: .6em .6em .6em #9f9696;
 }
-/* ----- fim do menu indicadores */
