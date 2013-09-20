@@ -19,8 +19,9 @@
   # Texto Quartil:                                      #4F4F4F
 */
 /* ######### ------------>>> FOLHAS DE ESTILO COMPLEMENTARES <<<------------######### */
-/* a instrução "import" a seguir deve ser a primeira instrução deste arquivo de CSS */
+/* as instruções "import" a seguir devem ser as primeiras instruções deste arquivo de CSS */
     @import url(sisesp_OpenLayers.css);
+    @import url(sisesp_selectbox.css);
 
 /* ######### -------------------->>> Initial Settings <<<---------------------######### */
 /* Eliminar diferenças de comportamento entre navegadores devido aos estilos iniciais
@@ -75,7 +76,6 @@ body {
     margin:auto;
     margin-top:20px;
 }
-
 #id_titulo {
     width:100%;
     height:2.2em;
@@ -94,6 +94,73 @@ body {
 #id_titulo img {
     vertical-align:middle;
 }
+#id_menus{
+    width=100%;
+    background-color:#3494D5;
+    height:2.5em;
+    padding-top:0.05em;
+    border-style:solid;
+    border-color:#ffa500;
+    border-width:0.02em;
+    margin:0 0 0 0;
+    font-size:1em;
+    text-align:center;
+    font-weight:bold;
+    margin:0.2em 0em 0.2em 0.2em;
+}
+#id_menuBase{
+    float:left;
+    color:white;
+    border-right-style:solid;
+}
+
+#id_menuIndicadores {
+    float:left;
+}
+#id_select{
+    float:right;
+    font-size:1.1em;
+    margin-top:0.13em;
+}
+
+#id_select #id_infos{
+    background-color:#b0c4de;
+    margin:0.2em 0.4em 0.2em 0.2em;
+    border: 0.1em solid #ccc;
+    -webkit-border-top-left-radius:2em;
+    -moz-border-radius-topleft:2em;
+    border-top-left-radius:2em;
+    -webkit-border-top-right-radius:2em;
+    -moz-border-radius-topright:2em;
+    border-top-right-radius:2em;
+    -webkit-border-bottom-right-radius:2em;
+    -moz-border-radius-bottomright:2em;
+    border-bottom-right-radius:2em;
+    -webkit-border-bottom-left-radius:2em;
+    -moz-border-radius-bottomleft:2em;
+    border-bottom-left-radius:2em;
+}
+/*
+.button {
+    color:black;
+    -moz-box-shadow: 0.2em 0.3em 0 0 #1564ad;
+    -webkit-box-shadow: 0.2em 0.3em 0 0 #1564ad;
+    box-shadow: 0.2em 0.3em 0 0 #1564ad;
+    background-color: #b0c4de;
+    font-size:1em;
+    text-align:center;
+    border:0.1em solid #84bbf3;
+    -moz-border-radius:0.8em;
+    -webkit-border-radius:0.8em;
+    border-radius:0.8em;
+    margin:0em 0.4em 0.2em 0.2em;
+    display:inline-block;
+    text-indent:0;
+    padding:0.02em 1.08em;
+    text-decoration:none;
+}
+*/
+
 #id_indicadores, #id_map {
     height:580px;
     border-style:solid;
@@ -102,6 +169,7 @@ body {
     padding:0;
 }
 #id_indicadores {
+    clear: both;
     background-color:#ffffff;
     background-image:url('img/gradient2.png');
     background-repeat:repeat-x;
@@ -134,12 +202,20 @@ body {
 }
 #id_layers_info{
     float:left;
+    text-decoration:blink;
 }
 #id_mouse{
     float:right;
 }
 
 /* ######### ------------------------>>> INDICADORES <<<-------------------------######### */
+#id_indicadores-titulo {
+    font-size:1.5em;
+    text-align:center;
+    font-weight:bold;
+    color:black;
+}
+
 #id_indicadores-1, #id_indicadores-2{
     margin:0;
     width:49.6%;
@@ -152,17 +228,66 @@ body {
 #id_indicadores-2{
     float:right;
 }
-#id_indicadores-titulo .indi_titulo1{
-    font-size:1.5em;
-    text-align:center;
-    font-weight:bold;
-    color:black;
-}
+
 #id_indicadores .indi_titulo2{
     font-size:1.3em;
     text-align:left;
     font:normal 1.2em;
     color:black;
+}
+
+#id_indicadores-1 table{
+    border:1px solid #A7C942;
+    width:100%;
+    border-collapse:collapse;
+}
+
+#id_indicadores-1 table th {
+    font-size:1.1em;
+    text-align:left;
+    padding-top:5px;
+    padding-bottom:4px;
+    background-color:#A7C942;
+    color:#ffffff;
+}
+#id_indicadores-1 table td, #id_indicadores-1 table th { 
+    font-size:1em;
+    padding:3px 7px 2px 7px;
+}
+#id_indicadores-1 .myButton3 {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f0c911), color-stop(1, #f2ab1e));
+    background:-moz-linear-gradient(top, #f0c911 5%, #f2ab1e 100%);
+    background:-webkit-linear-gradient(top, #f0c911 5%, #f2ab1e 100%);
+    background:-o-linear-gradient(top, #f0c911 5%, #f2ab1e 100%);
+    background:-ms-linear-gradient(top, #f0c911 5%, #f2ab1e 100%);
+    background:linear-gradient(to bottom, #f0c911 5%, #f2ab1e 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f0c911', endColorstr='#f2ab1e',GradientType=0);
+    background-color:#f0c911;
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    border-radius:6px;
+    border:1px solid #e65f44;
+    display:inline-block;
+    color:#c92200;
+    font-family:arial;
+    font-size:10px;
+    font-weight:bold;
+    padding:2px 24px;
+    text-decoration:none;
+}
+#id_indicadores-1 .myButton3:hover {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f2ab1e), color-stop(1, #f0c911));
+    background:-moz-linear-gradient(top, #f2ab1e 5%, #f0c911 100%);
+    background:-webkit-linear-gradient(top, #f2ab1e 5%, #f0c911 100%);
+    background:-o-linear-gradient(top, #f2ab1e 5%, #f0c911 100%);
+    background:-ms-linear-gradient(top, #f2ab1e 5%, #f0c911 100%);
+    background:linear-gradient(to bottom, #f2ab1e 5%, #f0c911 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2ab1e', endColorstr='#f0c911',GradientType=0);
+    background-color:#f2ab1e;
+}
+#id_indicadores-1 .myButton3:active {
+    position:relative;
+    top:1px;
 }
 
 #id_indicadores-2 explicacao2, #id_indicadores-1 explicacao2{
@@ -298,13 +423,7 @@ ul.f li {
     /*  Cor Quartil-5  */
     color:#E92922;
 }
-/* ######### ------------------------>>> POPUP <<<-------------------------######### */
-.popup {
-    text-align:center;
-    font-size:1.3em;
-    font-weight:bold;
-    letter-spacing:.2em;
-}
+
 
 /* ######### ------------------------>>> MENU <<<-------------------------######### */
 
@@ -372,7 +491,7 @@ ul.f li {
 }
 
 /*All subsequent sub menu levels vertical offset after 1st level sub menu */
-    .ddsmoothmenu ul li ul li ul{
+.ddsmoothmenu ul li ul li ul{
     top: 0;
 }
 
@@ -385,7 +504,7 @@ ul.f li {
     border-top-width: 0;
     border-bottom: 0.1em solid gray;
 }
-/* -----------------------------  */
+
 .ddsmoothmenu li a explicar{
     display: none;
 }
@@ -450,4 +569,85 @@ ul.f li {
     box-shadow: .6em .6em .6em #9f9696; /* box-shadow color generally should be a little darker than that for the NON CSS3 capable browsers background-color #aaa */
     /* -moz-box-shadow: .6em .6em .6em #9f9696; */
     -webkit-box-shadow: .6em .6em .6em #9f9696;
+}
+/* ######### ------------------------>>> POPUP <<<-------------------------######### */
+.popup {
+    text-align:center;
+    font-size:1.3em;
+    font-weight:bold;
+    letter-spacing:.2em;
+}
+/* ######### ------------------------>>> BOTÕES <<<-------------------------######### */
+.customEditingToolbar {
+    float: right;
+    right: 0px;
+    height: 30px; 
+}
+.customEditingToolbar div {
+    float: right;
+    margin: 5px;
+    width: 24px;
+    height: 24px;
+}
+.olControlNavigationItemActive { 
+    background-image: url("./img/editing_tool_bar.png");
+    background-repeat: no-repeat;
+    background-position: -103px -23px; 
+}
+.olControlNavigationItemInactive { 
+    background-image: url("./img/editing_tool_bar.png");
+    background-repeat: no-repeat;
+    background-position: -103px -0px; 
+}
+.olControlDrawFeaturePointItemInactive { 
+    background-image: url("./img/editing_tool_bar.png");
+    background-repeat: no-repeat;
+    background-position: -78px 0px; 
+}
+.olControlDrawFeaturePointItemActive { 
+    background-image: url("./img/editing_tool_bar.png");
+    background-repeat: no-repeat;
+    background-position: -78px -23px;
+}
+        .olControlModifyFeatureItemActive { 
+            background-image: url("./img/move_feature_on.png");
+            background-repeat: no-repeat;
+            background-position: 0px 1px;
+        }
+        .olControlModifyFeatureItemInactive { 
+            background-image: url("./img/move_feature_off.png");
+            background-repeat: no-repeat;
+            background-position: 0px 1px;
+        }
+
+.olControlDeleteFeatureItemActive { 
+    background-image: url("./img/remove_point_on.png");
+    background-repeat: no-repeat;
+    background-position: 0px 1px;
+}
+.olControlDeleteFeatureItemInactive { 
+    background-image: url("./img/remove_point_off.png");
+    background-repeat: no-repeat;
+    background-position: 0px 1px;
+}
+.olControlButtonInfoItemInactive{
+    background:url("./img/info_offp.png") no-repeat;
+    border: 1px solid #A19898;
+    right: 136px;
+    cursor: default;
+    height: 18px;
+    width: 18px;
+    border-radius: 4px;
+    padding: 0 0 0 0;
+}
+
+.olControlButtonInfoItemActive{
+    background:url("./img/info_onp.png") no-repeat;
+    border: 1px solid #A19898;
+    right: 136px;
+    cursor: default;
+    height: 24px;
+    width: 24px;
+    border-radius: 4px;
+    padding: 0 0 0 0;
 }

@@ -214,13 +214,13 @@ function construir_graficoinicial(){
 function construir_grafico4 (infos_RA){
     var width = 250;
     var height = 180;
-    console.log(infos_RA);
+    //console.log(infos_RA);
     var color = d3.scale.ordinal()
         .domain(["chart0","chart1","chart2","chart3","chart4","chart5"])
         .range([QUARTIL0,QUARTIL1,QUARTIL2,QUARTIL3,QUARTIL4,QUARTIL5]);
 
     var escalax=  d3.scale.linear()
-    .domain([0, d3.max(infos_RA,function(d){return d[0];})])
+    .domain([d3.min(infos_RA,function(d){return d[0];}), d3.max(infos_RA,function(d){return d[0];})])
         .range(["1em","20em"]);
     var  escalay=  d3.scale.linear()
     .domain([0, d3.max(infos_RA,function(d){return d[5];})])
