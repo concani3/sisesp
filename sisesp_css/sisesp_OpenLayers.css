@@ -17,7 +17,19 @@
     top: 0;
     right: 0;
 }
-
+div.editPanel {
+    top: 50px;
+    right: 50px;
+    position: absolute;
+}
+    .editPanel div {
+      background-image: url("./img/info_onp.png");
+      background-repeat: no-repeat;
+      width:  22px;
+      height: 22px;
+      border: thin solid black;
+      margin-top: 10px;
+    }
 .olControlButtonInfoItemActive{
     background:#22dd22 url("./img/info_onp.png");
     border: 1px solid #A19898;
@@ -54,7 +66,7 @@
 
 .historyClass{
     position: relative;
-    top: 8em;
+    top: 10.3em;
     right: 12.5em;
     z-index: 999;
 }

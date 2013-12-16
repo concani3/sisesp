@@ -1,0 +1,48 @@
+{
+    "indicador":{
+        "titulo":"Indicador de Trabs Autônomos",
+        "fonte":"Pesquisa Codeplan-2011",
+        "ano":"2011",
+        "unidade":"% da população com trabalho autônomo",
+        "descricao":"6.3 - População por Conta Própria (Autônomo)",
+        "num_quartis":      4,
+        "quartis":  [
+                {"qi":0,"qs":16},
+                {"qi":16,"qs":20},
+                {"qi":20,"qs":24},
+                {"qi":24,"qs":100}
+        ]
+    },
+    "indices":  [
+                {"RA":"Águas Claras"      ,"romano":"XX"    ,"indice":21.38},
+                {"RA":"Brasília"          ,"romano":"I"     ,"indice":17.22},
+                {"RA":"Brazlândia"        ,"romano":"IV"    ,"indice":19.38},
+                {"RA":"Candangolândia"    ,"romano":"XIX"   ,"indice":23.19},
+                {"RA":"Ceilândia"         ,"romano":"IX"    ,"indice":20.61},
+                {"RA":"Cruzeiro"          ,"romano":"XI"    ,"indice":14.57},
+                {"RA":"Estrutural"        ,"romano":"XXV"   ,"indice":39.74},
+                {"RA":"Gama"              ,"romano":"II"    ,"indice":19.88},
+                {"RA":"Guará"             ,"romano":"X"     ,"indice":19.33},
+                {"RA":"Itapoã"            ,"romano":"XXVIII","indice":31.30},
+                {"RA":"Jd Botânico"       ,"romano":"XXVII" ,"indice":20.51},
+                {"RA":"Lago Norte"        ,"romano":"XVIII" ,"indice":18.55},
+                {"RA":"Lago Sul"          ,"romano":"XVI"   ,"indice":32.25},
+                {"RA":"Núcleo Bandeirante","romano":"VIII"  ,"indice":25.59},
+                {"RA":"ParkWay"           ,"romano":"XXIV"  ,"indice":25.76},
+                {"RA":"Paranoá"           ,"romano":"VII"   ,"indice":22.31},
+                {"RA":"Planaltina"        ,"romano":"VI"    ,"indice":21.72},
+                {"RA":"Recanto das Emas"  ,"romano":"XV"    ,"indice":17.08},
+                {"RA":"Riacho Fundo"      ,"romano":"XVII"  ,"indice":22.27},
+                {"RA":"Riacho Fundo II"   ,"romano":"XXI"   ,"indice":17.76},
+                {"RA":"Samambaia"         ,"romano":"XII"   ,"indice":19.83},
+                {"RA":"Santa Maria"       ,"romano":"XIII"  ,"indice":19.12},
+                {"RA":"São Sebastião"     ,"romano":"XIV"   ,"indice":22.26},
+                {"RA":"SIA"               ,"romano":"XXIX"  ,"indice":46.26},
+                {"RA":"Sobradinho"        ,"romano":"V"     ,"indice":20.46},
+                {"RA":"Sobradinho-II"     ,"romano":"XXVI"  ,"indice":23.46},
+                {"RA":"Sudoeste/Octogonal","romano":"XXII"  ,"indice":15.18},
+                {"RA":"Taguatinga"        ,"romano":"III"   ,"indice":22.71},
+                {"RA":"Varjão"            ,"romano":"XXIII" ,"indice":36.66},
+                {"RA":"Vicente Pires"     ,"romano":"XXX"   ,"indice":21.53}
+            ]
+}

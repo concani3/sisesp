@@ -1,0 +1,59 @@
+/* Drop down styles*/
+div.selectbox-wrapper {
+  position:absolute;
+  width:40em;
+  background-color:#3494D5; /* azul escuro */
+/*  border:40px solid #ccc; */
+  margin:0.5em;
+  margin-top:-.5em;
+  padding:0;
+  text-align:left;
+  max-height:40em; /* destinado a todos os itens do menu */
+  overflow:auto;
+  box-shadow: .6em .6em .6em #9f9696;
+  z-index:100;
+}
+
+/* Estilo dos itens quando abrir a lista Drop down */
+div.selectbox-wrapper ul {
+  list-style-type:none;
+  margin:0;
+  padding:0;
+}
+/* Drop down list items style*/
+div.selectbox-wrapper ul li {
+  list-style-type:none;
+  display:block;
+  margin:0;
+  padding:.4em;
+  cursor:pointer;
+}
+
+/* Cor do background do item atualmente selecionado da lista dropdown */
+div.selectbox-wrapper ul li.selected {
+  background-color: #B2C624; /* verde */
+}
+
+/* Cor do background do item da lista dropdown qundo mouse hover */
+div.selectbox-wrapper ul li.current { 
+    background-color: #D62728; /* vermelho */
+}
+
+
+/* Look and feel of select box */
+.selectbox 
+{
+  display : block;
+  margin: .2em .3em .1em .2em;
+  padding:.4em 0 .4em .4em;
+  width : 10em; /* Largura do botão */
+  text-align:left;
+  /*  background: url('bg_select.png') right repeat-x; */
+  background: url('img/down.gif') no-repeat right center;
+  cursor: pointer;
+  /*  border:.6em solid #D1E4F6; */ 
+  border: 0em solid #9f9696; /*  #D62728 vermelho */
+  color:white; /* cor do texto */
+}
+
+

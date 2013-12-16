@@ -44,23 +44,47 @@
 <!-- <script type='text/javascript' src='http://localhost/js/jquery/jquery-1.10.1.min.js'></script> -->
 <script type='text/javascript' src='./js/sisesp_utils/sisesp_menuindicadores.js'></script>
 <script type='text/javascript' src='./js/sisesp_utils/sisesp_geoinformacao.js'></script>
+<script type='text/javascript' src='./js/sisesp_utils/sisesp_selectbox.js'></script>
+<script type='text/javascript'>
+function iniciacao(){
+    init();
+    $(document).ready(function() {
+            $('#Items').selectbox();
+    });
+}
+</script>
 </head>
-<body  onload='init();'>
+<body onload='iniciacao();'>
 <div id="id_principal";>
 <div id="id_history" class="historyClass"></div>
-<div id="id_titulo"><img src="icon/GDF.png" alt="Logo do GDF" title="Logo do GDF" />Portal da Geoinformação</div>
-<div id="id_indicadores" class="indicadores">
-<div id="id_container">
-<noscript>
-<a href="#"><h2>!!! OooopS !!!<br /></h2><center><h3>JavaScript desabilitado: para executar esta aplicação é necessário ter o JS habilitado.<br /> Interrompido!</h3></center></a>
-</noscript>
+<div id="id_titulo"><img src="icon/GDF.png" alt="Logo GDF" title="Logo do GDF" />Portal da Geoinformação</div>
+<div id="id_menus">
+<div id="id_menuBase">
+    <select name="Items" id="Items">
+            <option value="option0">PDAD-2011</option>
+            <option value="option1">PDAD-2013</option>
+            <option value="option2">RIDE</option>
+    </select>
 </div>
-<div id="id_indicadores-titulo"><p class="indi_titulo1">Indicadores Sociais</p><hr /></div>
+<div id="id_menuIndicadores"></div>
+<div id="id_select">Informações Literais:
+    <select name="Infos" id="id_infos" onchange="fsis_selecionarFeature()">
+            <option value="WMS">WMS-Cartografia</option>
+            <option value="Comunidade">Comunidade</option>
+            <option value="Equipamentos">Equip Públicos</option>
+    </select>
+</div>
+</div>
+<div id="id_indicadores" class="indicadores">
+<div id="id_indicadores-titulo"></div><hr /><p></p>
 <div id="id_indicadores-1"></div>
 <div id="id_indicadores-2"></div>
 </div>
 <div id="id_map"></div>
 <div id="id_mapinfo">
+<noscript>
+<blink><b>!!! OooopS !!!  Aplicação Interrompida!!!</b>  Seu navegador está com o JavaScript desabilitado.  É necessário ter o JS habilitado.</blink>
+</noscript>
 <div id="id_mouse"></div>
 <div id="id_layers_info"></div>
 </div>

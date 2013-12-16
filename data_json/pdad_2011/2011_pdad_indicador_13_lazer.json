@@ -1,0 +1,48 @@
+{
+    "indicador":{
+        "titulo":"Utilização do 13º Salário com Lazer",
+        "fonte":"Pesquisa Codeplan-2011",
+        "ano":"2011",
+        "unidade":"% da população que utiliza o 13º salário com lazer",
+        "descricao":"6.8 - População que utiliza seu 13º salário com Lazer",
+        "num_quartis":      4,
+        "quartis":  [
+                {"qi":0,"qs":5},
+                {"qi":5,"qs":10},
+                {"qi":10,"qs":15},
+                {"qi":15,"qs":100}
+        ]
+    },
+    "indices":  [
+                {"RA":"Águas Claras"      ,"romano":"XX"    ,"indice":18.30},
+                {"RA":"Brasília"          ,"romano":"I"     ,"indice":17.59},
+                {"RA":"Brazlândia"        ,"romano":"IV"    ,"indice":6.06},
+                {"RA":"Candangolândia"    ,"romano":"XIX"   ,"indice":5.18},
+                {"RA":"Ceilândia"         ,"romano":"IX"    ,"indice":7.73},
+                {"RA":"Cruzeiro"          ,"romano":"XI"    ,"indice":8.92},
+                {"RA":"Estrutural"        ,"romano":"XXV"   ,"indice":1.70},
+                {"RA":"Gama"              ,"romano":"II"    ,"indice":4.01},
+                {"RA":"Guará"             ,"romano":"X"     ,"indice":14.25},
+                {"RA":"Itapoã"            ,"romano":"XXVIII","indice":3.13},
+                {"RA":"Jd Botânico"       ,"romano":"XXVII" ,"indice":14.03},
+                {"RA":"Lago Norte"        ,"romano":"XVIII" ,"indice":7.50},
+                {"RA":"Lago Sul"          ,"romano":"XVI"   ,"indice":21.97},
+                {"RA":"Núcleo Bandeirante","romano":"VIII"  ,"indice":9.52},
+                {"RA":"ParkWay"           ,"romano":"XXIV"  ,"indice":23.49},
+                {"RA":"Paranoá"           ,"romano":"VII"   ,"indice":2.26},
+                {"RA":"Planaltina"        ,"romano":"VI"    ,"indice":0.57},
+                {"RA":"Recanto das Emas"  ,"romano":"XV"    ,"indice":5.13},
+                {"RA":"Riacho Fundo"      ,"romano":"XVII"  ,"indice":9.46},
+                {"RA":"Riacho Fundo II"   ,"romano":"XXI"   ,"indice":6.39},
+                {"RA":"Samambaia"         ,"romano":"XII"   ,"indice":6.64},
+                {"RA":"Santa Maria"       ,"romano":"XIII"  ,"indice":5.35},
+                {"RA":"São Sebastião"     ,"romano":"XIV"   ,"indice":3.66},
+                {"RA":"SIA"               ,"romano":"XXIX"  ,"indice":2.31},
+                {"RA":"Sobradinho"        ,"romano":"V"     ,"indice":7.60},
+                {"RA":"Sobradinho-II"     ,"romano":"XXVI"  ,"indice":5.39},
+                {"RA":"Sudoeste/Octogonal","romano":"XXII"  ,"indice":23.91},
+                {"RA":"Taguatinga"        ,"romano":"III"   ,"indice":8.36},
+                {"RA":"Varjão"            ,"romano":"XXIII" ,"indice":1.94},
+                {"RA":"Vicente Pires"     ,"romano":"XXX"   ,"indice":14.54}
+    ]
+}

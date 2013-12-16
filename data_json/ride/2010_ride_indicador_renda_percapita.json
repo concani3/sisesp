@@ -1,0 +1,41 @@
+{
+    "indicador":{
+        "titulo":"Renda Per Capita Média Mensal",
+        "fonte":"Censo 2010 (AtlasBrasil)",
+        "ano":"2010",
+        "unidade":"Reais",
+        "descricao":"Renda Per Capita Média Mensal",
+        "num_quartis":      4,
+        "quartis":  [
+                {"qi":0,"qs":450},
+                {"qi":450,"qs":550},
+                {"qi":550,"qs":800},
+                {"qi":800,"qs":5000}
+        ]
+    },
+    "indices":  [
+                {"RA":"Abadiânia"               ,"romano":"5200100"   ,"indice":519.87},
+                {"RA":"Água Fria de Goiás"      ,"romano":"5200175"   ,"indice":525.20},
+                {"RA":"Águas Lindas de Goiás"   ,"romano":"5200258"   ,"indice":449.38},
+                {"RA":"Alexânia"                ,"romano":"5200308"   ,"indice":498.09},
+                {"RA":"Brasília"                ,"romano":"5300108"   ,"indice":1716.52},
+                {"RA":"Buritis"                 ,"romano":"3109303"   ,"indice":505.59},
+                {"RA":"Cabeceira Grande"        ,"romano":"3109451"   ,"indice":424.47},
+                {"RA":"Cabeceiras"              ,"romano":"5204003"   ,"indice":420.47},
+                {"RA":"Cidade Ocidental"        ,"romano":"5205497"   ,"indice":647.64},
+                {"RA":"Cocalzinho de Goiás"     ,"romano":"5205513"   ,"indice":450.47},
+                {"RA":"Corumbá de Goiás"        ,"romano":"5205802"   ,"indice":503.01},
+                {"RA":"Cristalina"              ,"romano":"5206206"   ,"indice":686.90},
+                {"RA":"Formosa"                 ,"romano":"5208004"   ,"indice":732.24},
+                {"RA":"Luziânia"                ,"romano":"5212501"   ,"indice":580.88},
+                {"RA":"Mimoso de Goiás"         ,"romano":"5213053"   ,"indice":474.44},
+                {"RA":"N.Gama"                  ,"romano":"5215231"   ,"indice":498.44},
+                {"RA":"Padre Bernardo"          ,"romano":"5215603"   ,"indice":518.12},
+                {"RA":"Pirenópolis"             ,"romano":"5217302"   ,"indice":544.78},
+                {"RA":"Planaltina"              ,"romano":"5217609"   ,"indice":466.69},
+                {"RA":"Sto.Ant. Descoberto"     ,"romano":"5219753"   ,"indice":449.39},
+                {"RA":"Unaí"                    ,"romano":"3170404"   ,"indice":720.51},
+                {"RA":"Valp.de Goiás"           ,"romano":"5221858"   ,"indice":764.73},
+                {"RA":"Vila Boa"                ,"romano":"5222203"   ,"indice":376.72}
+    ]
+}

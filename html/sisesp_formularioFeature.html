@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang='pt-br'>
+<head>
+<title>Sisesp: Formulário para Adicionar Atributos das Features</title>
+<meta http-equiv="content-type" content="text/ html;charset=utf-8" />
+<meta name="author" content="Antonio Albuquerque">
+<meta name="Indicadores" content="Geoinformação, OpenLayers">
+<link rel='stylesheet' href='../sisesp_css/sisesp_formularioFeature.css'  type='text/css' />
+<script type='text/javascript' src='../js/sisesp_utils/sisesp_formularioFeature.js'></script>
+</head>
+<body onload='iniciar2();'>
+<div class="barra"></div>
+<form>
+<fieldset id="fieldstext"></fieldset>
+<fieldset id="fieldsselect"><legend>Categoria da Feature</legend>
+<select name="categoria" id="dropdown" class="select" >
+    <optgroup label="Educação">
+        <option value="" selected="selected">Selecionar Categoria...</option>
+        <option value="esc">Escola</option>
+        <option value="uni">Universidade</option>
+    </optgroup>
+    <optgroup label="Saúde">
+        <option value="hos">Hospital</option>
+        <option value="upa">UPA</option>
+    </optgroup>
+    <optgroup label="Segurança">
+        <option value="del">Delegacia</option>
+        <option value="pos">Posto</option>
+    </optgroup>
+    <optgroup label="Cultura">
+        <option value="tea">Teatro</option>
+        <option value="pon">Ponto Cultura</option>
+    </optgroup>
+</select></fieldset>
+<button class="myButton2" onclick="okay()">OK</button>
+<button class="myButton1" onclick="cancel()">Cancel</button>
+</form>
+<div class="barra"></div>
+</body>
+</html>

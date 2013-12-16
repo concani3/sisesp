@@ -1,0 +1,47 @@
+{
+    "indicador":{
+        "titulo":"Domicílios Ocupados por Famílias Renda de 10 a 20 SM",
+        "fonte":"Pesquisa Codeplan-2013",
+        "ano":"2013",
+        "unidade":"% domicílios ocupados por famílias renda entre 10 a 20 salários mínimos",
+        "descricao":"10.8 - Distribuição dos domicílios ocupados por classes de renda domiciliar",
+        "num_quartis":      3,
+        "quartis":  [
+                {"qi":0,"qs":6},
+                {"qi":6,"qs":10},
+                {"qi":10,"qs":100}
+        ]
+    },
+    "indices":  [
+                {"RA":"Águas Claras"      ,"romano":"XX"    ,"indice":-1},
+                {"RA":"Brasília"          ,"romano":"I"     ,"indice":-1},
+                {"RA":"Brazlândia"        ,"romano":"IV"    ,"indice":10.28},
+                {"RA":"Candangolândia"    ,"romano":"XIX"   ,"indice":12.65},
+                {"RA":"Ceilândia"         ,"romano":"IX"    ,"indice":-1},
+                {"RA":"Cruzeiro"          ,"romano":"XI"    ,"indice":-1},
+                {"RA":"Estrutural"        ,"romano":"XXV"   ,"indice":-1},
+                {"RA":"Gama"              ,"romano":"II"    ,"indice":12.08},
+                {"RA":"Guará"             ,"romano":"X"     ,"indice":-1},
+                {"RA":"Itapoã"            ,"romano":"XXVIII","indice":-1},
+                {"RA":"Jd Botânico"       ,"romano":"XXVII" ,"indice":-1},
+                {"RA":"Lago Norte"        ,"romano":"XVIII" ,"indice":-1},
+                {"RA":"Lago Sul"          ,"romano":"XVI"   ,"indice":-1},
+                {"RA":"Núcleo Bandeirante","romano":"VIII"  ,"indice":-1},
+                {"RA":"ParkWay"           ,"romano":"XXIV"  ,"indice":-1},
+                {"RA":"Paranoá"           ,"romano":"VII"   ,"indice":5.69},
+                {"RA":"Planaltina"        ,"romano":"VI"    ,"indice":5.60},
+                {"RA":"Recanto das Emas"  ,"romano":"XV"    ,"indice":4.69},
+                {"RA":"Riacho Fundo"      ,"romano":"XVII"  ,"indice":15.31},
+                {"RA":"Riacho Fundo II"   ,"romano":"XXI"   ,"indice":5.41},
+                {"RA":"Samambaia"         ,"romano":"XII"   ,"indice":6.29},
+                {"RA":"Santa Maria"       ,"romano":"XIII"  ,"indice":6.11},
+                {"RA":"São Sebastião"     ,"romano":"XIV"   ,"indice":-1},
+                {"RA":"SIA"               ,"romano":"XXIX"  ,"indice":-1},
+                {"RA":"Sobradinho"        ,"romano":"V"     ,"indice":-1},
+                {"RA":"Sobradinho-II"     ,"romano":"XXVI"  ,"indice":-1},
+                {"RA":"Sudoeste/Octogonal","romano":"XXII"  ,"indice":-1},
+                {"RA":"Taguatinga"        ,"romano":"III"   ,"indice":-1},
+                {"RA":"Varjão"            ,"romano":"XXIII" ,"indice":1.17},
+                {"RA":"Vicente Pires"     ,"romano":"XXX"   ,"indice":-1}
+            ]
+}
