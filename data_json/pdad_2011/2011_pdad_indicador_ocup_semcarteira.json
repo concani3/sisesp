@@ -1,0 +1,48 @@
+{
+    "indicador":{
+        "titulo":"Indicador de Trabs Sem Carteira Trabalho",
+        "fonte":"Pesquisa Codeplan-2011",
+        "ano":"2011",
+        "unidade":"% de empregados sem carteira de trabalho",
+        "descricao":"6.3 - População empregada sem carteira de trabalho assinada",
+        "num_quartis":      4,
+        "quartis":  [
+                {"qi":0,"qs":5},
+                {"qi":5,"qs":10},
+                {"qi":10,"qs":15},
+                {"qi":15,"qs":100}
+        ]
+    },
+    "indices":  [
+                {"RA":"Águas Claras"      ,"romano":"XX"    ,"indice":9.59},
+                {"RA":"Brasília"          ,"romano":"I"     ,"indice":2.42},
+                {"RA":"Brazlândia"        ,"romano":"IV"    ,"indice":10.58},
+                {"RA":"Candangolândia"    ,"romano":"XIX"   ,"indice":5.58},
+                {"RA":"Ceilândia"         ,"romano":"IX"    ,"indice":12.33},
+                {"RA":"Cruzeiro"          ,"romano":"XI"    ,"indice":2.96},
+                {"RA":"Estrutural"        ,"romano":"XXV"   ,"indice":9.28},
+                {"RA":"Gama"              ,"romano":"II"    ,"indice":6.94},
+                {"RA":"Guará"             ,"romano":"X"     ,"indice":4.67},
+                {"RA":"Itapoã"            ,"romano":"XXVIII","indice":13.04},
+                {"RA":"Jd Botânico"       ,"romano":"XXVII" ,"indice":5.46},
+                {"RA":"Lago Norte"        ,"romano":"XVIII" ,"indice":1.36},
+                {"RA":"Lago Sul"          ,"romano":"XVI"   ,"indice":2.08},
+                {"RA":"Núcleo Bandeirante","romano":"VIII"  ,"indice":5.72},
+                {"RA":"ParkWay"           ,"romano":"XXIV"  ,"indice":4.52},
+                {"RA":"Paranoá"           ,"romano":"VII"   ,"indice":12.79},
+                {"RA":"Planaltina"        ,"romano":"VI"    ,"indice":14.10},
+                {"RA":"Recanto das Emas"  ,"romano":"XV"    ,"indice":14.97},
+                {"RA":"Riacho Fundo"      ,"romano":"XVII"  ,"indice":9.90},
+                {"RA":"Riacho Fundo II"   ,"romano":"XXI"   ,"indice":13.24},
+                {"RA":"Samambaia"         ,"romano":"XII"   ,"indice":11.78},
+                {"RA":"Santa Maria"       ,"romano":"XIII"  ,"indice":7.89},
+                {"RA":"São Sebastião"     ,"romano":"XIV"   ,"indice":17.60},
+                {"RA":"SIA"               ,"romano":"XXIX"  ,"indice":3.63},
+                {"RA":"Sobradinho"        ,"romano":"V"     ,"indice":7.50},
+                {"RA":"Sobradinho-II"     ,"romano":"XXVI"  ,"indice":7.22},
+                {"RA":"Sudoeste/Octogonal","romano":"XXII"  ,"indice":2.92},
+                {"RA":"Taguatinga"        ,"romano":"III"   ,"indice":7.20},
+                {"RA":"Varjão"            ,"romano":"XXIII" ,"indice":11.93},
+                {"RA":"Vicente Pires"     ,"romano":"XXX"   ,"indice":8.37}
+            ]
+}

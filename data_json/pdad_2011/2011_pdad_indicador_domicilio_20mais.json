@@ -1,0 +1,49 @@
+{
+    "indicador":{
+        "titulo":"Domicílios Ocupados por Famílias Renda > 20 SM",
+        "fonte":"Pesquisa Codeplan-2011",
+        "ano":"2011",
+        "unidade":"% domicílios ocupados por famílias renda superior a 20 Salários Mínimos",
+        "descricao":"6.10 - Distribuição dos domicílios ocupados por classes de renda domiciliar",
+        "num_quartis":      5,
+        "quartis":  [
+                {"qi":0,"qs":7.99},
+                {"qi":7.99,"qs":15},
+                {"qi":15,"qs":25},
+                {"qi":25,"qs":40},
+                {"qi":40,"qs":100}
+        ]
+    },
+    "indices":  [
+                {"RA":"Águas Claras"      ,"romano":"XX"    ,"indice":24.50},
+                {"RA":"Brasília"          ,"romano":"I"     ,"indice":34.30},
+                {"RA":"Brazlândia"        ,"romano":"IV"    ,"indice":1.20},
+                {"RA":"Candangolândia"    ,"romano":"XIX"   ,"indice":6.30},
+                {"RA":"Ceilândia"         ,"romano":"IX"    ,"indice":1.10},
+                {"RA":"Cruzeiro"          ,"romano":"XI"    ,"indice":17.10},
+                {"RA":"Estrutural"        ,"romano":"XXV"   ,"indice":0.00},
+                {"RA":"Gama"              ,"romano":"II"    ,"indice":4.10},
+                {"RA":"Guará"             ,"romano":"X"     ,"indice":14.40},
+                {"RA":"Itapoã"            ,"romano":"XXVIII","indice":0.00},
+                {"RA":"Jd Botânico"       ,"romano":"XXVII" ,"indice":46.30},
+                {"RA":"Lago Norte"        ,"romano":"XVIII" ,"indice":52.10},
+                {"RA":"Lago Sul"          ,"romano":"XVI"   ,"indice":66.90},
+                {"RA":"Núcleo Bandeirante","romano":"VIII"  ,"indice":7.60},
+                {"RA":"ParkWay"           ,"romano":"XXIV"  ,"indice":48.11},
+                {"RA":"Paranoá"           ,"romano":"VII"   ,"indice":0.20},
+                {"RA":"Planaltina"        ,"romano":"VI"    ,"indice":1.40},
+                {"RA":"Recanto das Emas"  ,"romano":"XV"    ,"indice":0.50},
+                {"RA":"Riacho Fundo"      ,"romano":"XVII"  ,"indice":5.00},
+                {"RA":"Riacho Fundo II"   ,"romano":"XXI"   ,"indice":1.10},
+                {"RA":"Samambaia"         ,"romano":"XII"   ,"indice":0.70},
+                {"RA":"Santa Maria"       ,"romano":"XIII"  ,"indice":1.90},
+                {"RA":"São Sebastião"     ,"romano":"XIV"   ,"indice":0.40},
+                {"RA":"SIA"               ,"romano":"XXIX"  ,"indice":0.00},
+                {"RA":"Sobradinho"        ,"romano":"V"     ,"indice":8.80},
+                {"RA":"Sobradinho-II"     ,"romano":"XXVI"  ,"indice":12.30},
+                {"RA":"Sudoeste/Octogonal","romano":"XXII"  ,"indice":38.30},
+                {"RA":"Taguatinga"        ,"romano":"III"   ,"indice":8.00},
+                {"RA":"Varjão"            ,"romano":"XXIII" ,"indice":0.62},
+                {"RA":"Vicente Pires"     ,"romano":"XXX"   ,"indice":14.30}
+    ]
+}

@@ -1,0 +1,49 @@
+{
+    "indicador":{
+        "titulo":"Participantes Conf. Cidades-DF Sexo Masculino",
+        "fonte":"<a href=\"http://www.segov.df.gov.br\">Segov-DF</a>",
+        "ano":"2013",
+        "unidade":"% participantes do sexo masculino",
+        "descricao":"% de participantes na conferência distrital das cidades de 2013, sexo masculino",
+        "num_quartis":      5,
+        "quartis":  [
+                {"qi":0,"qs":2},
+                {"qi":2,"qs":40},
+                {"qi":40,"qs":49.9},
+                {"qi":49.9,"qs":79.9},
+                {"qi":79.9,"qs":100}
+        ]
+    },
+    "indices":  [
+                {"RA":"Águas Claras"      ,"romano":"XX"    ,"indice":0},
+                {"RA":"Brasília"          ,"romano":"I"     ,"indice":63},
+                {"RA":"Brazlândia"        ,"romano":"IV"    ,"indice":57},
+                {"RA":"Candangolândia"    ,"romano":"XIX"   ,"indice":80},
+                {"RA":"Ceilândia"         ,"romano":"IX"    ,"indice":62},
+                {"RA":"Cruzeiro"          ,"romano":"XI"    ,"indice":43},
+                {"RA":"Estrutural"        ,"romano":"XXV"   ,"indice":52},
+                {"RA":"Gama"              ,"romano":"II"    ,"indice":35},
+                {"RA":"Guará"             ,"romano":"X"     ,"indice":0},
+                {"RA":"Itapoã"            ,"romano":"XXVIII","indice":60},
+                {"RA":"Jd Botânico"       ,"romano":"XXVII" ,"indice":38},
+                {"RA":"Lago Norte"        ,"romano":"XVIII" ,"indice":58},
+                {"RA":"Lago Sul"          ,"romano":"XVI"   ,"indice":47},
+                {"RA":"Núcleo Bandeirante","romano":"VIII"  ,"indice":0},
+                {"RA":"ParkWay"           ,"romano":"XXIV"  ,"indice":0},
+                {"RA":"Paranoá"           ,"romano":"VII"   ,"indice":77},
+                {"RA":"Planaltina"        ,"romano":"VI"    ,"indice":53},
+                {"RA":"Recanto das Emas"  ,"romano":"XV"    ,"indice":47},
+                {"RA":"Riacho Fundo"      ,"romano":"XVII"  ,"indice":-1},
+                {"RA":"Riacho Fundo II"   ,"romano":"XXI"   ,"indice":42},
+                {"RA":"Samambaia"         ,"romano":"XII"   ,"indice":50},
+                {"RA":"Santa Maria"       ,"romano":"XIII"  ,"indice":70},
+                {"RA":"São Sebastião"     ,"romano":"XIV"   ,"indice":65},
+                {"RA":"SIA"               ,"romano":"XXIX"  ,"indice":0},
+                {"RA":"Sobradinho"        ,"romano":"V"     ,"indice":62},
+                {"RA":"Sobradinho-II"     ,"romano":"XXVI"  ,"indice":67},
+                {"RA":"Sudoeste/Octogonal","romano":"XXII"  ,"indice":50},
+                {"RA":"Taguatinga"        ,"romano":"III"   ,"indice":68},
+                {"RA":"Varjão"            ,"romano":"XXIII" ,"indice":29},
+                {"RA":"Vicente Pires"     ,"romano":"XXX"   ,"indice":0}
+    ]
+}

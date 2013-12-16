@@ -1,0 +1,48 @@
+{
+    "indicador":{
+        "titulo":"Indicador de Idade: 20 à 29 anos",
+        "fonte":"Pesquisa Codeplan-2011",
+        "ano":"2011",
+        "unidade":"% da população nesta faixa etária",
+        "descricao":"3.2 - População na idade de 20 à 29 anos por RA",
+        "num_quartis":      4,
+        "quartis":  [
+                {"qi":0,"qs":14},
+                {"qi":14,"qs":16},
+                {"qi":16,"qs":19},
+                {"qi":19,"qs":100}
+        ]
+    },
+    "indices":  [
+                {"RA":"Águas Claras"      ,"romano":"XX"    ,"indice":19.38},
+                {"RA":"Brasília"          ,"romano":"I"     ,"indice":17.21},
+                {"RA":"Brazlândia"        ,"romano":"IV"    ,"indice":16.40},
+                {"RA":"Candangolândia"    ,"romano":"XIX"   ,"indice":21},
+                {"RA":"Ceilândia"         ,"romano":"IX"    ,"indice":16.90},
+                {"RA":"Cruzeiro"          ,"romano":"XI"    ,"indice":18.01},
+                {"RA":"Estrutural"        ,"romano":"XXV"   ,"indice":15.06},
+                {"RA":"Gama"              ,"romano":"II"    ,"indice":13.11},
+                {"RA":"Guará"             ,"romano":"X"     ,"indice":17.99},
+                {"RA":"Itapoã"            ,"romano":"XXVIII","indice":15.44},
+                {"RA":"Jd Botânico"       ,"romano":"XXVII" ,"indice":15.41},
+                {"RA":"Lago Norte"        ,"romano":"XVIII" ,"indice":20.89},
+                {"RA":"Lago Sul"          ,"romano":"XVI"   ,"indice":13.02},
+                {"RA":"Núcleo Bandeirante","romano":"VIII"  ,"indice":18.41},
+                {"RA":"ParkWay"           ,"romano":"XXIV"  ,"indice":16.19},
+                {"RA":"Paranoá"           ,"romano":"VII"   ,"indice":20.63},
+                {"RA":"Planaltina"        ,"romano":"VI"    ,"indice":16.86},
+                {"RA":"Recanto das Emas"  ,"romano":"XV"    ,"indice":18.67},
+                {"RA":"Riacho Fundo"      ,"romano":"XVII"  ,"indice":19.95},
+                {"RA":"Riacho Fundo II"   ,"romano":"XXI"   ,"indice":19.16},
+                {"RA":"Samambaia"         ,"romano":"XII"   ,"indice":18.41},
+                {"RA":"Santa Maria"       ,"romano":"XIII"  ,"indice":19.16},
+                {"RA":"São Sebastião"     ,"romano":"XIV"   ,"indice":19.31},
+                {"RA":"SIA"               ,"romano":"XXIX"  ,"indice":17.11},
+                {"RA":"Sobradinho"        ,"romano":"V"     ,"indice":16.28},
+                {"RA":"Sobradinho-II"     ,"romano":"XXVI"  ,"indice":18.31},
+                {"RA":"Sudoeste/Octogonal","romano":"XXII"  ,"indice":15.55},
+                {"RA":"Taguatinga"        ,"romano":"III"   ,"indice":17.48},
+                {"RA":"Varjão"            ,"romano":"XXIII" ,"indice":17.25},
+                {"RA":"Vicente Pires"     ,"romano":"XXX"   ,"indice":16.85}
+    ]
+}

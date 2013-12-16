@@ -1,0 +1,48 @@
+{
+    "indicador":{
+        "titulo":"População Que Não Contribui para Previdência",
+        "fonte":"Pesquisa Codeplan-2011",
+        "ano":"2011",
+        "unidade":"% da população que não contribui para a previdência (nem pública nem privada)",
+        "descricao":"6.4 - População por contribuição para a previdência",
+        "num_quartis":      4,
+        "quartis":  [
+                {"qi":0,"qs":40},
+                {"qi":40,"qs":45},
+                {"qi":45,"qs":55},
+                {"qi":55,"qs":100}
+        ]
+    },
+    "indices":  [
+                {"RA":"Águas Claras"      ,"romano":"XX"    ,"indice":45.99},
+                {"RA":"Brasília"          ,"romano":"I"     ,"indice":39.40},
+                {"RA":"Brazlândia"        ,"romano":"IV"    ,"indice":60.28},
+                {"RA":"Candangolândia"    ,"romano":"XIX"   ,"indice":54.51},
+                {"RA":"Ceilândia"         ,"romano":"IX"    ,"indice":55.23},
+                {"RA":"Cruzeiro"          ,"romano":"XI"    ,"indice":45.39},
+                {"RA":"Estrutural"        ,"romano":"XXV"   ,"indice":61.03},
+                {"RA":"Gama"              ,"romano":"II"    ,"indice":58.93},
+                {"RA":"Guará"             ,"romano":"X"     ,"indice":49.97},
+                {"RA":"Itapoã"            ,"romano":"XXVIII","indice":57.53},
+                {"RA":"Jd Botânico"       ,"romano":"XXVII" ,"indice":41.11},
+                {"RA":"Lago Norte"        ,"romano":"XVIII" ,"indice":33.50},
+                {"RA":"Lago Sul"          ,"romano":"XVI"   ,"indice":34.94},
+                {"RA":"Núcleo Bandeirante","romano":"VIII"  ,"indice":53.35},
+                {"RA":"ParkWay"           ,"romano":"XXIV"  ,"indice":40.65},
+                {"RA":"Paranoá"           ,"romano":"VII"   ,"indice":57.10},
+                {"RA":"Planaltina"        ,"romano":"VI"    ,"indice":59.84},
+                {"RA":"Recanto das Emas"  ,"romano":"XV"    ,"indice":55.06},
+                {"RA":"Riacho Fundo"      ,"romano":"XVII"  ,"indice":57.37},
+                {"RA":"Riacho Fundo II"   ,"romano":"XXI"   ,"indice":57.38},
+                {"RA":"Samambaia"         ,"romano":"XII"   ,"indice":58.46},
+                {"RA":"Santa Maria"       ,"romano":"XIII"  ,"indice":55.77},
+                {"RA":"São Sebastião"     ,"romano":"XIV"   ,"indice":57.15},
+                {"RA":"SIA"               ,"romano":"XXIX"  ,"indice":46.57},
+                {"RA":"Sobradinho"        ,"romano":"V"     ,"indice":53.63},
+                {"RA":"Sobradinho-II"     ,"romano":"XXVI"  ,"indice":51.24},
+                {"RA":"Sudoeste/Octogonal","romano":"XXII"  ,"indice":32.91},
+                {"RA":"Taguatinga"        ,"romano":"III"   ,"indice":57.53},
+                {"RA":"Varjão"            ,"romano":"XXIII" ,"indice":61.30},
+                {"RA":"Vicente Pires"     ,"romano":"XXX"   ,"indice":50.04}
+    ]
+}

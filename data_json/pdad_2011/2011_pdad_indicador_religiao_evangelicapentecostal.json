@@ -1,0 +1,47 @@
+{
+    "indicador":{
+        "titulo":"Indicador de Religião Evangélica Pentecostal",
+        "fonte":"Pesquisa Codeplan-2011",
+        "ano":"2011",
+        "unidade":"% da população evangélica pentecostal",
+        "descricao":"3.5 - População por religião declarada",
+        "num_quartis":      3,
+        "quartis":  [
+                {"qi":0,"qs":8},
+                {"qi":8,"qs":15},
+                {"qi":15,"qs":100}
+        ]
+    },
+    "indices":  [
+                {"RA":"Águas Claras"      ,"romano":"XX"    ,"indice":17.27},
+                {"RA":"Brasília"          ,"romano":"I"     ,"indice":4.07},
+                {"RA":"Brazlândia"        ,"romano":"IV"    ,"indice":12.94},
+                {"RA":"Candangolândia"    ,"romano":"XIX"   ,"indice":8.75},
+                {"RA":"Ceilândia"         ,"romano":"IX"    ,"indice":13.04},
+                {"RA":"Cruzeiro"          ,"romano":"XI"    ,"indice":6.43},
+                {"RA":"Estrutural"        ,"romano":"XXV"   ,"indice":16.65},
+                {"RA":"Gama"              ,"romano":"II"    ,"indice":10.18},
+                {"RA":"Guará"             ,"romano":"X"     ,"indice":6.33},
+                {"RA":"Itapoã"            ,"romano":"XXVIII","indice":14.79},
+                {"RA":"Jd Botânico"       ,"romano":"XXVII" ,"indice":5.29},
+                {"RA":"Lago Norte"        ,"romano":"XVIII" ,"indice":4.42},
+                {"RA":"Lago Sul"          ,"romano":"XVI"   ,"indice":1.91},
+                {"RA":"Núcleo Bandeirante","romano":"VIII"  ,"indice":7.26},
+                {"RA":"ParkWay"           ,"romano":"XXIV"  ,"indice":4.88},
+                {"RA":"Paranoá"           ,"romano":"VII"   ,"indice":11.55},
+                {"RA":"Planaltina"        ,"romano":"VI"    ,"indice":9.00},
+                {"RA":"Recanto das Emas"  ,"romano":"XV"    ,"indice":11.22},
+                {"RA":"Riacho Fundo"      ,"romano":"XVII"  ,"indice":11.13},
+                {"RA":"Riacho Fundo II"   ,"romano":"XXI"   ,"indice":11.37},
+                {"RA":"Samambaia"         ,"romano":"XII"   ,"indice":11.56},
+                {"RA":"Santa Maria"       ,"romano":"XIII"  ,"indice":11.15},
+                {"RA":"São Sebastião"     ,"romano":"XIV"   ,"indice":7.95},
+                {"RA":"SIA"               ,"romano":"XXIX"  ,"indice":2.04},
+                {"RA":"Sobradinho"        ,"romano":"V"     ,"indice":6.65},
+                {"RA":"Sobradinho-II"     ,"romano":"XXVI"  ,"indice":9.42},
+                {"RA":"Sudoeste/Octogonal","romano":"XXII"  ,"indice":4.38},
+                {"RA":"Taguatinga"        ,"romano":"III"   ,"indice":8.39},
+                {"RA":"Varjão"            ,"romano":"XXIII" ,"indice":13.34},
+                {"RA":"Vicente Pires"     ,"romano":"XXX"   ,"indice":13.66}
+    ]
+}

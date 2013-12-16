@@ -1,0 +1,50 @@
+{
+    "indicador":{
+        "titulo":"Indicador de Banda Larga",
+        "fonte":"Pesquisa Codeplan-2011",
+        "ano":"2011",
+        "unidade":"% de acessos residenciais com Banda Larga",
+        "descricao":"7.3 - Serviço de comunicação nos domicílios",
+        "num_quartis":      6,
+        "quartis":  [
+                {"qi":0,"qs":25},
+                {"qi":25,"qs":30},
+                {"qi":30,"qs":49.9},
+                {"qi":49.9,"qs":55},
+                {"qi":55,"qs":65},
+                {"qi":65,"qs":100}
+        ]
+    },
+    "indices":  [
+                {"RA":"Águas Claras"      ,"romano":"XX"    ,"indice":63.0},
+                {"RA":"Brasília"          ,"romano":"I"     ,"indice":86.9},
+                {"RA":"Brazlândia"        ,"romano":"IV"    ,"indice":27.1},
+                {"RA":"Candangolândia"    ,"romano":"XIX"   ,"indice":51.3},
+                {"RA":"Ceilândia"         ,"romano":"IX"    ,"indice":30.9},
+                {"RA":"Cruzeiro"          ,"romano":"XI"    ,"indice":74.3},
+                {"RA":"Estrutural"        ,"romano":"XXV"   ,"indice":15.5},
+                {"RA":"Gama"              ,"romano":"II"    ,"indice":52.8},
+                {"RA":"Guará"             ,"romano":"X"     ,"indice":64.6},
+                {"RA":"Itapoã"            ,"romano":"XXVIII","indice":11.1},
+                {"RA":"Jd Botânico"       ,"romano":"XXVII" ,"indice":86.3},
+                {"RA":"Lago Norte"        ,"romano":"XVIII" ,"indice":87.8},
+                {"RA":"Lago Sul"          ,"romano":"XVI"   ,"indice":91.4},
+                {"RA":"Núcleo Bandeirante","romano":"VIII"  ,"indice":61.2},
+                {"RA":"Paranoá"           ,"romano":"VII"   ,"indice":27.7},
+                {"RA":"Park Way"          ,"romano":"XXIV"  ,"indice":77},
+                {"RA":"Planaltina"        ,"romano":"VI"    ,"indice":33.3},
+                {"RA":"Recanto das Emas"  ,"romano":"XV"    ,"indice":29.3},
+                {"RA":"Riacho Fundo"      ,"romano":"XVII"  ,"indice":50},
+                {"RA":"Riacho Fundo II"   ,"romano":"XXI"   ,"indice":34.8},
+                {"RA":"Samambaia"         ,"romano":"XII"   ,"indice":35.1},
+                {"RA":"Santa Maria"       ,"romano":"XIII"  ,"indice":42.4},
+                {"RA":"São Sebastião"     ,"romano":"XIV"   ,"indice":28.4},
+                {"RA":"SIA"               ,"romano":"XXIX"  ,"indice":48.8},
+                {"RA":"Sobradinho"        ,"romano":"V"     ,"indice":62.6},
+                {"RA":"Sobradinho-II"     ,"romano":"XXVI"  ,"indice":54.6},
+                {"RA":"Sudoeste/Octogonal","romano":"XXII"  ,"indice":85},
+                {"RA":"Taguatinga"        ,"romano":"III"   ,"indice":59.7},
+                {"RA":"Varjão"            ,"romano":"XXIII" ,"indice":19.3},
+                {"RA":"Vicente Pires"     ,"romano":"XXX"   ,"indice":59.5}
+            ]
+}

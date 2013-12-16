@@ -1,0 +1,47 @@
+{
+    "indicador":{
+        "titulo":"População na Condição de Agregado Familiar",
+        "fonte":"Pesquisa Codeplan-2011",
+        "ano":"2011",
+        "unidade":"% da população da RA na condição de agregado",
+        "descricao":"3.6 - População na codição de agregado domiciliar",
+        "num_quartis":      3,
+        "quartis":  [
+                {"qi":0,"qs":0.5},
+                {"qi":0.5,"qs":1},
+                {"qi":1,"qs":100}
+        ]
+    },
+    "indices":  [
+                {"RA":"Águas Claras"      ,"romano":"XX"    ,"indice":0.87},
+                {"RA":"Brasília"          ,"romano":"I"     ,"indice":0.69},
+                {"RA":"Brazlândia"        ,"romano":"IV"    ,"indice":1.41},
+                {"RA":"Candangolândia"    ,"romano":"XIX"   ,"indice":0.76},
+                {"RA":"Ceilândia"         ,"romano":"IX"    ,"indice":0.61},
+                {"RA":"Cruzeiro"          ,"romano":"XI"    ,"indice":0.30},
+                {"RA":"Estrutural"        ,"romano":"XXV"   ,"indice":0.15},
+                {"RA":"Gama"              ,"romano":"II"    ,"indice":0.10},
+                {"RA":"Guará"             ,"romano":"X"     ,"indice":0.37},
+                {"RA":"Itapoã"            ,"romano":"XXVIII","indice":0.26},
+                {"RA":"Jd Botânico"       ,"romano":"XXVII" ,"indice":0.29},
+                {"RA":"Lago Norte"        ,"romano":"XVIII" ,"indice":0.29},
+                {"RA":"Lago Sul"          ,"romano":"XVI"   ,"indice":0.74},
+                {"RA":"Núcleo Bandeirante","romano":"VIII"  ,"indice":0.20},
+                {"RA":"ParkWay"           ,"romano":"XXIV"  ,"indice":0.80},
+                {"RA":"Paranoá"           ,"romano":"VII"   ,"indice":0.12},
+                {"RA":"Planaltina"        ,"romano":"VI"    ,"indice":0.06},
+                {"RA":"Recanto das Emas"  ,"romano":"XV"    ,"indice":0.62},
+                {"RA":"Riacho Fundo"      ,"romano":"XVII"  ,"indice":0.94},
+                {"RA":"Riacho Fundo II"   ,"romano":"XXI"   ,"indice":1.12},
+                {"RA":"Samambaia"         ,"romano":"XII"   ,"indice":0.38},
+                {"RA":"Santa Maria"       ,"romano":"XIII"  ,"indice":0.06},
+                {"RA":"São Sebastião"     ,"romano":"XIV"   ,"indice":0.19},
+                {"RA":"SIA"               ,"romano":"XXIX"  ,"indice":2.04},
+                {"RA":"Sobradinho"        ,"romano":"V"     ,"indice":0.43},
+                {"RA":"Sobradinho-II"     ,"romano":"XXVI"  ,"indice":0.14},
+                {"RA":"Sudoeste/Octogonal","romano":"XXII"  ,"indice":0.32},
+                {"RA":"Taguatinga"        ,"romano":"III"   ,"indice":0.06},
+                {"RA":"Varjão"            ,"romano":"XXIII" ,"indice":0.48},
+                {"RA":"Vicente Pires"     ,"romano":"XXX"   ,"indice":0.85}
+    ]
+}

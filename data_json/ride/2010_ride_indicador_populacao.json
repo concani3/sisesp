@@ -1,0 +1,41 @@
+{
+    "indicador":{
+        "titulo":"População",
+        "fonte":"Censo 2010 (AtlasBrasil)",
+        "ano":"2010",
+        "unidade":"pessoas",
+        "descricao":"População",
+        "num_quartis":      4,
+        "quartis":  [
+                {"qi":0,"qs":20000},
+                {"qi":20000,"qs":100000},
+                {"qi":100000,"qs":500000},
+                {"qi":500000,"qs":4000000}
+        ]
+    },
+    "indices":  [
+                {"RA":"Abadiânia"               ,"romano":"5200100"   ,"indice":15693},
+                {"RA":"Água Fria de Goiás"      ,"romano":"5200175"   ,"indice":5072},
+                {"RA":"Águas Lindas de Goiás"   ,"romano":"5200258"   ,"indice":157323},
+                {"RA":"Alexânia"                ,"romano":"5200308"   ,"indice":23397},
+                {"RA":"Brasília"                ,"romano":"5300108"   ,"indice":2469489},
+                {"RA":"Buritis"                 ,"romano":"3109303"   ,"indice":22690},
+                {"RA":"Cabeceira Grande"        ,"romano":"3109451"   ,"indice":6451},
+                {"RA":"Cabeceiras"              ,"romano":"5204003"   ,"indice":7305},
+                {"RA":"Cidade Ocidental"        ,"romano":"5205497"   ,"indice":54360},
+                {"RA":"Cocalzinho de Goiás"     ,"romano":"5205513"   ,"indice":17078},
+                {"RA":"Corumbá de Goiás"        ,"romano":"5205802"   ,"indice":9692},
+                {"RA":"Cristalina"              ,"romano":"5206206"   ,"indice":45500},
+                {"RA":"Formosa"                 ,"romano":"5208004"   ,"indice":97903},
+                {"RA":"Luziânia"                ,"romano":"5212501"   ,"indice":165492},
+                {"RA":"Mimoso de Goiás"         ,"romano":"5213053"   ,"indice":2685},
+                {"RA":"N.Gama"                  ,"romano":"5215231"   ,"indice":92788},
+                {"RA":"Padre Bernardo"          ,"romano":"5215603"   ,"indice":27176},
+                {"RA":"Pirenópolis"             ,"romano":"5217302"   ,"indice":22400},
+                {"RA":"Planaltina"              ,"romano":"5217609"   ,"indice":76959},
+                {"RA":"Sto.Ant. Descoberto"     ,"romano":"5219753"   ,"indice":61791},
+                {"RA":"Unaí"                    ,"romano":"3170404"   ,"indice":75494},
+                {"RA":"Valp.de Goiás"           ,"romano":"5221858"   ,"indice":122771},
+                {"RA":"Vila Boa"                ,"romano":"5222203"   ,"indice":4531}
+    ]
+}

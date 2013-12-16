@@ -1,0 +1,47 @@
+{
+    "indicador":{
+        "titulo":"Indicador de Religião Espírita",
+        "fonte":"Pesquisa Codeplan-2011",
+        "ano":"2011",
+        "unidade":"% da população espírita",
+        "descricao":"3.5 - População por religião declarada",
+        "num_quartis":      3,
+        "quartis":  [
+                {"qi":0,"qs":3},
+                {"qi":3,"qs":6},
+                {"qi":6,"qs":100}
+        ]
+    },
+    "indices":  [
+                {"RA":"Águas Claras"      ,"romano":"XX"    ,"indice":4.35},
+                {"RA":"Brasília"          ,"romano":"I"     ,"indice":7.50},
+                {"RA":"Brazlândia"        ,"romano":"IV"    ,"indice":1.20},
+                {"RA":"Candangolândia"    ,"romano":"XIX"   ,"indice":1.69},
+                {"RA":"Ceilândia"         ,"romano":"IX"    ,"indice":1.32},
+                {"RA":"Cruzeiro"          ,"romano":"XI"    ,"indice":7.34},
+                {"RA":"Estrutural"        ,"romano":"XXV"   ,"indice":0.25},
+                {"RA":"Gama"              ,"romano":"II"    ,"indice":1.24},
+                {"RA":"Guará"             ,"romano":"X"     ,"indice":3.77},
+                {"RA":"Itapoã"            ,"romano":"XXVIII","indice":0.17},
+                {"RA":"Jd Botânico"       ,"romano":"XXVII" ,"indice":7.47},
+                {"RA":"Lago Norte"        ,"romano":"XVIII" ,"indice":8.61},
+                {"RA":"Lago Sul"          ,"romano":"XVI"   ,"indice":7.09},
+                {"RA":"Núcleo Bandeirante","romano":"VIII"  ,"indice":3.88},
+                {"RA":"ParkWay"           ,"romano":"XXIV"  ,"indice":6.48},
+                {"RA":"Paranoá"           ,"romano":"VII"   ,"indice":1.26},
+                {"RA":"Planaltina"        ,"romano":"VI"    ,"indice":7.42},
+                {"RA":"Recanto das Emas"  ,"romano":"XV"    ,"indice":0.38},
+                {"RA":"Riacho Fundo"      ,"romano":"XVII"  ,"indice":1.11},
+                {"RA":"Riacho Fundo II"   ,"romano":"XXI"   ,"indice":0.69},
+                {"RA":"Samambaia"         ,"romano":"XII"   ,"indice":1.01},
+                {"RA":"Santa Maria"       ,"romano":"XIII"  ,"indice":1.07},
+                {"RA":"São Sebastião"     ,"romano":"XIV"   ,"indice":0.34},
+                {"RA":"SIA"               ,"romano":"XXIX"  ,"indice":2.04},
+                {"RA":"Sobradinho"        ,"romano":"V"     ,"indice":4.88},
+                {"RA":"Sobradinho-II"     ,"romano":"XXVI"  ,"indice":5.53},
+                {"RA":"Sudoeste/Octogonal","romano":"XXII"  ,"indice":9.65},
+                {"RA":"Taguatinga"        ,"romano":"III"   ,"indice":2.34},
+                {"RA":"Varjão"            ,"romano":"XXIII" ,"indice":1.44},
+                {"RA":"Vicente Pires"     ,"romano":"XXX"   ,"indice":2.67}
+    ]
+}
