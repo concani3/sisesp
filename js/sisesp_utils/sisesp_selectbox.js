@@ -156,13 +156,13 @@ jQuery.SelectBox = function(selectobj, options) {
          2) Carregar novo menu dos indicadores
          3) Carregar novas informações gerais das RAs
         */
-        if (!fsis_limparpainel()) return false;
+        if (!fsis_principal("LIMPARPAINEL")) return false;
         ddsmoothmenu.init({
             mainmenuid: "smoothmenu-ajax",
             //customtheme: ["#1c5a80", "#18374a"], //override default menu CSS background values? Uncomment: ["normal_background", "hover_background"]
-            contentsource: ["id_menus-2", PASTA_HTML + vsis_baseindicadores[document.getElementById("Items").selectedIndex][1]] //"markup" or ["id_menus-2", "path_to_menu_file"]
+            contentsource: ["id_menuIndicadores", vsis_dados.pasta_html + vsis_dados.base_indicadores[document.getElementById("Items").selectedIndex][1]] //"markup" or ["id_menuIndicadores", "path_to_menu_file"]
         });
-        fsis_infogerais();
+        fsis_principal("BASEDADOS");
         return true;
     }
 

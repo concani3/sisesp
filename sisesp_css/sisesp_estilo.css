@@ -1,22 +1,22 @@
 /* */
 /* ######### ------------------------>>> CORES <<<-------------------------######### */
 /*
-  # Body background:            laranja                 #FF6600
-  # Div Principal background:   laranja Orange          #FFA500
-  # Border div principal:       laranja Orange          #FFA500
+  # Body background:            laranja                 #fff
+  # Div Principal background:   laranja Orange          #d5d0ca
+  # Border div principal:       laranja Orange          #d5d0ca
   # Div Titulo background:      branco gelo             #F1EEE8
-  # Border div Indicadores      laranja Orange          #FFF029
-  # Menu background             azul                    #1F77B4
+  # Border div Indicadores      laranja Orange          #d5d0ca
+  # Menu background             azul                    #3494D5
   # Menu Top Level              preto                   #2D2B2B
   # menu hover link             vermelho                #D62728
   #
-  # Quartil-0:                                          #FFF68F
-  # Quartil-1:                                          #EABE53
-  # Quartil-2:                                          #B1D4AF
-  # Quartil-3:                                          #7E9B26
-  # Quartil-4:                                          #E48164
-  # Quartil-5:                                          #E92922
-  # Texto Quartil:                                      #4F4F4F
+  # Faixa-0:                                          #ffd173
+  # Faixa-1:                                          #ffab00
+  # Faixa-2:                                          #bf9030
+  # Faixa-3:                                          #a66f00
+  # Faixa-4:                                          #a64800
+  # Faixa-5:                                          #bf3030
+  # Texto Faixa:                                      #4F4F4F
 */
 /* ######### ------------>>> FOLHAS DE ESTILO COMPLEMENTARES <<<------------######### */
 /* as instruções "import" a seguir devem ser as primeiras instruções deste arquivo de CSS */
@@ -61,7 +61,7 @@ input, select, textarea {
 html { font-size:100.01%; }
 /* ######### ------------------------>>> GLOBAL <<<-------------------------######### */
 body {
-    background-color:#ff6600;
+    background-color:#fff;   /* #ff6600; */
 /*    font-size: 62.5%; */
     font-size: 10px;
 }
@@ -70,8 +70,8 @@ body {
     width:1400px;
     border-style:solid;
     border-width:0.2em;
-    border-color:#ffa500;
-    background-color:#ffa500;
+    border-color:#d5d0ca;       /* #ffa500; */
+    background-color:#d2cbbe;   /* #ffa500; */
     padding:0;
     margin:auto;
     margin-top:20px;
@@ -81,7 +81,7 @@ body {
     height:2.2em;
     padding-top:0.05em;
     border-style:solid;
-    border-color:#ffa500;
+    border-color:#d5d0ca;       /* #ffa500; */
     border-width:0.02em;
     background-color:#F1EEE8;
     margin:0 0 0 0;
@@ -95,22 +95,21 @@ body {
     vertical-align:middle;
 }
 #id_menus{
-    width=100%;
+    width:99.7%;
     background-color:#3494D5;
     height:2.5em;
     padding-top:0.05em;
     border-style:solid;
-    border-color:#ffa500;
+    border-color:#d5d0ca;      /* #ffa500; */
     border-width:0.02em;
-    margin:0 0 0 0;
     font-size:1em;
     text-align:center;
     font-weight:bold;
-    margin:0.2em 0em 0.2em 0.2em;
+    margin:0.2em 0 0.2em 0.2em;
 }
 #id_menuBase{
     float:left;
-    color:white;
+    color:white;    /*  #828174; */
     border-right-style:solid;
 }
 
@@ -140,31 +139,11 @@ body {
     -moz-border-radius-bottomleft:2em;
     border-bottom-left-radius:2em;
 }
-/*
-.button {
-    color:black;
-    -moz-box-shadow: 0.2em 0.3em 0 0 #1564ad;
-    -webkit-box-shadow: 0.2em 0.3em 0 0 #1564ad;
-    box-shadow: 0.2em 0.3em 0 0 #1564ad;
-    background-color: #b0c4de;
-    font-size:1em;
-    text-align:center;
-    border:0.1em solid #84bbf3;
-    -moz-border-radius:0.8em;
-    -webkit-border-radius:0.8em;
-    border-radius:0.8em;
-    margin:0em 0.4em 0.2em 0.2em;
-    display:inline-block;
-    text-indent:0;
-    padding:0.02em 1.08em;
-    text-decoration:none;
-}
-*/
 
 #id_indicadores, #id_map {
     height:580px;
     border-style:solid;
-    border-color:#fff029;
+    border-color:#d5d0ca;       /* #fff029; */
     border-width:thin;
     padding:0;
 }
@@ -185,16 +164,16 @@ body {
 }
 #id_mapinfo{
     clear: both;
-    width:100%;
+    width:99.8%;
     height:1.4em;
     padding-top:0.3em;
-    background-color:#ffa500;
+    background-color:#fff;   /* #ffa500; */
     text-align:center;
     font-size:1em;
     margin:0 0 0 0;
     border-style:solid;
     border-width:thin;
-    border-color:#fff029;
+    border-color:#d5d0ca;       /* #fff029; */
 }
 #id_mouse, #id_layers_info {
     margin:0;
@@ -229,11 +208,12 @@ body {
     float:right;
 }
 
-#id_indicadores .indi_titulo2{
+#id_indicadores .indi_titulo2 {
     font-size:1.3em;
     text-align:left;
-    font:normal 1.2em;
-    color:black;
+    color:#000;
+    font-style:normal;
+    font-size: 1.2em;
 }
 
 #id_indicadores-1 table{
@@ -261,7 +241,7 @@ body {
     background:-o-linear-gradient(top, #f0c911 5%, #f2ab1e 100%);
     background:-ms-linear-gradient(top, #f0c911 5%, #f2ab1e 100%);
     background:linear-gradient(to bottom, #f0c911 5%, #f2ab1e 100%);
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f0c911', endColorstr='#f2ab1e',GradientType=0);
+/*    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f0c911', endColorstr='#f2ab1e', GradientType=0); */
     background-color:#f0c911;
     -moz-border-radius:6px;
     -webkit-border-radius:6px;
@@ -273,7 +253,7 @@ body {
     font-size:10px;
     font-weight:bold;
     padding:2px 24px;
-    text-decoration:none;
+    text-decoration:none
 }
 #id_indicadores-1 .myButton3:hover {
     background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f2ab1e), color-stop(1, #f0c911));
@@ -282,7 +262,7 @@ body {
     background:-o-linear-gradient(top, #f2ab1e 5%, #f0c911 100%);
     background:-ms-linear-gradient(top, #f2ab1e 5%, #f0c911 100%);
     background:linear-gradient(to bottom, #f2ab1e 5%, #f0c911 100%);
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2ab1e', endColorstr='#f0c911',GradientType=0);
+/*    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2ab1e', endColorstr='#f0c911',GradientType=0); */
     background-color:#f2ab1e;
 }
 #id_indicadores-1 .myButton3:active {
@@ -299,7 +279,9 @@ body {
     height:8em;
     padding: 0.2em;
     margin-left:0;
-    font: normal 1.2em;
+    margin-bottom: 0.2em;
+    font-style: normal;
+    font-size: 1em;
     color:#000; /*  cor do texto */
     background-image:url('img/gradient2.png');
     text-align:left;
@@ -324,6 +306,9 @@ body {
 .chartsvg{
     margin-left: 6em;
     margin-top:2em;
+}
+.chart{
+    margin-top:1.2em;
 }
 #id_indicadores-2 meutexto{
     display: block;
@@ -362,35 +347,36 @@ body {
     text-align:left;
     margin-left: 6em;
     font-size: 0.8em;
+    color:#000;
 }
-.chart0, .chart1, .chart2, .chart3, .chart4  {
+.chart0, .chart1, .chart2, .chart3, .chart4, .chart5  {
     text-align: left;
-    color: #4F4F4F;
+    color: #000;     /* #4F4F4F; */
     font-size: 0.8em;
 }
 .chart0  {
-    /*  Cor Quartil-0  */
-    background-color: #FFF68F;
+    /*  Cor Faixa-0  */
+    background-color: #ffd173;
 }
 .chart1 {
-    /*  Cor Quartil-1  */
-    background-color: #EABE53;
+    /*  Cor Faixa-1  */
+    background-color: #ffab00;
 }
 .chart2 {
-    /*  Cor Quartil-2  */
-    background-color: #B1D4AF;
+    /*  Cor Faixa-2  */
+    background-color: #bf9030;
 }
 .chart3 {
-    /*  Cor Quartil-3  */
-    background-color: #7E9B26;
+    /*  Cor Faixa-3  */
+    background-color: #a66f00;
 }
 .chart4 {
-    /*  Cor Quartil-4  */
-    background-color: #E48164;
+    /*  Cor Faixa-4  */
+    background-color: #a64800;
 }
 .chart5 {
-    /*  Cor Quartil-5  */
-    background-color: #E92922;
+    /*  Cor Faixa-5  */
+    background-color: #BF3030;
 }
 ul.a,ul.b,ul.c,ul.d,ul.e,ul.f{
     list-style-type:square;
@@ -400,35 +386,36 @@ ul.a,ul.b,ul.c,ul.d,ul.e,ul.f{
 }
 
 ul.a li {
-    /*  Cor Quartil-0  */
-    color:#FFF68F;
+    /*  Cor Faixa-0  */
+    color:#ffd173;
 }
 ul.b li { 
-    /*  Cor Quartil-1  */
-    color:#EABE53;
+    /*  Cor Faixa-1  */
+    color:#ffab00;
 }
 ul.c li {
-    /*  Cor Quartil-2  */
-    color:#B1D4AF;
+    /*  Cor Faixa-2  */
+    color:#bf9030;
 }
 ul.d li {
-    /*  Cor Quartil-3  */
-    color:#7E9B26;
+    /*  Cor Faixa-3  */
+    color:#a66f00;
 }
 ul.e li {
-    /*  Cor Quartil-4  */
-    color:#E48164;
+    /*  Cor Faixa-4  */
+    color:#a64800;
 }
 ul.f li {
-    /*  Cor Quartil-5  */
-    color:#E92922;
+    /*  Cor Faixa-5  */
+    color:#bf3030;
 }
 
 
 /* ######### ------------------------>>> MENU <<<-------------------------######### */
 
 .ddsmoothmenu{
-    font: normal 1em;
+    font-style: normal;
+    font-size: 1em;
     background: #3494D5; /* #1f77b4; background do menu bar */
     width: 100%;
 }

@@ -18,44 +18,23 @@
   alb.antonio@gmail.com
   concani3.wordpress.com
 
-* --------------------------------------------------------
+* ********************************************************
 *
 * GDF - Geoinformação: Indicadores Sociais Espacializados
 *
-* --------------------------------------------------------
+* ********************************************************
 -->
 <head>
 <title>Sisesp: Indicadores Sociais Espacializados</title>
-<meta http-equiv="content-type" content="text/ html;charset=utf-8" />
+<meta charset="utf-8">
 <meta name="keywords" content="Indicadores Sociais, GIS, Estatistica, PDAD">
 <meta name="author" content="Antonio Albuquerque">
-<meta name="Indicadores" content="Geoinformação, OpenLayers">
 <!-- <link rel='stylesheet' href='http://localhost/js/OpenLayers-2.12/theme/default/style.css' type='text/css'> -->
 <link rel='stylesheet' href='./js/OpenLayers-2.12/theme/default/style.css' type='text/css'>
 <link rel='stylesheet' href='./sisesp_css/sisesp_estilo.css'  type='text/css'>
-<script src="http://maps.google.com/maps/api/js?sensor=false&v=3.2"></script>
-<script type='text/javascript' src='./js/sisesp_utils/sisesp_funcoes.js'></script>
-<!-- <script type='text/javascript' src='http://localhost/js/OpenLayers-2.12/OpenLayers.js'></script> -->
-<!-- <script type='text/javascript' src='http://localhost/js/d3js/d3.js'></script> -->
-<script type='text/javascript' src='./js/OpenLayers-2.12/OpenLayers.js'></script>
-<script type='text/javascript' src='./js/d3js/d3.js'></script>
-<!-- a ordem de declaração das proximas 2 instruções é importante: carregar primeiro jquery -->
-<script type='text/javascript' src='./js/jquery/jquery-1.10.1.min.js'></script>
-<!-- <script type='text/javascript' src='http://localhost/js/jquery/jquery-1.10.1.min.js'></script> -->
-<script type='text/javascript' src='./js/sisesp_utils/sisesp_menuindicadores.js'></script>
-<script type='text/javascript' src='./js/sisesp_utils/sisesp_geoinformacao.js'></script>
-<script type='text/javascript' src='./js/sisesp_utils/sisesp_selectbox.js'></script>
-<script type='text/javascript'>
-function iniciacao(){
-    init();
-    $(document).ready(function() {
-            $('#Items').selectbox();
-    });
-}
-</script>
 </head>
-<body onload='iniciacao();'>
-<div id="id_principal";>
+<body onload='fsis_principal("INICIAR");'>
+<div id ="id_principal">
 <div id="id_history" class="historyClass"></div>
 <div id="id_titulo"><img src="icon/GDF.png" alt="Logo GDF" title="Logo do GDF" />Portal da Geoinformação</div>
 <div id="id_menus">
@@ -64,11 +43,12 @@ function iniciacao(){
             <option value="option0">PDAD-2011</option>
             <option value="option1">PDAD-2013</option>
             <option value="option2">RIDE</option>
+            <option value="option3">CONFERÊNCIAS</option>
     </select>
 </div>
 <div id="id_menuIndicadores"></div>
 <div id="id_select">Informações Literais:
-    <select name="Infos" id="id_infos" onchange="fsis_selecionarFeature()">
+    <select name='Infos' id='id_infos' onchange='fsis_principal("SELECIONARFEATURE");'>
             <option value="WMS">WMS-Cartografia</option>
             <option value="Comunidade">Comunidade</option>
             <option value="Equipamentos">Equip Públicos</option>
@@ -83,11 +63,22 @@ function iniciacao(){
 <div id="id_map"></div>
 <div id="id_mapinfo">
 <noscript>
-<blink><b>!!! OooopS !!!  Aplicação Interrompida!!!</b>  Seu navegador está com o JavaScript desabilitado.  É necessário ter o JS habilitado.</blink>
+<b>!!! OooopS !!!  Aplicação Interrompida!!!</b>  Seu navegador está com o JavaScript desabilitado.  É necessário ter o JS habilitado.
 </noscript>
 <div id="id_mouse"></div>
 <div id="id_layers_info"></div>
 </div>
 </div>
+<script src="http://maps.google.com/maps/api/js?sensor=false&amp;.v=3.2"></script>
+<!-- <script type='text/javascript' src='http://localhost/js/OpenLayers-2.12/OpenLayers.js'></script> -->
+<!-- <script type='text/javascript' src='http://localhost/js/d3js/d3.js'></script> -->
+<script type='text/javascript' src='./js/OpenLayers-2.12/OpenLayers.js'></script>
+<script type='text/javascript' src='./js/d3js/d3.js'></script>
+<!-- a ordem de declaração das proximas 2 instruções é importante: carregar primeiro jquery -->
+<script type='text/javascript' src='./js/jquery/jquery-1.10.1.min.js'></script>
+<!-- <script type='text/javascript' src='http://localhost/js/jquery/jquery-1.10.1.min.js'></script> -->
+<script type='text/javascript' src='./js/sisesp_utils/sisesp_menuindicadores.js'></script>
+<script type='text/javascript' src='./js/sisesp_utils/sisesp_geoinformacao.js'></script>
+<script type='text/javascript' src='./js/sisesp_utils/sisesp_selectbox.js'></script>
 </body>
 </html>
